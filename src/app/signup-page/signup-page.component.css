@@ -1,11 +1,11 @@
-.inscription::before {
+ .inscription::before {
   content: "....................................................................................................................................................";
   color: #fff;
   display: block; 
   margin: 0 0 15px;
   font-size: 18px;
   text-align: center;
-}
+} 
 
 .custom-control {
   position: relative;
@@ -17,10 +17,78 @@
 input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
+  display: inline-block;
 }
 
 .custom-control-input {
-  position: absolute;
-  z-index: -1;
-  opacity: 0;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
 }
+
+.ng-container {
+  background-color:#8A993A;
+  position: center;
+}
+
+img {
+  align-content: center;
+}
+
+h2 {
+  color: white;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
+
+.form-control {
+  margin: auto;
+  width: 50%;
+  font-style: italic;
+}
+
+ .custom-select { 
+    margin-right: 10px;
+ } 
+
+.link-style-1 {
+    display: inline-block;
+    color: #e5ff70;
+}
+
+/* this is the css for the terms & conditions disclaimer */
+.custom-control-label {
+  color: white;
+  margin: 8px 8px 8px 8px;  
+  display: block;
+  font-size: 15px;
+  text-align: center; 
+  font-weight: normal;
+}
+
+a {
+text-decoration: underline;
+}
+
+.btn-play {
+  height: 60px;
+  width: 360px;
+  background: #e5ff70;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #bfd16c;
+  color: #4a543a;
+  font-size: 16px;
+  margin: 20px;
+  align-items: flex-start; 
+  padding: 0 20px;
+}
+
+/* .form-group {
+  position: middle;
+} */

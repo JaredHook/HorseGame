@@ -1,0 +1,26 @@
+h2 {
+    color: white;
+    text-align: center;
+}
+
+h3 {
+    color: white;
+}
+
+li {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+.breeds {
+    text-align: left;
+}
+
+.coats {
+    text-align: right;
+}
+
+img {
+    vertical-align: middle;
+}
