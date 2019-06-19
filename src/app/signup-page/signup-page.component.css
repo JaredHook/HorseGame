@@ -12,19 +12,19 @@ input[type="checkbox"] {
   padding: 0;
   display: inline-block;
 }
-
+/* 
 .custom-control-input {
   position: relative;
   z-index: 1;
   opacity: 1;
-}
+} */
 
 /* container for form content  */
 .ng-container {
   background-color:#8A993A;
   position: center;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
 }
 
 img {
@@ -42,18 +42,6 @@ h3 {
   font-size: 15px;
   font-weight: 400;
 }
-
-.form-control {
-  margin: auto;
-  margin-top: 15px;
-  width: 36%;
-  height: 44px;
-  font-style: italic;
-}
-
- /* .custom-select { 
-    margin-right: 10px;
- }  */
 
  /* coloured links on disclaimers */
 .link-style-1 {
@@ -102,18 +90,6 @@ text-decoration: underline;
   justify-content: center;
 }
 
-.centerize {
-  display: block;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.custom-select {
-  height: 44px;
-  /* width: 100%; */
-  /* padding: 0 25px 0 10px; */
-  margin-right: 10px;
-  /* vertical-align: middle; */
-  width: 133px;
-  color: grey;
+.row {
+  margin: 0;
 }

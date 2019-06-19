@@ -1,3 +1,7 @@
+.header {
+    margin-left: 8px;
+}
+
 h2 {
     color: white;
     text-align: center;
@@ -53,3 +57,17 @@ img {
 .coat-list {
     right: -7px;
 }
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+  }
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+  }
+
+ ul {
+    list-style-type: none;
+ }
