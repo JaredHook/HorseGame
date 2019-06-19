@@ -1,115 +1,127 @@
 <div class="ng-container">
-  <h2>...and create your account</h2>
-<form>
-    <div class="form-group">
-      <label class="sr-only" for="login">Login</label>
-      <input type="text" class="form-control" id="login" placeholder="Login name">
-    </div>
-    <div class="form-group">
-      <label class="sr-only" for="password">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="Password">
-    </div>
-    <div class="form-inline form-group">
-      <div class="form-group">
-        <select class="custom-select" id="birthYear">
-          <option>1990</option>
-          <option>1991</option>
-          <option>1992</option>
-          <option>1993</option>
-          <option>1994</option>
-          <option>1995</option>
-          <option>1996</option>
-          <option>1997</option>
-          <option>1998</option>
-          <option>1999</option>
-          <option>2000</option>
-          <option>2001</option>
-          <option>2002</option>
-          <option>2003</option>
-          <option>2004</option>
-          <option>2005</option>
-          <option>2006</option>
-          <option>2007</option>
-          <option>2008</option>
-          <option>2009</option>
-          <option>2010</option>
-          <option>2011</option>
-          <option>2012</option>
-          <option>2013</option>
-          <option>2014</option>
-        </select>
+    <h2>...and create your account</h2>
+    <!-- form for account sign up -->
+  <form>
+      <div class="col-centered form-group">
+        <label class="sr-only" for="login">Login</label>
+        <input type="text" class="form-control" id="login" placeholder="Login name">
       </div>
       <div class="form-group">
-        <select class="custom-select" id="birthMonth">
-          <option>January</option>
-          <option>February</option>
-          <option>March</option>
-          <option>April</option>
-          <option>May</option>
-          <option>June</option>
-          <option>July</option>
-          <option>August</option>
-          <option>September</option>
-          <option>October</option>
-          <option>November</option>
-          <option>December</option>
-        </select>
+        <label class="sr-only" for="password">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <!-- dropdown menus for DOB -->
+      <!-- todo - use DOB from server -->
+      <div class="d-flex form-inline form-group">
+        <div class="form-group">
+          <select class="custom-select form-control" id="birthYear">
+            <option>year</option>
+            <option>1990</option>
+            <option>1991</option>
+            <option>1992</option>
+            <option>1993</option>
+            <option>1994</option>
+            <option>1995</option>
+            <option>1996</option>
+            <option>1997</option>
+            <option>1998</option>
+            <option>1999</option>
+            <option>2000</option>
+            <option>2001</option>
+            <option>2002</option>
+            <option>2003</option>
+            <option>2004</option>
+            <option>2005</option>
+            <option>2006</option>
+            <option>2007</option>
+            <option>2008</option>
+            <option>2009</option>
+            <option>2010</option>
+            <option>2011</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="custom-select form-control" id="birthMonth">
+            <option>month</option>
+            <option>January</option>
+            <option>February</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="custom-select form-control" id="birthDay">
+            <option>day</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+            <option>14</option>
+            <option>15</option>
+            <option>16</option>
+            <option>17</option>
+            <option>18</option>
+            <option>19</option>
+            <option>20</option>
+            <option>21</option>
+            <option>22</option>
+            <option>23</option>
+            <option>24</option>
+            <option>25</option>
+            <option>26</option>
+            <option>27</option>
+            <option>28</option>
+            <option>29</option>
+            <option>30</option>
+            <option>31</option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <select class="custom-select" id="birthDay">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-          <option>11</option>
-          <option>12</option>
-          <option>13</option>
-          <option>14</option>
-          <option>15</option>
-          <option>16</option>
-          <option>17</option>
-          <option>18</option>
-          <option>19</option>
-          <option>20</option>
-          <option>21</option>
-          <option>22</option>
-          <option>23</option>
-          <option>24</option>
-          <option>25</option>
-          <option>26</option>
-          <option>27</option>
-          <option>28</option>
-          <option>29</option>
-          <option>30</option>
-          <option>31</option>
-        </select>
+        <input type="email" class="form-control" id="email" placeholder="Email">
       </div>
-    </div>
-    <div class="form-group">
-      <input type="email" class="form-control" id="email" placeholder="Email">
-    </div>
-    <h3>Enter the login name of the person who introduced you to Howrse here.</h3>
-    <div class="form-group">
-        <input type="text" class="form-control" id="Reffered" placeholder="Referred by (optional)">
+      <h3>Enter the login name of the person who introduced you to Howrse here.</h3>
+      <div class="form-group">
+          <input type="text" class="form-control" id="Reffered" placeholder="Referred by (optional)">
+        </div>
+      <div class="inscription">
+        <div class="form-group custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="terms">
+          <label class="custom-control-label" for="terms">I have read and agree to the <a target="privacy" class = "link-style-1" href="https://www.owlient.com/tou/ca">Terms and Conditions of Use,</a> 
+            the <a target="privacy" class = "link-style-1" href="https://www.owlient.com/eula/ca">End User License Agreement,</a> and the <a target="privacy" class="link-style-1" href="https://www.owlient.com/pp/ca">Privacy Policy</a></label>
+        </div>
       </div>
-    <div class="inscription">
-      <div class="form-group custom-control custom-checkbox">
-        <input type="checkbox" class="custom-control-input" id="terms">
-        <label class="custom-control-label" for="terms">I have read and agree to the <a target="privacy" class = "link-style-1" href="https://www.owlient.com/tou/ca">Terms and Conditions of Use,</a> 
-          the <a target="privacy" class = "link-style-1" href="https://www.owlient.com/eula/ca">End User License Agreement,</a> and the <a target="privacy" class="link-style-1" href="https://www.owlient.com/pp/ca">Privacy Policy</a></label>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-play">Play</button>
-  </form>
-  <div><label class="custom-control-label" for="terms">This information is collected by Owlient to create your account. 
-      <a target="privacy" class = "link-style-1" href="https://ca.howrse.com/footer/privacyNotice">More information about the processing of your personal data and your rights.</a></label></div>
-
-<br>
-<br>    
-</div>
+  
+   <div class="centerize">
+     <!-- <a class="btn btn-play" href="#"><span>Play</span></a> -->
+   </div>
+  
+   <button type="submit" class="centerize btn btn-play">Play</button> 
+    </form>
+    <!-- disclaimer and terms  -->
+    <div><label class="custom-control-label" for="terms">This information is collected by Owlient to create your account. 
+        <a target="privacy" class = "link-style-1" href="https://ca.howrse.com/footer/privacyNotice">More information about the processing of your personal data and your rights.</a></label></div>
+  <br>
+  <br>    
+  </div>
+  

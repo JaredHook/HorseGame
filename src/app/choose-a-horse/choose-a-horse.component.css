@@ -24,3 +24,32 @@ li {
 img {
     vertical-align: middle;
 }
+
+.breed-label {
+    display: table;
+    width: 100%;
+    height: 40px;
+    position: relative;
+}
+
+.breed-list {  
+    position: relative;
+    animation: inscriptionPopLeft .75s;
+    animation-duration: 0.75s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    animation-name: inscriptionPopLeft;
+    -webkit-animation: inscriptionPopLeft .75s;
+}
+
+.row {
+    padding-bottom: 30px;
+}
+
+.coat-list {
+    right: -7px;
+}

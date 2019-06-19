@@ -1,4 +1,4 @@
- .inscription::before {
+.inscription::before {
   content: "....................................................................................................................................................";
   color: #fff;
   display: block; 
@@ -6,13 +6,6 @@
   font-size: 18px;
   text-align: center;
 } 
-
-.custom-control {
-  position: relative;
-  display: block;
-  min-height: 1.5rem;
-  padding-left: 1.5rem;
-}
 
 input[type="checkbox"] {
   box-sizing: border-box;
@@ -26,9 +19,12 @@ input[type="checkbox"] {
   opacity: 1;
 }
 
+/* container for form content  */
 .ng-container {
   background-color:#8A993A;
   position: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 img {
@@ -44,28 +40,35 @@ h3 {
   color: white;
   text-align: center;
   font-size: 15px;
+  font-weight: 400;
 }
 
 .form-control {
   margin: auto;
-  width: 50%;
+  margin-top: 15px;
+  width: 36%;
+  height: 44px;
   font-style: italic;
 }
 
- .custom-select { 
+ /* .custom-select { 
     margin-right: 10px;
- } 
+ }  */
 
+ /* coloured links on disclaimers */
 .link-style-1 {
     display: inline-block;
     color: #e5ff70;
 }
 
-/* this is the css for the terms & conditions disclaimer */
+/* this is disclaimers */
 .custom-control-label {
   color: white;
   margin: 8px 8px 8px 8px;  
   display: block;
+  position: relative;
+  min-height: 1.5rem;
+  padding-left: 1.5rem;
   font-size: 15px;
   text-align: center; 
   font-weight: normal;
@@ -84,11 +87,33 @@ text-decoration: underline;
   border-color: #bfd16c;
   color: #4a543a;
   font-size: 16px;
-  margin: 20px;
   align-items: flex-start; 
-  padding: 0 20px;
+  padding: 0px;
+  text-decoration: none;
 }
 
-/* .form-group {
-  position: middle;
-} */
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.centerize {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.custom-select {
+  height: 44px;
+  /* width: 100%; */
+  /* padding: 0 25px 0 10px; */
+  margin-right: 10px;
+  /* vertical-align: middle; */
+  width: 133px;
+  color: grey;
+}
