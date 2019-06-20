@@ -11,32 +11,32 @@ h3 {
     color: white;
 }
 
-li {
+/* li {
     color: white;
     text-align: center;
     font-size: 18px;
-}
+} */
 
-.breeds {
+/* .breeds {
     text-align: left;
 }
 
 .coats {
     text-align: right;
-}
+} */
 
 img {
     vertical-align: middle;
 }
 
-.breed-label {
+/* .breed-label {
     display: table;
     width: 100%;
     height: 40px;
     position: relative;
-}
+} */
 
-.breed-list {  
+/* .breed-list {  
     position: relative;
     animation: inscriptionPopLeft .75s;
     animation-duration: 0.75s;
@@ -48,15 +48,15 @@ img {
     animation-play-state: running;
     animation-name: inscriptionPopLeft;
     -webkit-animation: inscriptionPopLeft .75s;
-}
+} */
 
 .row {
     padding-bottom: 30px;
 }
 
-.coat-list {
+/* .coat-list {
     right: -7px;
-}
+} */
 
 .col-centered {
     float: none;
@@ -68,6 +68,64 @@ img {
     justify-content: center;
   }
 
- ul {
+ /* ul {
     list-style-type: none;
- }
+ } */
+
+/* custom radio color */
+  input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #d1d3d1;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+/* change radio color on click */
+input[type='radio']:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: rgb(102, 170, 0);
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid white;
+}
+
+/* change bold label on click
+input[type='radio'] + label {
+    color: #ccc;
+    font-style: normal;
+  } 
+
+input[type='radio']:checked + label {
+    color: #f00;
+    font-style: bold;
+  }  */
+
+
+circle.right {
+shape-outside: circle(45% at 0% 50%);
+shape-margin: 10%;
+width: 250px;
+height: 300px;
+float: left;
+}
+
+circle.left {
+shape-outside: circle(45% at 100% 50%);
+shape-margin: 10%;
+width: 250px;
+height: 300px;
+float: right;
+}
