@@ -13,3 +13,12 @@ body {
   border-color: #656f3b;
   font-weight: 600;
 }
+
+@viewport {
+  width: device-width;
+  zoom: 1.0;
+}
+
+.align-center {
+  text-align: center;
+}
