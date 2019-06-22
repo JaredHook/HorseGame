@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { User } from '../user';
+//to do: 
+//import { PasswordValidator } from '../validators/password-validator';
 
 @Component({
   selector: 'app-signup-page',
@@ -7,7 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPageComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
+    get userName() {
+        //return this.signuppageForm.get('userName');
+    }
 
   ngOnInit() {
   }

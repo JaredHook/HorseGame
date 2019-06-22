@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { ChooseAHorseComponent } from './choose-a-horse/choose-a-horse.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
