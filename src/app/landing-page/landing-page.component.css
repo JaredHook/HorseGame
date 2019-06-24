@@ -1,4 +1,37 @@
 .header {
-height: 75px;
-overflow: hidden;
+    margin-left: 8px;
+}
+
+body {
+    /*background-image: url('assets/images/background-1.jpg');*/
+    /*background-repeat: no-repeat;*/
+    /* background-color: #E3DFB0!important;  */
+}
+
+img {
+    /*display: table-cell;
+    height: 300px;
+    width: 300px;*/
+    vertical-align: middle;
+}
+
+.row {
+    padding-bottom: 30px;
+}
+
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

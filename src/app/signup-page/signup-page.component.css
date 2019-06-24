@@ -62,6 +62,18 @@ h3 {
   font-weight: normal;
 }
 
+.form-check-input {
+    position: inherit;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 16px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid #d0d0d0;
+    border-radius: 5px;
+}
+
 a {
 text-decoration: underline;
 }
@@ -92,4 +104,10 @@ text-decoration: underline;
 
 .row {
   margin: 0;
+}
+
+.align {
+    width: 100%;
+    position: relative;
+    z-index: 1;
 }

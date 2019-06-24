@@ -12,11 +12,8 @@ import { User } from '../user';
 export class SignupPageComponent implements OnInit {
 
     constructor() { }
-    get userName() {
-        //return this.signuppageForm.get('userName');
-    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }
