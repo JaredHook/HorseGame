@@ -2,9 +2,9 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
 
 body {
-  background-image: url('assets/images/background.jpg');
-  background-repeat: no-repeat;
-  /*background-color: #BFD16C; greenish color */
+  /*background-image: url('assets/images/background.jpg');
+  background-repeat: no-repeat;*/
+  background-color: #BFD16C;
 }
 
 .btn-play {

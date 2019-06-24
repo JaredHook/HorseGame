@@ -7,13 +7,15 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { ChooseAHorseComponent } from './choose-a-horse/choose-a-horse.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BreedPageComponent } from './breed-page/breed-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupPageComponent,
     ChooseAHorseComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    BreedPageComponent
   ],
   imports: [
     BrowserModule,
