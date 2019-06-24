@@ -7,23 +7,8 @@
             <div class="col-sm-4">
                 <div class="circle-left"></div>
                 <ul class="list-unstyled text-right">
-                    <li>
-                        <label>Breed 1<input type="radio" name="breed" checked></label>
-                    </li>
-                    <li>
-                        
-                    </li>
-                    <li>
-                        <label><input type="radio" name="breed"></label>
-                    </li>
-                    <li>
-                        <label>Breed 4<input type="radio" name="breed"></label>
-                    </li>
-                    <li>
-                        <label>Breed 5<input type="radio" name="breed"></label>
-                    </li>
-                    <li>
-                        <label>Breed 6<input type="radio" name="breed"></label>
+                    <li *ngFor="let breed of all">
+                        <label>{{breed.breed}}<input type="radio" name="breed" checked></label>
                     </li>
                 </ul>
             </div>
