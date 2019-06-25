@@ -5,7 +5,7 @@
     <!-- form for account sign up -->
         <div class="row">
             <div class="col-sm-6 col-centered">
-                <!-- TO DO <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"></form>-->
+                <!-- todo form validation <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"></form>-->
                 <div class="form-group">
                     <label class="sr-only" for="login">Login</label>
                     <input type="text" class="form-control" id="login" placeholder="Login name">
@@ -21,12 +21,11 @@
             </div>
         </div>
         <!-- dropdown menus for DOB -->
-        <!-- todo - use DOB from server -->
         <div class="d-flex row">
             <div class="col-sm-2">
                 <div class="form-group">
                     <select class="form-control" id="birthYear">
-                        <!--use years from database-->
+                        <!--todo use years from database-->
                         <option>year</option>
                         <option>1990</option>
                         <option>1991</option>
@@ -38,7 +37,7 @@
             <div class="col-sm-2">
                 <div class="form-group">
                     <select class="form-control" id="birthMonth">
-                        <!--Ngforloop for months-->
+                        <!--todo Ngforloop for months-->
                         <option>month</option>
                         <option>January</option>
                         <option>February</option>
@@ -48,7 +47,7 @@
             <div class="col-sm-2">
                 <div class="form-group">
                     <select class="form-control" id="birthDay">
-                        <!--Ngforloop for days iterating from 1-31-->
+                        <!--todo Ngforloop for days iterating from 1-31-->
                         <option>day</option>
                         <option>1</option>
                         <option>2</option>
@@ -89,6 +88,7 @@
 
         <div class="row">
             <div class="col-sm-4 col-centered">
+                <!--todo button on submit method-->
                 <button type="submit" class="btn btn-play align"><span>Play</span></button>
             </div>
         </div>
