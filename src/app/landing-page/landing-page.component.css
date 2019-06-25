@@ -2,11 +2,11 @@
     margin-left: 8px;
 }
 
-body {
+/* body { */
     /*background-image: url('assets/images/background-1.jpg');*/
     /*background-repeat: no-repeat;*/
     /* background-color: #E3DFB0!important;  */
-}
+/* } */
 
 img {
     /*display: table-cell;
@@ -34,4 +34,8 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.ng-container {
+    background-color: #59ABDA;
 }

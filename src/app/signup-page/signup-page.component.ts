@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { User } from '../user';
+import { BreedPageComponent } from '../breed-page/breed-page.component';
 //to do: 
 //import { PasswordValidator } from '../validators/password-validator';
 

@@ -8,6 +8,20 @@ import { ChooseAHorseComponent } from './choose-a-horse/choose-a-horse.component
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BreedPageComponent } from './breed-page/breed-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home';
+import { PlayComponent } from './play';
+
+// line 19 redirects to home 
+const routes: Routes = [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'play', component: PlayComponent },
+  
+
+];
 
 @NgModule({
   declarations: [
@@ -15,12 +29,18 @@ import { BreedPageComponent } from './breed-page/breed-page.component';
     SignupPageComponent,
     ChooseAHorseComponent,
     LandingPageComponent,
-    BreedPageComponent
+    BreedPageComponent,
+    HomeComponent,
+    PlayComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

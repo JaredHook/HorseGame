@@ -10,23 +10,14 @@
     <div class="d-flex row">
       <!-- list of breeds  -->
       <div class="col-sm-4">
-        <div class="circle-left">
-          <ul class="list-unstyled text-right">
-            <h3>Breeds</h3>
-            <li><label> French Trotter <input type="radio" name="breed" value="FrenchTrotter"></label></li>
-            <li><label> Shetland <input type="radio" name="breed" value="Shetland"></label></li>
-            <li><label> Quarter Horse <input type="radio" name="breed" value="QuarterHorse"></label></li>
-            <li><label> Holsteiner <input type="radio" name="breed" value="Holsteiner"></label></li>
-            <li><label> Gypsy Vanner <input type="radio" name="breed" value="GypsyVanner"></label></li>
-            <li><label> Curly <input type="radio" name="breed" value="Curly"></label></li>
-            <li><label> Argentinean Criollo <input type="radio" name="breed" value="ArgentineanCriollo"></label></li>
-            <li><label> KWPN <input type="radio" name="breed" value="KWPN"></label></li>
-            <li><label> Canadian Horse <input type="radio" name="breed" value="CanadianHorse"></label></li>
-            <li><label> Newfoundland Pony <input type="radio" name="breed" value="NewfoundlandPony"></label></li>
-            <li><label> 29 other breeds to discover <input type="radio" name="breed" value="Other"></label></li>
-            <!-- <li><i class="fas fa-lock"></i> 29 other breeds to discover</li> -->
-          </ul>
-        </div>
+          <div class="circle-left">
+              <ul class="list-unstyled text-right">
+                  <h3>Breeds</h3>
+                  <li *ngFor="let breed of allBreeds">
+                      <label>{{breed.breed}}<input type="radio" name="breed" checked></label>
+                  </li>
+              </ul>
+          </div>
       </div>
       <div class="col-sm-4 flex-column">
         <img src="/assets/images/horse-alz-b.png">
@@ -35,20 +26,14 @@
             <strong class="text-nowrap">Trot</strong>
           </div>
       </div>
-      <!-- list of coats  -->
+      <!-- list of colors  -->
       <div class="col-sm-4">
         <div class="circle-right">
           <ul class="list-unstyled text-left">
             <h3>Coats</h3>
-            <li><label><input type="radio" name="coat" value="Chestnut"> Chestnut </label></li>
-            <li><label><input type="radio" name="coat" value="Bay"> Bay </label></li>
-            <li><label><input type="radio" name="coat" value="LiverChestnut"> Liver Chestnut </label></li>
-            <li><label><input type="radio" name="coat" value="DarkBay"> Dark Bay </label></li>
-            <li><label><input type="radio" name="coat" value="CherryBay"> Cherry Bay </label></li>
-            <li><label><input type="radio" name="coat" value="Black"> Black </label></li>
-            <li><label><input type="radio" name="coat" value="FlaxenChestnut"> Flaxen Chestnut </label></li>
-            <li><label><input type="radio" name="coat" value="Other"> 1 other coat to discover </label></li>
-            <!-- <input type="radio" name="coat" value="Other"> 1 other coat to discover<br> -->
+            <li *ngFor="let color of allColors">
+                <label><input type="radio" name="color" checked>{{color.color}}</label>
+            </li>
           </ul>
         </div>
       </div>
