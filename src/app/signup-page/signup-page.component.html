@@ -3,105 +3,102 @@
     <br>
     <br>
     <!-- form for account sign up -->
-        <div class="row">
+    <div class="row">
+        <form class="col-centered" #f="ngForm" (ngSubmit)="onSubmit()">
             <div class="col-sm-6 col-centered">
-                <!-- todo form validation <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"></form>-->
                 <div class="form-group">
                     <label class="sr-only" for="login">Login</label>
-                    <input type="text" class="form-control" id="login" placeholder="Login name">
+                    <input #login="ngModel" ngModel name="login" type="text" class="form-control" id="login" placeholder="Login name">
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-centered">
-                <div class="form-group">
-                    <label class="sr-only" for="password">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+            <div class="row">
+                <div class="col-sm-6 col-centered">
+                    <div class="form-group">
+                        <label class="sr-only" for="password">Password</label>
+                        <input #password="ngModel" ngModel name="password" type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- dropdown menus for DOB -->
-        <div class="d-flex row">
-            <div class="col-sm-2">
-                <div class="form-group">
-                    <select class="form-control" id="birthYear">
-                        <!--todo use years from database-->
-                        <option>year</option>
-                        <option>1990</option>
-                        <option>1991</option>
-                        <option>1992</option>
-                        <option>1993</option>
-                    </select>
+            <!-- dropdown menus for DOB -->
+            <div class="d-flex row">
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <select class="form-control" #year="ngModel" ngModel name="year" id="year">
+                            <!--todo use years from database-->
+                            <option>1990</option>
+                            <option>1991</option>
+                            <option>1992</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <select class="form-control" #month="ngModel" ngModel name="month" id="month">
+                            <!--todo Ngforloop for months-->
+                            <option>January</option>
+                            <option>February</option>
+                            <option>March</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <select class="form-control" #day="ngModel" ngModel name="day" id="day">
+                            <!--todo Ngforloop for days iterating from 1-31-->
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-2">
-                <div class="form-group">
-                    <select class="form-control" id="birthMonth">
-                        <!--todo Ngforloop for months-->
-                        <option>month</option>
-                        <option>January</option>
-                        <option>February</option>
-                    </select>
+            <div class="row">
+                <div class="col-sm-6 col-centered">
+                    <div class="form-group">
+                        <input #email="ngModel" ngModel name="email" type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-2">
-                <div class="form-group">
-                    <select class="form-control" id="birthDay">
-                        <!--todo Ngforloop for days iterating from 1-31-->
-                        <option>day</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
+            <h3>Enter the login name of the person who introduced you to Howrse here.</h3>
+            <div class="row">
+                <div class="col-sm-6 col-centered">
+                    <div class="form-group">
+                        <input #referred="ngModel" ngModel name="referred" type="text" class="form-control" id="reffered" placeholder="Referred by (optional)">
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-centered">
-                <div class="form-group">
-                    <input type="email" class="form-control" id="email" placeholder="Email">
+            <div class="inscription">
+                <div class="form-check text-center">
+                    <input #checkbox="ngModel" ngModel name="checkbox" type="checkbox" class="form-check-input" id="checkbox">
+                    <label class="form-check-label" for="terms">
+                        I have read and agree to the <a target="privacy"
+                                                        class="link-style-1" href="https://www.owlient.com/tou/ca">Terms and Conditions of Use,</a>
+                        the <a target="privacy" class="link-style-1" href="https://www.owlient.com/eula/ca">
+                            End User
+                            License Agreement,
+                        </a> and the <a target="privacy" class="link-style-1"
+                                        href="https://www.owlient.com/pp/ca">Privacy Policy</a>
+                    </label>
                 </div>
             </div>
-        </div>
-        <h3>Enter the login name of the person who introduced you to Howrse here.</h3>
-        <div class="row">
-            <div class="col-sm-6 col-centered">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="Reffered" placeholder="Referred by (optional)">
-                </div>
-            </div>
-        </div>
-        <div class="inscription">
-            <div class="form-check text-center">
-                <input type="checkbox" class="form-check-input" id="terms">
-                <label class="form-check-label" for="terms">
-                    I have read and agree to the <a target="privacy"
-                                                    class="link-style-1" href="https://www.owlient.com/tou/ca">Terms and Conditions of Use,</a>
-                    the <a target="privacy" class="link-style-1" href="https://www.owlient.com/eula/ca">
-                        End User
-                        License Agreement,
-                    </a> and the <a target="privacy" class="link-style-1"
-                                    href="https://www.owlient.com/pp/ca">Privacy Policy</a>
-                </label>
-            </div>
-        </div>
-
+        </form>
         <div class="row">
             <div class="col-sm-4 col-centered">
                 <!--todo button on submit method-->
-                <button type="submit" class="btn btn-play align"><span>Play</span></button>
+                <button type="submit" class="btn btn-play align" (click)="onSubmit(this.f.value)">Play</button>
+
             </div>
         </div>
-    <br>
-    <!-- disclaimer and terms  -->
-    <div>
-        <label class="custom-control-label" for="terms">
-            This information is collected by Owlient to
-            create your account.
-            <a target="privacy" class="link-style-1" href="https://ca.howrse.com/footer/privacyNotice">
-                More
-                information about the processing of your personal data and your rights.
-            </a>
-        </label>
+        <br>
+        <!-- disclaimer and terms  -->
+        <div>
+            <label class="custom-control-label" for="terms">
+                This information is collected by Owlient to
+                create your account.
+                <a target="privacy" class="link-style-1" href="https://ca.howrse.com/footer/privacyNotice">
+                    More
+                    information about the processing of your personal data and your rights.
+                </a>
+            </label>
+        </div>
     </div>
-</div>

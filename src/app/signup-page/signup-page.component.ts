@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { User } from '../user';
-import { BreedPageComponent } from '../breed-page/breed-page.component';
-//to do: 
-//import { PasswordValidator } from '../validators/password-validator';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-signup-page',
-  templateUrl: './signup-page.component.html',
-  styleUrls: ['./signup-page.component.css']
+    selector: 'app-signup-page',
+    templateUrl: './signup-page.component.html',
+    styleUrls: ['./signup-page.component.css']
 })
 export class SignupPageComponent implements OnInit {
 
@@ -16,5 +13,25 @@ export class SignupPageComponent implements OnInit {
 
     ngOnInit() {
     }
-
+    onSubmit(value: string): void {
+        console.log('you submitted value: ', value);
+    }
 }
+    // validators for reactive form
+//    form: FormGroup;
+
+//    constructor(private formBuilder: FormBuilder) { }
+
+//    ngOnInit() {
+//        this.form = this.formBuilder.group({
+//            name: [null, Validators.required],
+//            password: [null, Validators.required],
+//            dob: this.formBuilder.group({
+//                year: [null, Validators.required],
+//                month: [null, Validators.required],
+//                day: [null, Validators.required],
+//            email: [null, [Validators.required, Validators.email]],
+//            referred: [null],
+//            })
+//        });
+//    }
