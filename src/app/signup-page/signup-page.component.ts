@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { NgForm } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
     selector: 'app-signup-page',
@@ -9,29 +10,26 @@ import { NgForm } from '@angular/forms';
 })
 export class SignupPageComponent implements OnInit {
 
-    constructor() { }
+    constructor(private http: HttpClient) { }
 
     ngOnInit() {
     }
-    onSubmit(value:any): void {
-        console.log('you submitted value: ', value.value);
+    onSubmit(value: any): void {
+        console.log('you submitted value: ', value.value["login"]);
+        this.http.post(
+            "http://avellinfalls.com/home/add_new_user",
+            "login", value.value["login"]
+        )
+            .subscribe(
+                (val) => {
+                    console.log("post call successful value",
+                        val);
+                },
+                response => {
+                    console.log("post call in error", response);
+                },
+                () => {
+                    console.log("post observable is now completed");
+                });
     }
 }
-    // validators for reactive form
-//    form: FormGroup;
-
-//    constructor(private formBuilder: FormBuilder) { }
-
-//    ngOnInit() {
-//        this.form = this.formBuilder.group({
-//            name: [null, Validators.required],
-//            password: [null, Validators.required],
-//            dob: this.formBuilder.group({
-//                year: [null, Validators.required],
-//                month: [null, Validators.required],
-//                day: [null, Validators.required],
-//            email: [null, [Validators.required, Validators.email]],
-//            referred: [null],
-//            })
-//        });
-//    }
