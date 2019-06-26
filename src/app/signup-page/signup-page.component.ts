@@ -13,8 +13,8 @@ export class SignupPageComponent implements OnInit {
 
     ngOnInit() {
     }
-    onSubmit(value: string): void {
-        console.log('you submitted value: ', value);
+    onSubmit(value:any): void {
+        console.log('you submitted value: ', value.value);
     }
 }
     // validators for reactive form
