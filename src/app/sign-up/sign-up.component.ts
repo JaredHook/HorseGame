@@ -4,6 +4,8 @@ import { IBreed } from './ibreed.interface';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Breed } from './breed';
+import { Color } from './color';
+import {  FormsModule, NgForm } from '@angular/forms';
 
 
 @Component({
@@ -11,20 +13,26 @@ import { Breed } from './breed';
     templateUrl: './sign-up.component.html',
     styleUrls: ['./sign-up.component.css']
 })
+
 export class SignUpComponent implements OnInit {
-    data = Object;
+  //  data = Object;
     breeds: Breed[] = [];
-    breed$: Observable<IBreed[]>;
-    results: IBreed[] = [];
+    colors: Color[] = [];
+  //  breed$: Observable<IBreed[]>;
+  //  results: IBreed[] = [];
     all: Breed[];
-    
+    entire: Color[];
 
     constructor(private http: HttpClient) { }
 
     ngOnInit() {
        // makeHeaders();
         this.all = this.getBreeds();
+        this.entire = this.getColor();
     }
+
+    
+
 
     getBreeds(): Breed[]{
         this.http
@@ -51,6 +59,79 @@ export class SignUpComponent implements OnInit {
             })
         return this.breeds;
     }
+
+
+  getColor(): Color[] {
+      this.http
+          .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_colors')
+          .pipe(
+              map(responseData => {
+                  let dataColor: any;
+                  for (const key in responseData) {
+                      if (responseData.hasOwnProperty(key)) {
+                          dataColor = responseData[key]
+                      }
+
+                  }
+
+                  return dataColor;
+
+              }))
+          .subscribe(data => {
+              let br = data as Array<Color>;
+              for (let i = 0; i < br.length; i++) {
+                  let color = new Color(br[i].id, br[i].color, br[i].color_id);
+                  this.colors.push(color);
+              }
+          })
+      return this.colors;
+    } 
+
+    onSubmit(input: NgForm) {
+        console.log(input.value["password"]);
+        this.http.post("http://avellinfalls.com/home/add_new_user",
+            {
+                "login": input.value["login"],
+                "password": input.value["password"],
+                "day": input.value["day"],
+                "month": input.value["month"],
+                "year": input.value["year"],
+                "email": input.value["email"],
+                "checkbox": input.value["checkbox"]
+
+            })
+            .subscribe(
+                (val) => {
+                    console.log("POST call successful value returned in body",
+                        val);
+                },
+                response => {
+                    console.log("POST call in error", response);
+                },
+                () => {
+                    console.log("The POST observable is now completed.");
+                });
+    } 
+
+   /* This is another way to display the value.
+     onSubmit(value:any):void {
+        console.log(value.value);
+        this.http.post("http://avellinfalls.com/home/add_new_user",
+            {
+                "login": "value.value"
+            })
+            .subscribe(
+                (val) => {
+                    console.log("POST call successful value returned in body",
+                        val);
+                },
+                response => {
+                    console.log("POST call in error", response);
+                },
+                () => {
+                    console.log("The POST observable is now completed.");
+                });
+    } */
 }
 
 
