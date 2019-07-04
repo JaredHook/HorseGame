@@ -7,7 +7,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { Observable } from 'rxjs';
-import {  FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { TestingComponent } from './testing/testing.component';
 
 
 
@@ -16,7 +17,8 @@ import {  FormsModule } from '@angular/forms';
     AppComponent,
     SignupPageComponent,
     SignUpComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,
