@@ -33,7 +33,7 @@ const routes: Routes = [
     FarmComponent,
     DetailBoxComponent,
     LoginComponent,
-    NavbarComponent,
+   // NavbarComponent,
     LoginFormComponent
   ],
   imports: [
