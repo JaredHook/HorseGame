@@ -64,9 +64,6 @@ label {
 
 } 
 
-
-
-
 .dropdown-toggle::after {
   display: none;
 }
@@ -76,7 +73,6 @@ dropdown-item.active, .dropdown-item:active {
   text-decoration: none;
   background-color: #fff;
 }
-
 
   .new {
   display: block;
@@ -108,8 +104,6 @@ dropdown-item.active, .dropdown-item:active {
   left: 100%;
   margin-left: 15px;
   }
-
-
 
   .arrow_box {
     position: relative;
