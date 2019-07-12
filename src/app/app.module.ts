@@ -39,7 +39,9 @@ const routes: Routes = [
     LoginComponent,
     // NavbarComponent,
     LoginFormComponent,
-    HorseStableComponent
+    HorseStableComponent,
+    LoginFormComponent
+
   ],
   imports: [
     BrowserModule,

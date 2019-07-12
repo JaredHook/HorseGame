@@ -13,24 +13,19 @@ import {HorseService} from '../../services/horse.service';
 export class FarmComponent implements OnInit {
   horse: Horse;
   horseService: HorseService;
-
   constructor(private router: ActivatedRoute, horseService: HorseService) {
     this.horseService = horseService;
   }
 
   ngOnInit() {
-
     this.router.paramMap.pipe(map(() => window.history.state)).subscribe(res => {
       this.horse = res as Horse;
     });
     if (!this.horse.id) {
       this.horseService.getHorseById(this.router.snapshot.params.id).subscribe(
         res => {
-
-
+          this.horse = res
         });
     }
   }
-
 }
-
