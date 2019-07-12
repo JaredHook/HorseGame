@@ -28,9 +28,6 @@
   text-align: center;
 <<<<<<< HEAD
 }*/
-=======
-  color: #630;
-}
 
 #care-header,
 #night-header,
@@ -110,4 +107,4 @@ progress[value]::-webkit-progress-value {
 #progress-alignment {
   position:center;
 }
->>>>>>> develop
+
