@@ -26,8 +26,7 @@ export class FarmComponent implements OnInit {
     if (!this.horse.id) {
       this.horseService.getHorseById(this.router.snapshot.params.id).subscribe(
         res => {
-
-
+          this.horse = res
         });
     }
   }
