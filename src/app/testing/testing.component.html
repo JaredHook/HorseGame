@@ -1,0 +1,187 @@
+
+<h1>NAVBAR</h1>
+
+
+<div class="container">
+    <div class="row d-flex align-items-center ">
+        <div class="col-sm-10">
+            <nav class="navbar navbar-expand-sm navbar-light bk navbarflex ">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"><i class="fas fa-horse-head space" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i> <span class="textm">Breeding Farm</span> </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item disabled" href="#"> <i class="fas fa-clipboard"></i><span class="textd">Office</span><i class="fas fa-lock space"></i></a>
+                                <hr />
+                                <a class="dropdown-item" href="#"> <span class="textb"><i class="fas fa-horse-head"></i></span><span class="textc">Horse</span></a>
+                                <hr />
+                                <a class="dropdown-item disabled" href="#"> <i class="fas fa-award"></i><span class="textd">Competition Results</span><i class="fas fa-lock space"></i></a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#"><i class="fas fa-lock space"><i class="fab fa-houzz"></i></i> <span class="textp">Equestrian centre</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#"><i class="fas fa-lock space"><i class="fas fa-coins"></i></i> <span class="textp">Trade</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"><i class="fas fa-users space" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></i> <span class="textm">Community</span> </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#"> <span class="textb"><i class="fas fa-user-shield"></i></span><span class="textc">Friends</span></a>
+                                <hr />
+                                <a class="dropdown-item" href="#"> <span class="textb"><i class="fas fa-search"></i></span><span class="textc">Directories</span></a>
+                                <a class="dropdown-item" href="#"> <span class="tabd"><i class="fas fa-chevron-right"></i></span><span class="textc">Equestrian Forum</span></a>
+                                <a class="dropdown-item" href="#"> <span class="tabd"><i class="fas fa-chevron-right"></i></span><span class="textc">Events</span></a>
+                                <a class="dropdown-item" href="#"> <span class="tabd"><i class="fas fa-chevron-right"></i></span><span class="textc">Game Play</span></a>
+                                <a class="dropdown-item" href="#"> <span class="tabd"><i class="fas fa-chevron-right"></i></span><span class="textc">Equestrian Center classified</span></a>
+                                <hr />
+                                <a class="dropdown-item" href="#"> <span class="textb"><i class="fas fa-user-plus"></i></span><span class="textc">Invite Players </span></a>
+                                <hr />
+                                <a class="dropdown-item" href="#"> <span class="textb"><i class="fas fa-paint-brush"></i></span><span class="textc">Creation Space</span></a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#"><i class="fas fa-lock space"><i class="fab fa-houzz"></i></i> <span class="textp">Achievements</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="col-sm-2">
+            <nav class="navbar navbar-expand-sm navbar-light navsize">
+                <!--<a href=""> <span  class="question"><i class="fas fa-question"></i></span></a>  For testing purposes -->
+                <a href=""> <span class="question">?</span></a>
+            </nav>
+        </div>
+        </div>
+    </div>
+
+
+
+    <!--<div class="container">
+        <h2 class="text-center">Choose a Horse...</h2>
+        <div class="row d-flex">
+            <div class="col-sm-4">
+                <div class="circle-left"></div>
+                <ul class="list-unstyled text-right">
+                    <li>
+                        <label>Breed 1<input type="radio" name="breed" checked></label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="breed" *ngFor="let result of results">{{result.breed}}</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="breed"></label>
+                    </li>
+                    <li>
+                        <label>Breed 4<input type="radio" name="breed"></label>
+                    </li>
+                    <li>
+                        <label>Breed 5<input type="radio" name="breed"></label>
+                    </li>
+                    <li>
+                        <label>Breed 6<input type="radio" name="breed"></label>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-4 flex-column">
+                <img src="https://ca.howrse.com/media/equideo/image/chevaux/adulte/trotteur/normal/300/alz.png" class="transparent horse-img">
+                <div class="skill-set text-center">
+                    <h4 class="text-nowrap">Best Skill:</h4>
+                    <strong class="text-nowrap">Trot</strong>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="circle-right"></div>
+                <ul class="list-unstyled">
+                    <li>
+                        <label><input type="radio" name="color" checked>Color 1</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="color">Color 2</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="color">Color 3</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="color">Color 4</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="color">Color 5</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="color">Color 6</label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h2 class="text-center">...and create your account.</h2>
+
+        <form>
+            <div class="row">
+                <div class="col-sm-6 col-centered">
+                    <div class="form-group">
+                        <label class="sr-only" for="login">Login</label>
+                        <input type="text" class="form-control" id="login" placeholder="Enter Login name">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-centered">
+                    <div class="form-group">
+                        <label class="sr-only" for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row d-flex">
+                <div class="form-group col-sm-2">
+                    <select class="form-control" id="birthDay">
+                        <option>Day</option>
+                        <option>2</option>
+                        <option>16</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <select class="form-control" id="birthMonth">
+                        <option>Month</option>
+                        <option>September</option>
+                        <option>June</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <select class="form-control" id="birthYear">
+                        <option>Year</option>
+                        <option>1990</option>
+                        <option>2000</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6 col-centered">
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Enter email">
+                    </div>
+                </div>
+            </div>
+
+            <div class="inscription">
+                <div class="form-check text-center">
+                    <input type="checkbox" class="form-check-input" id="terms">
+                    <label class="form-check-label" for="terms">I have read agree with the Terms and Conditions</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 col-centered">
+                    <button type="submit" class="btn btn-play btn-lg btn-block">Play</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="body-background"></div>
+    </div>-->

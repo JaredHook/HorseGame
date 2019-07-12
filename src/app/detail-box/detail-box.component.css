@@ -1,0 +1,129 @@
+.nav-tabs > li > a {
+  margin-right: .7rem;
+  background-color: #eae58f;
+  border-radius: 7px 7px 0 0;
+  padding: .4rem .6rem;
+  border-bottom: 0;
+  border: 2px solid #e2da78;
+  position: relative;
+  box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px 0 inset;
+  color: #643100;
+}
+
+.nav-tabs > li.active > a {
+  background-image: linear-gradient(#eae58f, #f6f3b0);
+  border: 2px solid #e2da78;
+  border-bottom: 0;
+  z-index: 5;
+}
+
+  .nav-tabs > li.active > a::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    left: 0;
+    bottom: -1px;
+    background-color: #f6f3b0;
+  }
+
+.nav-tabs {
+  border: 0;
+}
+
+.container {
+  max-width: 60%;
+}
+
+.flex-row-between {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffdf;
+}
+
+.skill-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.genetic-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.breed {
+  color: #930055;
+}
+
+.horse-info {
+  padding: 1rem;
+}
+
+.table {
+  margin-top: .4rem;
+  border: 0;
+  border-color: #e2da78;
+  background-color: #fcfabf;
+}
+
+.table > thead > tr > th {
+  border-top: 2px solid #e2da78;
+  border-bottom: 0;
+  background-image: linear-gradient(#fcfac1, #f6f3b0);
+  padding: 0 1rem 3px;
+}
+
+.table > tbody > tr > td {
+  border-top: 0;
+  background-color: #f6f3b0;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.table-border > tbody > tr > td {
+  text-align: left;
+}
+
+.table-border > thead > tr > th:last-child {
+  border-left: 2px solid #e2da78;
+}
+
+.table-border > tbody > tr > td:last-child {
+  border-left: 2px solid #e2da78;
+}
+
+.trophy-flex {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table > tbody > tr > td.victory-title {
+  width: 60%;
+  text-align: left;
+}
+.victory {
+  border-bottom: 1px solid #ffffe1;
+}
+
+#trophy {
+  width: 46px;
+  height: 44px;
+  background: url(../../assets/images/sprite.png) -529px 0;
+  margin: 0 auto;
+}
+
+#trophy-silver {
+  width: 46px;
+  height: 44px;
+  background: url(../../assets/images/sprite.png) -529px 0;
+  filter: grayscale(100%);
+  margin: 0 auto;
+}
+
+#trophy-bronze {
+  width: 46px;
+  height: 44px;
+  background: url(../../assets/images/sprite.png) -529px 0;
+  filter: hue-rotate(335deg) saturate(1.1);
+  margin: 0 auto;
+}

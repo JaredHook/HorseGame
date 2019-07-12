@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.flex-btn {
+  position: relative;
+  right: 33%;
+}
 .inscription {
   margin-bottom: 32px;
 }
@@ -48,24 +52,6 @@ input[type="radio"] {
   bottom: -.8rem;
   height: 2.2rem;
   width: 2.2rem;
-}
-
-.error-msg {
-  position: absolute;
-  left: 75%;
-  align-self: center;
-  color: rgba(200, 18, 18, 0.80);
-  font-weight: 600;
-}
-
-.is-invalid {
-  border-color: rgba(233, 18, 18, 0.70);
-  border-width: 2px;
-  box-shadow: 0 1px 1px rgba(233, 18, 18, 0.10), 0 1px 1px rgba(233, 18, 18, 0.10);
-}
-
-.is-invalid::placeholder {
-    color: rgba(233, 18, 18, 0.70);
 }
 
 .col-centered {
@@ -112,13 +98,17 @@ input[type="radio"] {
   justify-content: center;
   align-items: center;
 }
+.flex-btn {
+  position: relative;
+  right: 33%;
+}
 
 .btn[disabled] {
   opacity: .3;
 }
 
 .circle-right {
-  shape-outside: circle(50% at 0% 50%);
+  shape-outside: circle(50% at 0% 55%);
   /*shape-margin: 10%;*/
   width: 100%;
   height: 90%;
@@ -126,7 +116,7 @@ input[type="radio"] {
 }
 
 .circle-left {
-  shape-outside: circle(50% at 100% 50%);
+  shape-outside: circle(50% at 100% 55%);
   /*shape-margin: 10%;*/
   width: 100%;
   height: 90%;
