@@ -1,3 +1,4 @@
 <p *ngFor=" let horse of  horses">
-  <a routerLink="/play" [state]="horse">{{horse.name}}</a>
+  <a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a>
 </p>
+

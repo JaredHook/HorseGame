@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HorseStableComponent } from './horse-stable.component';
 
 describe('HorseStableComponent', () => {

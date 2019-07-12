@@ -19,7 +19,6 @@
   font-size: 18px;
 }
 
-
 .dropdown:hover .dropdown-menu {
   display: block;
   margin-top: -13px;
@@ -28,7 +27,6 @@
 
 .dropdown-item:hover {
   background: blue;
-  
 }
 
 .dropdown-toggle::after {
@@ -77,8 +75,7 @@
   width: 44px;
   height: 38px;
   background: rgba(52,99,156,.7);
-  border-radius: 4px;
-  
+  border-radius: 4px; 
 }
 
 

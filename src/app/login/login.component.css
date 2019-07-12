@@ -57,11 +57,9 @@ label {
   */
 
 .dropdown-menu {
-  
   transform: translate(-30%)  !important;
   margin-top: 36px;
   position:absolute;
-
 } 
 
 .dropdown-toggle::after {
