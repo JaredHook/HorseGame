@@ -13,13 +13,11 @@ import {HorseService} from '../../services/horse.service';
 export class FarmComponent implements OnInit {
   horse: Horse;
   horseService: HorseService;
-
   constructor(private router: ActivatedRoute, horseService: HorseService) {
     this.horseService = horseService;
   }
 
   ngOnInit() {
-
     this.router.paramMap.pipe(map(() => window.history.state)).subscribe(res => {
       this.horse = res as Horse;
     });
@@ -30,6 +28,5 @@ export class FarmComponent implements OnInit {
         });
     }
   }
-
 }
 
