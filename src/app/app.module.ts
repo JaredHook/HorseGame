@@ -18,6 +18,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HorseStableComponent } from './horse-stable/horse-stable.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 const routes: Routes = [
   // basic routes
@@ -40,8 +41,8 @@ const routes: Routes = [
     // NavbarComponent,
     LoginFormComponent,
     HorseStableComponent,
+    ProgressbarComponent,
     LoginFormComponent
-
   ],
   imports: [
     BrowserModule,
