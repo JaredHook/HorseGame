@@ -57,4 +57,14 @@ export class HorseService {
       })
     )
   }
+
+  getHorseById(id: string): Observable<Horse> {
+    return this.db.collection('/horses').doc(id).snapshotChanges().pipe(
+      map(res => {
+        const data = res.payload.data() as Horse
+        return  data ;
+
+      })
+    )
+  }
 }
