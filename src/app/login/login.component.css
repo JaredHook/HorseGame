@@ -16,7 +16,7 @@
   }
 
 .btnf {
-  width:;
+  
   font-weight: 600;
   background-color: #425F9C;
   height: 40px;
@@ -58,7 +58,7 @@ label {
 
 .dropdown-menu {
   transform: translate(-30%)  !important;
-  margin-top: 36px;
+  margin-top: 53px;
   position:absolute;
 } 
 
@@ -143,4 +143,9 @@ input[type='checkbox'] {
   width: 24px;
   height: 24px;
   background: white;
+}
+
+input[type=checkbox], input[type=radio] {
+  margin: -4px 0 0 -20px;
+  line-height: normal;
 }
