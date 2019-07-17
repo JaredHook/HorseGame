@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { HorseService } from '../../services/horse.service';
 
 @Component({
   selector: 'app-login',
@@ -19,12 +20,15 @@ export class LoginComponent implements OnInit {
 
   constructor(fb: FormBuilder,
     userService: UserService,
-    private router: Router,) {
+    horseService: HorseService,
+    private router: Router) {
     this.userService = userService;
     this.form = fb.group({
       "loginEmail": this.loginEmail,
       "password": ["", Validators.required]
     });
+    horseService.setName('jason');
+    console.log('the name is ' + horseService.getName())
   }
 
   ngOnInit() {
@@ -36,8 +40,10 @@ export class LoginComponent implements OnInit {
     console.log("form submitted");
     console.log(this.form);
     this.userService.loginUsers(this.form.value).subscribe(
-        res => {
+      res => {
+        //console.log('return value is ' + JSON.stringify(res));
         if (res[0].payload.doc.id) {
+          console.log(res[0].payload.doc.id)
          new AuthService(res[0].payload.doc.id)
           this.router.navigate(['/stable']);
         };

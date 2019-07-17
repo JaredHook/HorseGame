@@ -10,13 +10,18 @@
   font-size: 16px;
 }
 
-  .btnsize:hover {
+  .btnsize:hover  {
     background-color: rgba(157,194,201,3);
+    border: solid 1px transparent;
     /* background: rgba(255,255,255,.3);  test with actual background */
   }
 
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+  background-color: rgba(157,194,201,3);
+  border: solid 1px transparent;
+}
+
 .btnf {
-  width:;
   font-weight: 600;
   background-color: #425F9C;
   height: 40px;
@@ -58,7 +63,7 @@ label {
 
 .dropdown-menu {
   transform: translate(-30%)  !important;
-  margin-top: 36px;
+  margin-top: 52px;
   position:absolute;
 } 
 
@@ -143,4 +148,9 @@ input[type='checkbox'] {
   width: 24px;
   height: 24px;
   background: white;
+}
+
+input[type=checkbox], input[type=radio] {
+  margin: -4px 0 0 -20px;
+  line-height: normal;
 }

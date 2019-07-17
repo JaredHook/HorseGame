@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { FormGroup, FormControl, Validators, FormBuilder }
   from '@angular/forms';
 import { UserService } from '../../services/user.service';
+import { HorseService } from '../../services/horse.service';
 
 @Component({
   selector: 'app-login-form',
@@ -36,7 +37,9 @@ import { UserService } from '../../services/user.service';
 export class LoginFormComponent {
 
   constructor(private fb: FormBuilder,
-    public userService: UserService) { }
+    public userService: UserService,
+    public horseService: HorseService
+  ) { }
 
   get login() {
     return this.loginForm.get('login');
@@ -47,6 +50,7 @@ export class LoginFormComponent {
 
   ngOnInit() {
     console.log('success');
+    console.log('LoginFormComponent the name is ' + this.horseService.getName())
   }
 
   loginForm = this.fb.group({
