@@ -24,22 +24,16 @@ import { LoginFormComponent } from '../login-form/login-form.component';
 })
 
 export class SignupPageComponent implements OnInit {
-  breeds: Breed[] = [];
-  allBreeds: Breed[];
-
-  // colors
-  colors: Color[] = [];
-  allColors: Color[];
   constructor(private fb: FormBuilder,
-    private http: HttpClient,
-    private router: Router,
-    public userService: UserService,
-    public breedService: BreedService,
-    public colorService: ColorService,
-    public horseService: HorseService,
-    public dialog: MatDialog) { }
+              private http: HttpClient,
+              private router: Router,
+              public userService: UserService,
+              public breedService: BreedService,
+              public colorService: ColorService,
+              public horseService: HorseService,
+              public dialog: MatDialog) { }
 
-  //these are some getters to help with readability in the html
+  // these are some getters to help with readability in the html
   get login() {
     return this.signupForm.get('login');
   }
@@ -49,18 +43,19 @@ export class SignupPageComponent implements OnInit {
   get email() {
     return this.signupForm.get('email');
   }
+  breeds: Breed[] = [];
+  allBreeds: Breed[];
+  // colors
+  colors: Color[] = [];
+  allColors: Color[];
+  imgHorse: string;
+  imageDefColor = 'assets/horses/achal_tecke/gr-pml.png';
 
-  ngOnInit() {
-    // makeHeaders();
-    console.log('success');
-    this.allBreeds = this.getBreeds();
-    //this.getBreeds();
-    this.allColors = this.getColors();
-  }
 
   signupForm = this.fb.group({
     login: ['', [Validators.required, Validators.minLength(3)]],
-    password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')]],//length of at least 8 aplhanumeric characters. Must contain lowercase uppercase and a number can contain special characters
+
+    password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')]], // length of at least 8 aplhanumeric characters. Must contain lowercase uppercase and a number can contain special characters
     DoB: this.fb.group({
       day: [''],
       month: [''],
@@ -70,11 +65,19 @@ export class SignupPageComponent implements OnInit {
     terms: ['', [Validators.requiredTrue]],
     breed: [''],
     color: ['']
-  })
+  });
+
+  ngOnInit() {
+    // makeHeaders();
+    console.log('success');
+    this.allBreeds = this.getBreeds();
+    // this.getBreeds();
+    this.allColors = this.getColors();
+  }
 
 
   getBreeds(): Breed[] {
-    //this.http
+    // this.http
     //  .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_breeds')
     //  .pipe(
     //    map(responseData => {
@@ -93,16 +96,16 @@ export class SignupPageComponent implements OnInit {
     //      this.breeds.push(breed);
     //    }
     //  })
-    //return this.breeds;
+    // return this.breeds;
     this.breedService.getBreeds()
       .subscribe(result => {
         console.log(result);
-        let br = result as Array<Breed>;
+        const br = result as Array<Breed>;
         for (let i = 0; i < br.length; i++) {
-          let breed = new Breed(br[i].key, br[i].breed, br[i].breed_id);
+          const breed = new Breed(br[i].key, br[i].breed, br[i].breed_id);
           this.breeds.push(breed);
         }
-      })
+      });
     return this.breeds;
   }
 
@@ -129,12 +132,12 @@ export class SignupPageComponent implements OnInit {
     this.colorService.getColors()
       .subscribe(result => {
         console.log(result);
-        let br = result as Array<Color>;
+        const br = result as Array<Color>;
         for (let i = 0; i < br.length; i++) {
-          let color = new Color(br[i].key, br[i].color, br[i].color_id);
+          const color = new Color(br[i].key, br[i].color, br[i].color_id);
           this.colors.push(color);
         }
-      })
+      });
     return this.colors;
   }
 
@@ -142,13 +145,13 @@ export class SignupPageComponent implements OnInit {
     this.userService.createUser(this.signupForm.value)
       .then(
         res => {
-          this.horseService.createRandomHorse(this.signupForm.value, res.id)
+          this.horseService.createRandomHorse(this.signupForm.value, res.id);
           this.router.navigate(['/play']);
-          //this.router.navigate(['/home']);
+          // this.router.navigate(['/home']);
         }
-      )
-    //Julias backend
-    //this.http
+      );
+    // Julias backend
+    // this.http
     //  .post(
     //    'http://avellinfalls.com/home/add_new_user',
     //    {
@@ -167,10 +170,10 @@ export class SignupPageComponent implements OnInit {
     //      console.log("The POST observable is now completed.");
     //    });
 
-    //this.router.navigate(['/play']);
+    // this.router.navigate(['/play']);
   }
   openDialog(): void {
-    let dialogRef = this.dialog.open(LoginFormComponent, {
+    const dialogRef = this.dialog.open(LoginFormComponent, {
       panelClass: ['no-padding', 'no-scrolls'],
       height: '400px',
       width: '400px',
@@ -180,4 +183,10 @@ export class SignupPageComponent implements OnInit {
       console.log('the dialog was closed');
     });
   }
+  getKey(key: string ) {
+    console.log(key);
+}
+
+
+
 }
