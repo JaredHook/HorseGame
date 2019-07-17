@@ -99,7 +99,7 @@ export class SignupPageComponent implements OnInit {
         console.log(result);
         let br = result as Array<Breed>;
         for (let i = 0; i < br.length; i++) {
-          let breed = new Breed(br[i].id, br[i].breed, br[i].breed_id);
+          let breed = new Breed(br[i].key, br[i].breed, br[i].breed_id);
           this.breeds.push(breed);
         }
       })
@@ -131,7 +131,7 @@ export class SignupPageComponent implements OnInit {
         console.log(result);
         let br = result as Array<Color>;
         for (let i = 0; i < br.length; i++) {
-          let color = new Color(br[i].id, br[i].color, br[i].color_id);
+          let color = new Color(br[i].key, br[i].color, br[i].color_id);
           this.colors.push(color);
         }
       })
