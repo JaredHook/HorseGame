@@ -64,6 +64,8 @@
   border: 0;
   border-color: #e2da78;
   background-color: #fcfabf;
+  table-layout: fixed;
+  width: 100%;
 }
 
 .table > thead > tr > th {
