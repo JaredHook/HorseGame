@@ -20,6 +20,9 @@
     </div>
   </section>
   <h1>My horses</h1>
+  <ul class="nav nav-tabs">
+    <li [class.active]="viewMode == 'char'" rel="char"><a (click)="viewMode ='char'">My horses without a breeding farm</a></li>
+  </ul>
   <main>
     <section class="flexbox">
       <div class="row">
@@ -73,7 +76,7 @@
           </tr>
           <tr>
             <td>
-              <div><img src="assets/images/greenplus.PNG" />Create a new breeding farm</div>
+              <div class="create-new"><img src="assets/images/greenplus.PNG" />Create a new breeding farm</div>
             </td>
         </tbody>
       </table>
