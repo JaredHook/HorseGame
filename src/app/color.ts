@@ -1,10 +1,12 @@
 export class Color {
-  id: string;
+  //id: string;
+  key: string;
   color: string;
   color_id: string;
 
-  constructor(id: string, color: string, color_id: string) {
-    this.id = id;
+  constructor(key: string, color: string, color_id: string) {
+    //this.id = id;
+    this.key = key;
     this.color = color;
     this.color_id = color_id;
   }
