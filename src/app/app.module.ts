@@ -11,19 +11,23 @@ import { DetailBoxComponent } from './detail-box/detail-box.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
-//import { NavbarComponent } from './navbar/navbar.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 // import { LoginModalComponent } from './login-modal/login-modal.component';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HorseStableComponent } from './horse-stable/horse-stable.component';
+import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 const routes: Routes = [
-  //basic routes
+  // basic routes
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: SignupPageComponent },
   { path: 'play', component: FarmComponent },
-  { path: 'login', component: LoginFormComponent }
+  { path: 'play/:id', component: FarmComponent },
+  { path: 'login', component: LoginFormComponent },
+  { path: 'stable', component: HorseStableComponent }
 ];
 
 @NgModule({
@@ -32,9 +36,12 @@ const routes: Routes = [
     SignupPageComponent,
     FarmComponent,
     DetailBoxComponent,
+    NavbarComponent,
     LoginComponent,
-   // NavbarComponent,
-    LoginFormComponent
+    // NavbarComponent,
+    LoginFormComponent,
+    HorseStableComponent,
+    ProgressbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +53,7 @@ const routes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MatDialogModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

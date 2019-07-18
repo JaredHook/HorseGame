@@ -1,0 +1,24 @@
+.body-background {
+  background-image: url(https://ca.howrse.com/media/equideo/image/background/body/default/body-background-landing-prairie.jpg);
+  top: 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  left: 0;
+  z-index: -1;
+  background-position: center top;
+  position: absolute;
+  height: 1000px;
+}
+
+.breadcrumb {
+  border-bottom: 1px solid #F5F4C1;
+  font-size: 13px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  background: none;
+}
+
+  .breadcrumb .breadcrumb-item::before {
+    content: "";
+  }

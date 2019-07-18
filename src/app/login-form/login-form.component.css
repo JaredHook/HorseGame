@@ -56,6 +56,22 @@ input[type="checkbox"] {
   width: 1.5rem;
 }
 
+.error-msg {
+  align-self: center;
+  color: rgba(200, 18, 18, 0.80);
+  font-weight: 600;
+}
+
+.is-invalid {
+  border-color: rgba(233, 18, 18, 0.70);
+  border-width: 2px;
+  box-shadow: 0 1px 1px rgba(233, 18, 18, 0.10), 0 1px 1px rgba(233, 18, 18, 0.10);
+}
+
+ .is-invalid::placeholder {
+    color: rgba(233, 18, 18, 0.70);
+  }
+
 .login-form {
   display: block;
 }

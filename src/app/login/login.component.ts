@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { JsonPipe } from '@angular/common';
+import { AuthService } from '../../services/auth.service';
+import { HorseService } from '../../services/horse.service';
 
 @Component({
   selector: 'app-login',
@@ -11,25 +11,50 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  signIn = false;
-  constructor(private fb: FormBuilder,
-              private router: Router,
-              public userService: UserService) { }
+
+  form: FormGroup;
+  public userService: UserService;
+
+  firstName = new FormControl("", Validators.required);
+  loginEmail: any;
+
+  constructor(fb: FormBuilder,
+    userService: UserService,
+    horseService: HorseService,
+    private router: Router) {
+    this.userService = userService;
+    this.form = fb.group({
+      "loginEmail": this.loginEmail,
+      "password": ["", Validators.required]
+    });
+    horseService.setName('jason');
+    console.log('the name is ' + horseService.getName())
+  }
 
   ngOnInit() {
+
   }
 
-  loginForm = this.fb.group({
-    login: [''],
-    password: [''],
-    stay: ['']
-  })
+  onSubmit() {
+    let userAuth = this.form;
+    console.log("form submitted");
+    console.log(this.form);
+    this.userService.loginUsers(this.form.value).subscribe(
+      res => {
+        //console.log('return value is ' + JSON.stringify(res));
+        if (res[0].payload.doc.id) {
+          console.log(res[0].payload.doc.id)
+         new AuthService(res[0].payload.doc.id)
+          this.router.navigate(['/stable']);
+        };
+      })
 
-  onLogin() {
-    console.log(this.loginForm.value);
-    this.userService.loginUsers(this.loginForm.value)
-      .subscribe(
-        res => console.log(res)
-      )
+    // not logged in so redirect to login page with the return url
+    // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url } });
+
   }
-}
+
+  }
+
+
+

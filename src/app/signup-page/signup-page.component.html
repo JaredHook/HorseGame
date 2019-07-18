@@ -1,23 +1,29 @@
-<div class="flex-between">
-  <img src="https://ca.howrse.com/media/equideo/image/interface/header/logo/disconnected/howrse.png" class="transparent horse-img">
-  <app-login class="flex-btn"></app-login>
-</div>
-<div class="container">
-  <h2 class="text-center">Choose a Horse...</h2>
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <div class="row flex-between">
-      <div class="col-sm-4">
-        <div class="circle-left"></div>
-        <h4 class="text-center">Breeds</h4>
-        <ul class="list-unstyled text-right text-nowrap">
-          <li *ngFor="let breed of allBreeds">
-            <label>
-              {{breed.breed}}<input type="radio" name="breed" formControlName="breed" [checked]="idx === 0"
-                                    [value]="breed.breed_id">
-            </label>
-          </li>
-        </ul>
-      </div>
+  <div class="row">
+    <div class="col-sm-4 flex-column">
+      <img src="https://ca.howrse.com/media/equideo/image/interface/header/logo/disconnected/howrse.png" class="transparent horse-img howrse">
+    </div>
+    <div class="col-sm-4">     
+    </div>
+    <div class="col-sm-4 flex-column">
+      <app-login></app-login>
+    </div>
+    </div>
+  <div class="container">
+    <h2 class="text-center">Choose a Horse...</h2>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="row flex-between">
+        <div class="col-sm-4">
+          <div class="circle-left"></div>
+          <h4 class="text-center">Breeds</h4>
+          <ul class="list-unstyled text-right text-nowrap">
+            <li *ngFor="let breed of allBreeds">
+              <label>
+                {{breed.breed}} <input type="radio" name="breed" formControlName="breed" [checked]="idx === 0"
+                                      [key]="breed.key" [value]="breed.breed_id">
+              </label>
+            </li>
+          </ul>
+        </div>
 
         <div class="col-sm-4 flex-column">
           <img src="https://ca.howrse.com/media/equideo/image/chevaux/adulte/trotteur/normal/300/alz.png" class="transparent horse-img">
@@ -34,7 +40,7 @@
             <li *ngFor="let color of allColors">
               <label>
                 <input type="radio" name="color" formControlName="color" [checked]="idx === 0"
-                       [value]="color.color_id">{{color.color}}
+                       [key]="color.key" [value]="color.color_id"> {{color.color}}
               </label>
             </li>
           </ul>
