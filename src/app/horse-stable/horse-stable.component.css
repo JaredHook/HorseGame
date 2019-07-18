@@ -11,26 +11,34 @@
 }
 
 .breadcrumb {
-  border-bottom: 1px solid #F5F4C1;
   font-size: 13px;
   font-weight: 700;
   position: relative;
   z-index: 1;
   background: none;
+  margin: auto;
 }
 
-  .breadcrumb .breadcrumb-item::before {
-    content: "";
-  }
+.breadcrumb-row {
+  border-bottom: 1px solid #ededa3;
+}
+
+.breadcrumb .breadcrumb-item::before {
+  content: "";
+}
+
+.breadcrumb > .active {
+  color: #710;
+}
 
 .box-content {
-  background-color: #e2e18b;
+  background-color: #e4e18b;
   border: 2px solid #e2da78;
   position: relative;
   z-index: 3;
   top: -3px;
-  border-radius: 0 7px 7px 7px;
-  box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px -1px inset;
+  border-radius: 7px 7px 7px 7px;
+  box-shadow: #B0AE48 1px 1px inset, #B0AE48 -1px -1px inset;
   color: #003a0e;
   font-size: 1.1rem;
 }
@@ -50,6 +58,16 @@ a {
 
 tbody {
   font-size: 13px;
+}
+
+.table > tbody > tr > td {
+  border-top: 1px solid #B0AE48;
+  border-bottom: 1px solid #B0AE48;
+}
+
+.table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #B0AE48;
 }
 
 th {
@@ -73,4 +91,17 @@ th {
   align-items: center;
   white-space: pre;
   overflow: visible !important;
+  width: 80%;
+  height: 10%;
+}
+
+.dropdown-menu {
+  background-color: #E8EDc6;
+  font-size: 12px;
+}
+
+.dropdown-toggle::after {
+  position: absolute;
+  right: 65%;
+  top: 10%;
 }
