@@ -24,6 +24,18 @@ import { LoginFormComponent } from '../login-form/login-form.component';
 })
 
 export class SignupPageComponent implements OnInit {
+  breeds: Breed[] = [];
+  allBreeds: Breed[];
+  // colors
+  colors: Color[] = [];
+
+  allColors: Color[];
+  imgDefHorse  = 'achal_tecke';
+  imgDefColor = 'gr-pml';
+  imgBaseUrl = 'assets/horses/';
+  imgUrl: string;
+
+
   constructor(private fb: FormBuilder,
               private http: HttpClient,
               private router: Router,
@@ -31,7 +43,9 @@ export class SignupPageComponent implements OnInit {
               public breedService: BreedService,
               public colorService: ColorService,
               public horseService: HorseService,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog) {
+    this.imgUrl = this.imgBaseUrl + this.imgDefHorse + '/' + this.imgDefColor + '.png';
+  }
 
   // these are some getters to help with readability in the html
   get login() {
@@ -43,13 +57,6 @@ export class SignupPageComponent implements OnInit {
   get email() {
     return this.signupForm.get('email');
   }
-  breeds: Breed[] = [];
-  allBreeds: Breed[];
-  // colors
-  colors: Color[] = [];
-  allColors: Color[];
-  imgHorse: string;
-  imageDefColor = 'assets/horses/achal_tecke/gr-pml.png';
 
 
   signupForm = this.fb.group({
@@ -183,9 +190,20 @@ export class SignupPageComponent implements OnInit {
       console.log('the dialog was closed');
     });
   }
-  getKey(key: string ) {
-    console.log(key);
+  // imgDefHorse = 'achal-tecke';
+ // imgDefColor = 'gr-pml';
+ // imgBaseUrl = 'assets/horses/';
+ // imgUrl: string;
+
+  getBreedKey(keyb: string ) {
+    this.imgUrl = this.imgBaseUrl + keyb + '/' + this.imgDefColor + '.png';
+    this.imgDefHorse = keyb;
 }
+
+  getColorKey(keyc: string) {
+    this.imgUrl = this.imgBaseUrl + this.imgDefHorse + '/' + keyc + '.png';
+    this.imgDefColor = keyc;
+  }
 
 
 
