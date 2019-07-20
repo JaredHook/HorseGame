@@ -42,7 +42,7 @@ const routes: Routes = [
     LoginFormComponent,
     HorseStableComponent,
     ProgressbarComponent,
-    LoginFormComponent
+
   ],
   imports: [
     BrowserModule,
