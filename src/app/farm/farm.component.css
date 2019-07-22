@@ -47,8 +47,8 @@
 
 .nowrap {
   white-space: nowrap;
+  margin-left: 3px;
 }
-
 
 .h2,
 .h3,
@@ -60,7 +60,6 @@ strong {
   margin: 0;
   padding: 10px 2px 10px 2px;
 }
-
 
 label {
   padding-right: 60px;
@@ -101,4 +100,8 @@ progress[value]::-webkit-progress-value {
 
 #progress-alignment {
   position:center;
+}
+
+.grey-check {
+  float: right;
 }
