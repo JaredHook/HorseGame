@@ -78,6 +78,11 @@ body {
   color: #fff;
 }
 
+.container-box{
+  max-width: 60%;
+  
+}
+
   .login-label:hover {
     color: #3b5998;
     /*background-color: #fff*/

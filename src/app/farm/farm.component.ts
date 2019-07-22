@@ -3,7 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Horse } from '../horse';
-import {HorseService} from '../../services/horse.service';
+import { HorseService } from '../../services/horse.service';
 
 @Component({
   selector: 'app-farm',

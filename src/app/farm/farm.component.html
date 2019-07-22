@@ -219,7 +219,17 @@
           </div>
         </div>
       </div>
-    </section>  
+    </section>
+    <app-stars [stamina]="horse.stamina"
+               [speed]="horse.speed"
+               [dressage]="horse.dressage"
+               [gallop]="horse.gallop"
+               [trot]="horse.trot"
+               [jumping]="horse.jumping"></app-stars>
+
+    <app-progressbar [energy]="horse.energy"
+                     [health]="horse.health"
+                     [morale]="horse.morale"></app-progressbar>
     <app-detail-box></app-detail-box>
   </main>
 </div>

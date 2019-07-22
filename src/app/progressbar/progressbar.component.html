@@ -1,16 +1,18 @@
-<div class="box-content">
-  <ul class="list-unstyled">
-    <li>
-      <label for="progress">Energy</label>
-        <progress max="100" value="70"></progress>
-    </li>
-    <li>
-      <label for="progress">Health</label>
-        <progress max="100" value="70"></progress>
-    </li>
-    <li>
-      <label for="progress">Morale</label>
-      <progress max="100" value="70"></progress>
-    </li>
-  </ul>
+<div class="container-box"> 
+  <div class="box-content">
+    <ul class="list-unstyled">
+      <li>
+        <label for="progress">Energy</label>
+        <progress max="100" [value]="energy"></progress>
+      </li>
+      <li>
+        <label for="progress">Health</label>
+        <progress max="100"  [value]="health"></progress>
+      </li>
+      <li>
+        <label for="progress">Morale</label>
+        <progress max="100"  [value]="morale"></progress>
+      </li>
+    </ul>
+  </div>
 </div>
