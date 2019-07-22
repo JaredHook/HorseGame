@@ -9,6 +9,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HorseService {
+  name: string = 'greg';
   
   constructor(public db: AngularFirestore) { }
 
@@ -66,5 +67,13 @@ export class HorseService {
 
       })
     )
+  }
+
+  getName(): string {
+    return this.name;
+  }
+
+  setName(name: string) {
+    this.name = name;
   }
 }
