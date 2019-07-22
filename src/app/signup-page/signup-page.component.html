@@ -13,7 +13,7 @@
             <li *ngFor="let breed of allBreeds">
               <label>
                 {{breed.breed}} <input type="radio" name="breed" formControlName="breed" [checked]="idx === 0"
-                                      <!--[key]="breed.key"-->[value]="breed.breed_id">
+                                     [value]="breed.breed_id">
               </label>
             </li>
           </ul>
@@ -34,7 +34,7 @@
             <li *ngFor="let color of allColors">
               <label>
                 <input type="radio" name="color" formControlName="color" [checked]="idx === 0"
-                       <!--[key]="color.key"--> [value]="color.color_id"> {{color.color}}
+                       [value]="color.color_id"> {{color.color}}
               </label>
             </li>
           </ul>

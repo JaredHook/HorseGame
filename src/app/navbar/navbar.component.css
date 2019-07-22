@@ -3,8 +3,8 @@
   width: 940px;
   height: 38px;
   border-radius: 4px;
-  float:left;
-  margin: 10px 0  0 0;
+  float: left;
+  margin: 10px 0 0 0;
 }
 
 .sr-only {
@@ -70,15 +70,14 @@
 }
 
 .navsize {
-  float:left;
-  margin: 10px 0 0 10px; ;
+  float: left;
+  margin: 10px 0 0 10px;
+  ;
   width: 44px;
   height: 38px;
   background: rgba(52,99,156,.7);
-  border-radius: 4px; 
+  border-radius: 4px;
 }
-
-
 
 .arrow_box {
   position: relative;
@@ -141,4 +140,3 @@
     border-width: 12px;
     margin-left: -144px;
   }
-

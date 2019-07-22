@@ -47,6 +47,7 @@
 
 .nowrap {
   white-space: nowrap;
+  margin-left: 3px;
 }
 
 
@@ -101,4 +102,9 @@ progress[value]::-webkit-progress-value {
 
 #progress-alignment {
   position:center;
+}
+
+.grey-check{
+  float: right;
+  margin-left: 100px;
 }
