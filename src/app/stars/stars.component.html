@@ -8,105 +8,121 @@
     </div>
 
     <div>
-      <span><strong> Stamina </strong></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
+      <div class="star-ratings-sprite"><span [ngStyle]="{'width.%': stamina}" class="star-ratings-sprite-rating"></span></div>
       <span class="head" max="100"><strong>{{stamina}}</strong></span>
     </div>
     <hr>
-
-    <div class="star-ratings-sprite">
-      <span><strong> Speed </strong></span><span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="head" max="100">
-        <strong>
-          {{speed}}
-        </strong>
-      </span>
+    <div>
+      <div class="star-ratings-sprite"><span [ngStyle]="{'width.%': speed}" class="star-ratings-sprite-rating"></span></div>
+      <span class="head" max="100"><strong>{{speed}}</strong></span>
     </div>
-
+    <hr>
+    <div>
+      <div class="star-ratings-sprite"><span [ngStyle]="{'width.%': trot}" class="star-ratings-sprite-rating"></span></div>
+      <span class="head" max="100"><strong>{{trot}}</strong></span>
+    </div>
+    <hr>
+    <div>
+      <div class="star-ratings-sprite"><span [ngStyle]="{'width.%': gallop}" class="star-ratings-sprite-rating"></span></div>
+      <span class="head" max="100"><strong>{{gallop}}</strong></span>
+    </div>
+    <hr>
+    <div>
+      <div class="star-ratings-sprite"><span [ngStyle]="{'width.%': dressage}" class="star-ratings-sprite-rating"></span></div>
+      <span class="head" max="100"><strong>{{dressage}}</strong></span>
+    </div>
+    <hr>
+    <div>
+      <div class="star-ratings-sprite"><span [ngStyle]="{'width.%': jumping}" class="star-ratings-sprite-rating"></span></div>
+      <span class="head" max="100"><strong>{{jumping}}</strong></span>
+    </div>
     <hr>
 
-    <div>
-      <span> Dressage </span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="head" max="100">
-        <strong>
-          {{dressage}}
-        </strong>
-      </span>
-    </div>
-    <hr>
-    <div>
-      <span> Gallop </span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="head"><strong>{{gallop}}</strong></span>
-    </div>
-    <hr>
-    <div>
-      <span> Trot </span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="head">
-        <strong>{{trot}}</strong>
-      </span>
-    </div>
-    <hr>
-    <div>
-      <span> Jumping </span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star checked"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="fa fa-star"></span>
-      <span class="head"><strong>{{jumping}}</strong></span>
-    </div>
+    <!--<div class="star-ratings-sprite" >
+
+    <span><strong> Speed </strong></span><span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="head" max="100">
+      <strong>
+        {{speed}}
+      </strong>
+    </span>
+  </div>
+
+  <hr>
+
+  <div>
+    <span> Dressage </span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="head" max="100">
+      <strong>
+        {{dressage}}
+      </strong>
+    </span>
+  </div>
+  <hr>
+  <div>
+    <span> Gallop </span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="head"><strong>{{gallop}}</strong></span>
+  </div>
+  <hr>
+  <div>
+    <span> Trot </span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="head">
+      <strong>{{trot}}</strong>
+    </span>
+  </div>
+  <hr>
+  <div>
+    <span> Jumping </span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+    <span class="head"><strong>{{jumping}}</strong></span>
+  </div>-->
   </div>
 </div>

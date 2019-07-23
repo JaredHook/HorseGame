@@ -17,16 +17,17 @@ export class StarsComponent implements OnInit {
   totalSkills = 0;
 
   constructor() { }
-  
 
   ngOnInit() {
+    
   }
 
 
   ngOnChanges() {
-    this.totalSkills = this.stamina + this.speed + this.gallop + this.trot + this.jumping
+    this.totalSkills = this.stamina + this.speed + this.gallop + this.trot + this.jumping 
     console.log(this.totalSkills)
-  }
+
+      }
 
   
 }

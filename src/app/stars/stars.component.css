@@ -39,6 +39,28 @@ h2 {
   font-family: arial narrow;
 }*/
 
+
+.star-ratings-sprite {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  font-size: 0;
+  height: 21px;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 222px;
+  margin: 0 auto;
+}
+
+.star-ratings-sprite-rating {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  background-position: 0 100%;
+  float: left;
+  height: 21px;
+  display: block;
+}
+
+
+
 .box-content1{
   border:2px solid #a4ba6d;
   border-radius: 5px;
@@ -48,9 +70,13 @@ h2 {
     background-color:#e9feb5;
   }
 
-  .checked {
-    color: gold;
-  }
+.box-content1{
+  
+}
+
+.checked {
+  color: gold;
+}
 
 hr{
   margin:0px;
