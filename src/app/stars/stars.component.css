@@ -61,14 +61,17 @@ h2 {
 
 
 
-.box-content1{
-  border:2px solid #a4ba6d;
+.box-content1 {
+  border: 2px solid #a4ba6d;
   border-radius: 5px;
+  background-color: #e9feb5;
 }
 
-  .box-content1{
-    background-color:#e9feb5;
-  }
+
+.box-content1 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
 
 .box-content1{
   
