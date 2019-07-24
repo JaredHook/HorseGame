@@ -53,7 +53,6 @@
   white-space: nowrap;
 }
 
-
 .h2,
 .h3,
 b,
@@ -64,7 +63,6 @@ strong {
   margin: 0;
   padding: 10px 2px 10px 2px;
 }
-
 
 label {
   padding-right: 60px;
@@ -77,7 +75,6 @@ label {
 progress {
   border-radius: 2px;
   vertical-align: middle;
-  padding-right: 10px;
 }
 
 progress[value]::-webkit-progress-bar {
@@ -104,6 +101,10 @@ progress[value]::-webkit-progress-value {
 }
 
 #progress-alignment {
-  position:center;
+  margin: 0;
 }
 
+.training {
+  background-color: rgba(181, 183, 77, .71);
+  height: 50px;
+}

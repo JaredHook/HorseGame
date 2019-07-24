@@ -27,7 +27,17 @@ export class StarsComponent implements OnInit {
     this.totalSkills = this.stamina + this.speed + this.gallop + this.trot + this.jumping 
     console.log(this.totalSkills)
 
+    try {
+      // code that may throw an error...
+    }
+    catch (e) {
+      if (e instanceof Error) {
+        // properly handle Error e
       }
-
-  
+      else {
+        // probably cannot recover...therefore, rethrow
+        throw e;
+      }
+    }
+  }
 }
