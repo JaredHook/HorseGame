@@ -23,15 +23,43 @@
   text-align: center;
 }
 
+.care {
+  background: #dcdb81;
+  border: 0;
+}
+
+.table {
+  border: 1px solid #e2da78;
+  background-color: #dcdb81;
+  table-layout: fixed;
+  width: 100%;
+}
+
+  .table > thead > tr > th {
+    border-top: 1px solid #e2da78;
+    border-bottom: 0;
+    background-color: #dcdb81;
+    padding: 0 1rem 3px;
+  }
+
+  .table > tbody > tr > td {
+    border-top: 0;
+    background-color: #dcdb81;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+
 .head1{
   text-align:right;
 }
 
 
-#care-header,
+/*#care-header,
 #night-header,
-#mission-header,
 #rides-header,
+*/
+#mission-header,
 #competitions-header,
 #breeding-header {
   opacity: 0.4;
