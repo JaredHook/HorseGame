@@ -10,7 +10,8 @@ export class UserService {
 
   //getAvatars(){
   //    return this.db.collection('/avatar').valueChanges()
-  // } 
+  
+  // }
 
   getUser(userKey) {
     return this.db.collection('users').doc(userKey).snapshotChanges();
