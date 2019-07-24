@@ -39,13 +39,14 @@
     border-top: 1px solid #e2da78;
     border-bottom: 0;
     background-color: #dcdb81;
-    padding: 0 1rem 3px;
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
   }
 
   .table > tbody > tr > td {
     border-top: 0;
     background-color: #dcdb81;
-    padding: 0 1rem;
     text-align: center;
   }
 
