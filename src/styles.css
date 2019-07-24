@@ -10,9 +10,6 @@ body {
 .box-content {
   background-color: #f6f3b0;
   border: 2px solid #e2da78;
-  position: relative;
-  z-index: 3;
-  top: -3px;
   border-radius: 0 7px 7px 7px;
   box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px -1px inset;
   color: #003a0e;
@@ -79,6 +76,11 @@ body {
   font-size: 16px;
   cursor: pointer;
   color: #fff;
+}
+
+.container-box{
+  max-width: 60%;
+  
 }
 
   .login-label:hover {

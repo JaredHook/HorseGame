@@ -18,6 +18,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HorseStableComponent } from './horse-stable/horse-stable.component';
+import { StarsComponent } from './stars/stars.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
 
 const routes: Routes = [
@@ -41,6 +42,7 @@ const routes: Routes = [
     // NavbarComponent,
     LoginFormComponent,
     HorseStableComponent,
+    StarsComponent,
     ProgressbarComponent,
 
   ],
