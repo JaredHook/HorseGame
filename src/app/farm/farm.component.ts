@@ -47,7 +47,7 @@ export class FarmComponent implements OnInit {
         const br = res as Array<Breed>;
 
         for (let i = 0; i < br.length; i++) {
-          if (br[i].breed_id == this.horse.breed) {
+          if (this.horse.breed === br[i].breed_id) {
             this.breed = br[i];
           }
         }
