@@ -26,6 +26,20 @@ export class StarsComponent implements OnInit {
     try {
       this.totalSkills = (Number(this.stamina) || 0) + (Number(this.speed) || 0) + (Number(this.gallop) || 0) + (Number(this.trot) || 0) + (Number(this.jumping) || 0) + (Number(this.dressage) || 0)
 
+    try {
+      // code that may throw an error...
+    }
+    catch (e) {
+      if (e instanceof Error) {
+        // properly handle Error e
+      }
+      else {
+        // probably cannot recover...therefore, rethrow
+        throw e;
+      }
+    }
+  }
+
       if (isNaN(this.totalSkills)) throw 'this is not a number';
       if (this.totalSkills == 0) throw 'total skills are not valid';
     }

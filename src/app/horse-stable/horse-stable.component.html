@@ -25,8 +25,6 @@
   <main>
     <section class="flexbox">
       <div class="row">
-        <!--Navbar
-        <app-navbar></app-navbar>-->
       </div>
     </section>
     <div class="box-content">
@@ -59,18 +57,18 @@
         <tbody>
           <tr>
             <td>
-              <div><img src="assets/images/gr-c-1.png" width="40" height="40" />Strawberry</div>
+              <div><img src="assets/images/gr-c-1.png" width="40" height="40" /><a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a></div>
               <div><img src="assets/images/brush.png" /><img src="assets/images/bonus.png" /></div>
             </td>
             <td>
             <td>
-              <div><img src="assets/images/gr-c-1.png" width="40" height="40" />Watermelon</div>
+              <div><img src="assets/images/gr-c-1.png" width="40" height="40" /><a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a></div>
             </td>
             <td>
-              <div><img src="assets/images/gr-c-1.png" width="40" height="40" />Peach</div>
+              <div><img src="assets/images/gr-c-1.png" width="40" height="40" /><a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a></div>
             </td>
             <td>
-              <div><img src="assets/images/gr-c-1.png" width="40" height="40" />Blueberry</div>
+              <div><img src="assets/images/gr-c-1.png" width="40" height="40" /><a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a></div>
             </td>
           </tr>
           <tr>

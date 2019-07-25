@@ -1,10 +1,17 @@
-
 <div>
   <img src="https://ca.howrse.com/media/equideo/image/interface/header/logo/disconnected/howrse.png"
-    class="transparent horse-img">
+       class="transparent horse-img">
 </div>
-
 <div class="container">
+  <!--<section class="flexbox">-->
+    <div class="row">
+      <!--Navbar-->
+      <app-navbar></app-navbar>
+      <div class="col-sm-4">
+        <!--Care Widget-->
+        <div class="widget">
+          <div id="care" class="widget-item">
+            <h3 id="care-header" class="widget-title">Care</h3>
   <main>
     <section class="flexbox">
       <div class="row justify-content-center">
@@ -19,76 +26,72 @@
               <h3 id="care-header" class="widget-title">Care</h3>
             </div>
           </div>
+          <table class="table table-border">
+            <tbody>
+              <tr>
+                <td>
+                  <button class="care" style="width:50px;">
+                    <img src="/assets/images/hay.png" style="margin: 1px 1px 1px 1px" alt="hay">
+                  </button>
+                  <div>Feed</div>
+                  <button class="care" style="width:50px;">
+                    <img src="/assets/images/brush.png" style="margin: 1px 1px 1px 1px" alt="groom">
+                  </button>
+                  <div>Groom</div>
+                </td>
+                <td>
+                  <button class="care" style="width:50px;">
+                    <img src="/assets/images/drink.png" style="margin: 1px 1px 1px 1px" alt="drink">
+                  </button>
+                  <div>Drink</div>
+                  <button class="care" style="width:50px;">
+                    <img src="/assets/images/carrot.png" style="margin: 1px 1px 1px 1px" alt="carrot">
+                  </button>
+                  <div>Carrot</div>
+                </td>
+                <td>
+                  <button class="care" style="width:50px;">
+                    <img src="/assets/images/stroke.png" style="margin: 1px 1px 1px 1px" alt="stroke">
+                  </button>
+                  <div>Stroke</div>
+                  <button class="care" style="width:50px;">
+                    <img src="/assets/images/nurse.png" style="margin: 1px 1px 1px 1px" alt="nurse">
+                  </button>
+                  <div>Nurse</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
           <!--Night Widget-->
           <div class="widget">
             <div id="night" class="widget-item">
               <h3 id="night-header" class="widget-title">Night</h3>
             </div>
           </div>
-          <!--Equestrian Center Widget-->
-          <div class="widget">
-            <div id="equestrian" class="widget-item">
-              <h3 id="equestrian-header" class="widget-title">Equestrian Center</h3>
-              <table class="width-100">
-                <tbody>
-                  <tr class="dashed">
-                    <td class="col-0 first" colspan="2">
-                      <div class="float-right"></div>
-                      <div class="grid-table">
-                        <div class="grid-row">
-                          <div class="grid-cell align-middle">
-                            <strong class="nowrap spacer-small-right">Name:</strong><i>
-                              <span>
-                                Emma's amazing
-                                stables
-                              </span>
-                            </i>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-
-                    <td class="col-0 first last" colspan="2">
-                      <div class="grid-table">
-                        <div class="grid-row">
-                          <div class="grid-cell align-middle">
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-
-                  <tr class="align-top dashed">
-                    <td class="first last col-0" colspan="2" style="padding-bottom: 5px">
-                      <div class="grid-table">
-                        <div class="grid-row">
-                          <div class="grid-cell align-middle">
-                            <strong class="nowrap spacer-small-right">Up to:</strong>2nd July 2119<span data-tooltip="Box 1*" data-tooltip-theme="0">
-                              <img src="/assets/images/farmhouse.png"
-                                   alt="farmhouse" />
-                            </span>
-                          </div>
-                          <div class="grid-cell align-middle">
-                            <strong class="nowrap">Box:</strong>
-                            <span data-tooltip="Box 1*" data-tooltip-theme="0">
-                              <img src="/assets/images/farmhouse.png"
-                                   alt="farmhouse" />
-                            </span> <span data-tooltip="Straw" data-tooltip-theme="0">
-                              <img src="/assets/images/straw.png" alt="straw" />
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-              </table>
-            </div>
-          </div>
-
-          <!--History Widget-->
-          <div class="widget">
-            <div id="history" class="widget-item">
-              <h3 id="history-header" class="widget-title">History</h3>
-            </div>
+          <table class="table table-border">
+            <tbody>
+              <tr>
+                <td>
+                  <button class="care" style="width:50px;">
+                    <img src="/assets/images/lune.png" style="margin: 1px 1px 1px 1px" alt="lune">
+                  </button>
+                  <div>Put to bed</div>
+                </td>
+                <td>
+                  <button class="care" style="width:50px;">
+                    <img src="/assets/images/age.png" style="margin: 1px 1px 1px 1px" alt="age">
+                  </button>
+                  <div>Age</div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!--Equestrian Center Widget-->
+        <div class="widget">
+          <div id="equestrian" class="widget-item">
+            <h3 id="equestrian-header" class="widget-title">Equestrian Center</h3>
             <table class="width-100">
               <tbody>
                 <tr class="dashed">
@@ -96,17 +99,19 @@
                     <div class="float-right"></div>
                     <div class="grid-table">
                       <div class="grid-row">
-                        <ul class="grid-table align-middle list-unstyled">
-                          <li>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img src="/assets/images/sun.png" style="margin: 1px 1px 1px 0px" alt="sun">
+                        <div class="grid-cell align-middle">
+                          <strong class="nowrap spacer-small-right">Name:</strong><i>
+                            <span>
+                              Emma's amazing
+                              stables
                             </span>
-                            <span class="grid-cell last">08:00: {{horse.name}} has just woken up</span>
-                          </li>
-                        </ul>
+                          </i>
+                        </div>
                       </div>
                     </div>
                   </td>
+
+                  <td class="col-0 first last" colspan="2">
             </table>
           </div>
         </div>
@@ -153,100 +158,204 @@
               <tbody>
                 <tr class="dashed">
                   <td class="col-0 first" colspan="2">
-                    <div class="float-right"></div>
+                    <div class="float-right"></div
                     <div class="grid-table">
                       <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Stamina</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_stamina}}"> {{horse.tr_stamina}}% </progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Speed</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_speed}}"> {{horse.tr_speed}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Dressage</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_dressage}}"> {{horse.tr_dressage}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Gallop</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_gallop}}"> {{horse.tr_gallop}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Trot</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_trot}}"> {{horse.tr_trot}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Jumping</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_jumping}}"> {{horse.tr_jumping}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
+                        <div class="grid-cell align-middle">
+                        </div>
                       </div>
                     </div>
                   </td>
+
+                <tr class="align-top dashed">
+                  <td class="first last col-0" colspan="2" style="padding-bottom: 5px">
+                    <div class="grid-table">
+                      <div class="grid-row">
+                        <div class="grid-cell align-middle">
+                          <strong class="nowrap spacer-small-right">Up to:</strong>2nd July 2119<span data-tooltip="Box 1*" data-tooltip-theme="0">
+                            <img src="/assets/images/farmhouse.png"
+                                 alt="farmhouse" />
+                          </span>
+                        </div>
+                        <div class="grid-cell align-middle">
+                          <strong class="nowrap">Box:</strong>
+                          <span data-tooltip="Box 1*" data-tooltip-theme="0">
+                            <img src="/assets/images/farmhouse.png"
+                                 alt="farmhouse" />
+                          </span> <span data-tooltip="Straw" data-tooltip-theme="0">
+                            <img src="/assets/images/straw.png" alt="straw" />
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
             </table>
           </div>
-          <!--Competition Widget-->
-          <div class="widget">
-            <div id="competitions" class="widget-item">
-              <h3 id="competitions-header" class="widget-title">Competitions</h3>
-            </div>
+        </div>
+
+        <!--History Widget-->
+        <div class="widget">
+          <div id="history" class="widget-item">
+            <h3 id="history-header" class="widget-title">History</h3>
           </div>
-          <!--Breeding Widget-->
-          <div class="widget">
-            <div id="breeding" class="widget-item">
-              <h3 id="breeding-header" class="widget-title">Breeding</h3>
-            </div>
-          </div>
+          <table class="width-100">
+            <tbody>
+              <tr class="dashed">
+                <td class="col-0 first" colspan="2">
+                  <div class="float-right"></div>
+                  <div class="grid-table">
+                    <div class="grid-row">
+                      <ul class="grid-table align-middle list-unstyled">
+                        <li>
+                          <span class="grid-cell first" style="width:35px;">
+                            <img src="/assets/images/sun.png" style="margin: 1px 1px 1px 0px" alt="sun">
+                          </span>
+                          <span class="grid-cell last">08:00: {{horse.name}} has just woken up</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </td>
+          </table>
         </div>
       </div>
-    </section>
-    <app-stars [stamina]="horse.stamina"
-               [speed]="horse.speed"
-               [dressage]="horse.dressage"
-               [gallop]="horse.gallop"
-               [trot]="horse.trot"
-               [jumping]="horse.jumping"></app-stars>
-
+<div class="col-sm-4">
+  <div></div>
+</div>
+<div class="col-sm-4">
+  <!--Mission Widget-->
+  <div class="widget">
+    <div id="mission" class="widget-item">
+      <h3 id="mission-header" class="widget-title">Mission</h3>
+    </div>
+  </div>
+  <!--Rides Widget-->
+  <div class="widget">
+    <div id="rides" class="widget-item">
+      <h3 id="rides-header" class="widget-title">Rides</h3>
+    </div>
+    <table class="width-100">
+      <tbody>
+        <tr class="dashed">
+          <td class="col-0 first" colspan="2">
+            <div class="float-right"></div>
+            <div class="grid-table">
+              <div class="grid-row">
+                <ul class="grid-table align-middle list-unstyled">
+                  <li>
+                    <button class="training" style="width:50px;">
+                      <img src="/assets/images/beach.png" style="margin: 1px 1px 1px 1px" alt="beach">
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </td>
+    </table>
+  </div>
+  <!--Training Widget-->
+  <div class="widget">
+    <div id="Training" class="widget-item">
+      <h3 id="training-header" class="widget-title">Training</h3>
+    </div>
+    <table class="width-100">
+      <tbody>
+        <tr class="dashed">
+          <td class="col-0 first" colspan="2">
+            <div class="float-right"></div>
+            <div class="grid-table">
+              <div class="grid-row">
+                <ul class="grid-table list-unstyled">
+                  <li>
+                    <label for="progress">Stamina</label>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_stamina}}"> {{horse.tr_stamina}}% </progress>
+                    <span class="grid-cell first" style="width:35px;">
+                      <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="grid-row">
+                <ul class="grid-table list-unstyled">
+                  <li>
+                    <label for="progress">Speed</label>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_speed}}"> {{horse.tr_speed}}%</progress>
+                    <span class="grid-cell first" style="width:35px;">
+                      <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="grid-row">
+                <ul class="grid-table list-unstyled">
+                  <li>
+                    <label for="progress">Dressage</label>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_dressage}}"> {{horse.tr_dressage}}%</progress>
+                    <span class="grid-cell first" style="width:35px;">
+                      <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="grid-row">
+                <ul class="grid-table list-unstyled">
+                  <li>
+                    <label for="progress">Gallop</label>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_gallop}}"> {{horse.tr_gallop}}%</progress>
+                    <span class="grid-cell first" style="width:35px;">
+                      <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="grid-row">
+                <ul class="grid-table list-unstyled">
+                  <li>
+                    <label for="progress">Trot</label>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_trot}}"> {{horse.tr_trot}}%</progress>
+                    <span class="grid-cell first" style="width:35px;">
+                      <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="grid-row">
+                <ul class="grid-table list-unstyled">
+                  <li>
+                    <label for="progress">Jumping</label>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_jumping}}"> {{horse.tr_jumping}}%</progress>
+                    <span class="grid-cell first" style="width:35px;">
+                      <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </td>
+    </table>
+  </div>
+  <!--Competition Widget-->
+  <div class="widget">
+    <div id="competitions" class="widget-item">
+      <h3 id="competitions-header" class="widget-title">Competitions</h3>
+    </div>
+  </div>
+  <!--Breeding Widget-->
+  <div class="widget">
+    <div id="breeding" class="widget-item">
+      <h3 id="breeding-header" class="widget-title">Breeding</h3>
+    </div>
+  </div>
+</div>
+</div>
+<!--</section>-->
+<app-stars [stamina]="horse.stamina"
+           [speed]="horse.speed"
+           [dressage]="horse.dressage"
+           [gallop]="horse.gallop"
+           [trot]="horse.trot"
+           [jumping]="horse.jumping"></app-stars>
     <app-progressbar [energy]="horse.energy"
                      [health]="horse.health"
                      [morale]="horse.morale"></app-progressbar>

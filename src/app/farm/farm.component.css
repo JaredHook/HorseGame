@@ -23,15 +23,44 @@
   text-align: center;
 }
 
+.care {
+  background: #dcdb81;
+  border: 0;
+}
+
+.table {
+  border: 1px solid #e2da78;
+  background-color: #dcdb81;
+  table-layout: fixed;
+  width: 100%;
+}
+
+  .table > thead > tr > th {
+    border-top: 1px solid #e2da78;
+    border-bottom: 0;
+    background-color: #dcdb81;
+    height: 50px;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .table > tbody > tr > td {
+    border-top: 0;
+    background-color: #dcdb81;
+    text-align: center;
+  }
+
+
 .head1{
   text-align:right;
 }
 
 
-#care-header,
+/*#care-header,
 #night-header,
-#mission-header,
 #rides-header,
+*/
+#mission-header,
 #competitions-header,
 #breeding-header {
   opacity: 0.4;
@@ -53,7 +82,6 @@
   white-space: nowrap;
 }
 
-
 .h2,
 .h3,
 b,
@@ -64,7 +92,6 @@ strong {
   margin: 0;
   padding: 10px 2px 10px 2px;
 }
-
 
 label {
   padding-right: 60px;
@@ -77,7 +104,6 @@ label {
 progress {
   border-radius: 2px;
   vertical-align: middle;
-  padding-right: 10px;
 }
 
 progress[value]::-webkit-progress-bar {
@@ -104,6 +130,10 @@ progress[value]::-webkit-progress-value {
 }
 
 #progress-alignment {
-  position:center;
+  margin: 0;
 }
 
+.training {
+  background-color: rgba(181, 183, 77, .71);
+  height: 50px;
+}
