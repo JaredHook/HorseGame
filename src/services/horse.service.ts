@@ -44,7 +44,7 @@ export class HorseService {
       tr_gallop: 0,
       tr_trot: 0,
       tr_jumping: 0
-    });
+    }).t
   }
 
   getHorses(): Observable<Horse[]> {
