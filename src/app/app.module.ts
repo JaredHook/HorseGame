@@ -14,12 +14,12 @@ import { environment } from '../environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-// import { LoginModalComponent } from './login-modal/login-modal.component';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HorseStableComponent } from './horse-stable/horse-stable.component';
 import { StarsComponent } from './stars/stars.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
+import {Environment} from '@angular/compiler-cli/src/ngtsc/typecheck/src/environment';
 
 const routes: Routes = [
   // basic routes
@@ -39,7 +39,7 @@ const routes: Routes = [
     DetailBoxComponent,
     NavbarComponent,
     LoginComponent,
-    // NavbarComponent,
+    NavbarComponent,
     LoginFormComponent,
     HorseStableComponent,
     StarsComponent,

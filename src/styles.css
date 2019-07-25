@@ -80,14 +80,14 @@ body {
 
 .container-box{
   max-width: 60%;
-  
+
 }
 
-  .login-label:hover {
-    color: #3b5998;
-    /*background-color: #fff*/
-  }
+.login-label:hover {
+  color: #3b5998;
+  /*background-color: #fff*/
+}
 
 .navbar-light {
-  background-color: rgba(52,99,156,.7) !important;
+  background-color: #eae58f;
 }

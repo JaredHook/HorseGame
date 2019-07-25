@@ -1,15 +1,13 @@
-.bk {
+.bg {
   background: rgba(52,99,156,.7);
-  width: 940px;
-  height: 38px;
+  width: 100%;
+  height: 380px;
   border-radius: 4px;
   float:left;
-  margin: 10px 0  0 0;
+  margin: 0 15px 15px 15px ;
 }
 
-.sr-only {
-  padding-right: 5px;
-}
+
 
 .textm {
   color: #fff;
