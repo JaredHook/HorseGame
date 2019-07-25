@@ -23,6 +23,7 @@ export class HorseService {
     let gallop = this.getRandStat();
     let trot = this.getRandStat();
     let jumping = this.getRandStat();
+    let dressage = this.getRandStat();
     
 
     return this.db.collection('horses').add({

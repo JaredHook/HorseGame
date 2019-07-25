@@ -5,11 +5,12 @@
     "\\src\\app",
     "\\src\\app\\detail-box",
     "\\src\\app\\farm",
-    "\\src\\app\\Login",
+    "\\src\\app\\progressbar",
     "\\src\\app\\signup-page",
+    "\\src\\app\\stars",
     "\\src\\environments",
     "\\src\\services"
   ],
-  "SelectedNode": "\\src\\app\\Login\\login.component.ts",
+  "SelectedNode": "\\src\\app\\testing",
   "PreviewInSolutionExplorer": false
 }
