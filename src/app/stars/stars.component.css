@@ -1,0 +1,93 @@
+/*.star-ratings-css {
+  unicode-bidi: bidi-override;
+  color: #c5c5c5;
+  font-size: 25px;
+  height: 25px;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0;
+  text-shadow: 0px 1px 0 #a2a2a2;
+}
+
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+  body{
+  margin: 50px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  background: #f2fbff;
+}
+
+em {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}*/
+
+/*span {
+  font-family: arial narrow;
+}*/
+
+
+.star-ratings-sprite {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  font-size: 0;
+  height: 21px;
+  line-height: 0;
+  overflow: hidden;
+  text-indent: -999em;
+  width: 222px;
+  margin: 0 auto;
+}
+
+.star-ratings-sprite-rating {
+  background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
+  background-position: 0 100%;
+  float: left;
+  height: 21px;
+  display: block;
+}
+
+
+
+.box-content1 {
+  border: 2px solid #a4ba6d;
+  border-radius: 5px;
+  background-color: #e9feb5;
+}
+
+  .box-content1{
+    border: 50px;
+  }
+
+  .box-content1 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+.box-content1{
+  align-content: flex-end;
+}
+
+.checked {
+  color: gold;
+}
+
+hr{
+  margin:0px;
+  padding:0px;
+}
+ .header1 {
+   text-align: right;
+ }

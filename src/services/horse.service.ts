@@ -87,4 +87,9 @@ export class HorseService {
   setName(name: string) {
     this.name = name;
   }
+
+  trainHorse(id: string, stamina:number) {
+    return this.db.collection('/horses').doc(id).update({
+      'tr_stamina': stamina })
+  };
 }

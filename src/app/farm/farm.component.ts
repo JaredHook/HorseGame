@@ -3,7 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Horse } from '../horse';
-import {HorseService} from '../../services/horse.service';
+import { HorseService } from '../../services/horse.service';
 
 @Component({
   selector: 'app-farm',
@@ -27,5 +27,10 @@ export class FarmComponent implements OnInit {
           this.horse = res;
         });
     }
+  }
+
+  onBeachClick() {
+    this.horse.tr_stamina++ 
+    this.horseService.trainHorse(this.router.snapshot.params.id, this.horse.tr_stamina)
   }
 }

@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 
   firstName = new FormControl("", Validators.required);
   loginEmail: any;
+  error = false;
 
   constructor(fb: FormBuilder,
     userService: UserService,
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
     private router: Router) {
     this.userService = userService;
     this.form = fb.group({
-      "loginEmail": this.loginEmail,
+      //"loginEmail": this.loginEmail,
+      "loginEmail": ["", Validators.required],
       "password": ["", Validators.required]
     });
     horseService.setName('jason');
@@ -32,21 +34,26 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   onSubmit() {
     let userAuth = this.form;
     console.log("form submitted");
     console.log(this.form);
+    console.log('This is not logged in');
     this.userService.loginUsers(this.form.value).subscribe(
       res => {
         //console.log('return value is ' + JSON.stringify(res));
-        if (res[0].payload.doc.id) {
-          console.log(res[0].payload.doc.id)
-         new AuthService(res[0].payload.doc.id)
-          this.router.navigate(['/stable']);
-        };
+        try {
+          if (res[0].payload.doc.id) {
+            console.log(res[0].payload.doc.id)
+            new AuthService(res[0].payload.doc.id)
+            this.router.navigate(['/stable']);
+          };
+        }
+        catch (e) {
+          return this.error = true;
+        }
       })
 
     // not logged in so redirect to login page with the return url
@@ -54,7 +61,7 @@ export class LoginComponent implements OnInit {
 
   }
 
-  }
+}
 
 
 
