@@ -18,38 +18,37 @@ export class StarsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {    
+  ngOnInit() {
   }
 
-  ngOnChanges() {    
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnChanges() {
 
     try {
-      this.totalSkills = (Number(this.stamina) || 0) + (Number(this.speed) || 0) + (Number(this.gallop) || 0) + (Number(this.trot) || 0) + (Number(this.jumping) || 0) + (Number(this.dressage) || 0)
+      // tslint:disable-next-line:max-line-length
+      this.totalSkills = (Number(this.stamina) || 0) + (Number(this.speed) || 0) + (Number(this.gallop) || 0) + (Number(this.trot) || 0) + (Number(this.jumping) || 0) + (Number(this.dressage) || 0);
 
-    try {
+      try {
       // code that may throw an error...
-    }
-    catch (e) {
+    } catch (e) {
       if (e instanceof Error) {
         // properly handle Error e
-      }
-      else {
+      } else {
         // probably cannot recover...therefore, rethrow
         throw e;
       }
     }
-  }
 
-      if (isNaN(this.totalSkills)) throw 'this is not a number';
-      if (this.totalSkills == 0) throw 'total skills are not valid';
-    }
-    catch (e) {
-      console.log(e)
 
-    }
+      if (isNaN(this.totalSkills)) { throw new Error('this is not a number'); }
+      if (this.totalSkills === 0) { throw new Error('total skills are not valid'); }
+    } catch (e) {
+      console.log(e);
 
-   
+    }}}
 
-  }
-  
-}
+
+
+
+
+
