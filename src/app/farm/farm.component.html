@@ -1,17 +1,14 @@
-
 <div>
   <img src="https://ca.howrse.com/media/equideo/image/interface/header/logo/disconnected/howrse.png"
-    class="transparent horse-img">
+       class="transparent horse-img">
 </div>
 
 <div class="container">
   <main>
     <section class="flexbox">
-      <div class="row justify-content-center">
-        <div class="col-sm-12 mb-2">
-          <!--Navbar-->
-          <app-navbar></app-navbar>
-        </div>
+      <div class="row">
+        <!--Navbar-->
+        <app-navbar></app-navbar>
         <div class="col-sm-4">
           <!--Care Widget-->
           <div class="widget">
@@ -111,7 +108,11 @@
           </div>
         </div>
         <div class="col-sm-4">
-          <div></div>
+          <!--<div  class="col-sm-4 flex-column">-->
+            <div>  <!--class="skill-set text-center"--> <!--<img  class="transparent horse-img" src="assets/horses/{{breed.key}}/{{color.key}}.png">-->
+            <!--<h4  class="text-nowrap">Best Skill:</h4><strong  class="text-nowrap">Trot</strong>-->
+            </div>
+          <!--</div>-->
         </div>
         <div class="col-sm-4">
           <!--Mission Widget-->
@@ -134,7 +135,7 @@
                       <div class="grid-row">
                         <ul class="grid-table align-middle list-unstyled">
                           <li>
-                            <button class="training" style="width:50px;" (click) ="onBeachClick()">
+                            <button class="training" style="width:50px;" (click)="onBeachClick()">
                               <img src="/assets/images/beach.png" style="margin: 1px 1px 1px 1px" alt="beach">
                             </button>
                           </li>
@@ -142,6 +143,8 @@
                       </div>
                     </div>
                   </td>
+                 </tr>
+               </tbody>
             </table>
           </div>
           <!--Training Widget-->
@@ -255,4 +258,3 @@
 </div>
 <!--Beautiful Background Image-->
 <div class="body-background"></div>
-
