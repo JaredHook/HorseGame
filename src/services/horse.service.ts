@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Horse } from '../app/horse';
 import { map } from 'rxjs/operators';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,26 +18,36 @@ export class HorseService {
     return Math.floor((Math.random() * 100) + 1);
   }
 
+  getRandGender(): string {
+    if (Math.random() < 0.5) {
+      return 'Stallion';
+    } else {
+      return 'Mare';
+    }
+  }
+
   createRandomHorse(value, userId) {
     let stamina = this.getRandStat();
     let speed = this.getRandStat();
     let gallop = this.getRandStat();
     let trot = this.getRandStat();
     let jumping = this.getRandStat();
-    let dressage = this.getRandStat();
-    
-
+    let dressage = this.getRandStat();    
+    let gender = this.getRandGender();
+  
     return this.db.collection('horses').add({
       breed: value.breed,
       color: value.color,
       name: 'Strawberry',
-      gender: 'mare',
+      gender: gender,
       userId: userId,
       stamina: stamina,
       speed: speed,
       gallop: gallop,
       trot: trot,
       jumping: jumping,
+      height: 14.5,
+      weight: 400,
       energy: 100,
       health: 100,
       morale: 100,
