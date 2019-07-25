@@ -356,11 +356,11 @@
            [gallop]="horse.gallop"
            [trot]="horse.trot"
            [jumping]="horse.jumping"></app-stars>
-
-<app-progressbar [energy]="horse.energy"
-                 [health]="horse.health"
-                 [morale]="horse.morale"></app-progressbar>
-<app-detail-box></app-detail-box>
+    <app-progressbar [energy]="horse.energy"
+                     [health]="horse.health"
+                     [morale]="horse.morale"></app-progressbar>
+    <app-detail-box [horse]="horse"></app-detail-box>
+  </main>
 </div>
 <!--Beautiful Background Image-->
 <div class="body-background"></div>

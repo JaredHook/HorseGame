@@ -1,18 +1,58 @@
-<div class="container-box"> 
-  <div class="box-content">
-    <ul class="list-unstyled">
-      <li>
-        <label for="progress">Energy</label>
-        <progress max="100" [value]="energy"></progress>
-      </li>
-      <li>
-        <label for="progress">Health</label>
-        <progress max="100"  [value]="health"></progress>
-      </li>
-      <li>
-        <label for="progress">Morale</label>
-        <progress max="100"  [value]="morale"></progress>
-      </li>
-    </ul>
+<div class="box-content">
+  <div class="timer-circle">
+    <div class="timer_number">00:05</div>
+    <svg>
+      <circle r="2rem" cx="50%" cy="50%"></circle>
+    </svg>
+  </div>
+
+  <div>
+    <div class="stat">
+      <span class="stat-title">
+        Energy
+      </span>
+      <div class="meter">
+        <span></span>
+        <span class="shrinker" style="width:42%"></span>
+      </div>
+      <span class="stat-percent"> <!--{{ horse.energy }}-->  58% </span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-title">
+        Health
+      </span>
+      <div class="meter">
+        <span></span>
+        <span class="shrinker" style="width:15%"></span>
+      </div>
+      <span class="stat-percent"> <!--{{ horse.health }}-->  85% </span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-title">
+        Morale
+      </span>
+      <div class="meter">
+        <span></span>
+        <span class="shrinker" style="width:70%"></span>
+      </div>
+      <span class="stat-percent"> <!--{{ horse.morale }}-->  30% </span>
+    </div>
   </div>
 </div>
+
+<!--<ul class="list-unstyled">
+   <li>
+     <label for="progress">Energy</label>
+       <progress max="100" value="100"></progress>
+   </li>
+   <li>
+     <label for="progress">Health</label>
+       <progress max="100" value="70"></progress>
+   </li>
+   <li>
+     <label for="progress">Morale</label>
+     <progress max="100" value="70"></progress>
+   </li>
+ </ul>-->
