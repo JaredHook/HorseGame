@@ -30,7 +30,7 @@ export class FarmComponent implements OnInit {
   }
 
   onBeachClick() {
-    this.horse.tr_stamina++ 
-    this.horseService.trainHorse(this.router.snapshot.params.id, this.horse.tr_stamina)
+    this.horse.tr_stamina++;
+    this.horseService.trainHorse(this.router.snapshot.params.id, this.horse.tr_stamina);
   }
 }
