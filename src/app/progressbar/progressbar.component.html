@@ -14,9 +14,9 @@
         </span>
         <div class="meter">
           <span></span>
-          <span class="shrinker" style="width:42%"></span>
+          <span class="shrinker" [style.width.%]="energyBar"></span>
         </div>
-        <span class="stat-percent"> <!--{{ horse.energy }}-->  58% </span>
+        <span class="stat-percent"> {{ energy }}% </span>
       </div>
 
       <div class="stat">
@@ -25,9 +25,9 @@
         </span>
         <div class="meter">
           <span></span>
-          <span class="shrinker" style="width:15%"></span>
+          <span class="shrinker" [style.width.%]="healthBar"></span>
         </div>
-        <span class="stat-percent"> <!--{{ horse.health }}-->  85% </span>
+        <span class="stat-percent"> {{ health }}% </span>
       </div>
 
       <div class="stat">
@@ -36,9 +36,9 @@
         </span>
         <div class="meter">
           <span></span>
-          <span class="shrinker" style="width:70%"></span>
+          <span class="shrinker" [style.width.%]="moraleBar"></span>
         </div>
-        <span class="stat-percent"> <!--{{ horse.morale }}-->  30% </span>
+        <span class="stat-percent"> {{ morale }}% </span>
       </div>
     </div>
   </div>
