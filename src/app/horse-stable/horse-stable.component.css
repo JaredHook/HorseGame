@@ -148,11 +148,11 @@ th {
   font-size: 12px;
 }
 
-.dropdown-toggle::after {
+/*.dropdown-toggle::after {
   position: absolute;
   right: 65%;
   top: 10%;
-}
+}*/
 
 .create-new {
   font-weight: 700;
