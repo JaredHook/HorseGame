@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\e2e",
     "\\src",
     "\\src\\app",
     "\\src\\app\\detail-box",
     "\\src\\app\\farm",
-    "\\src\\app\\horse-stable",
-    "\\src\\app\\login-form",
+    "\\src\\app\\progressbar",
+    "\\src\\app\\signup-page",
     "\\src\\app\\stars",
-    "\\src\\assets"
+    "\\src\\environments",
+    "\\src\\services"
   ],
-  "SelectedNode": "\\src\\app\\stars",
+  "SelectedNode": "\\src\\app\\testing",
   "PreviewInSolutionExplorer": false
 }
