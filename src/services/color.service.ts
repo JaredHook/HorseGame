@@ -28,4 +28,16 @@ export class ColorService {
       })
     );
   }
+
+  getColorById(id: number): Observable<Color[]> {
+    return this.db.collection('/colors', ref => ref.where('color_id', '==', id)).snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data() as Color
+          const id = a.payload.doc.id
+          return { id, ...data };
+        })
+      })
+    )
+  }
 }
