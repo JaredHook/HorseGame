@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { AuthService } from './auth.service';
 import { Observable } from 'rxjs';
 import { Horse } from '../app/horse';
 import { map } from 'rxjs/operators';
-
+import { from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HorseService {
   name: string = 'greg';
-  
-  constructor(public db: AngularFirestore) { }
+  colorService: ColorService
+
+  constructor(public db: AngularFirestore, colorService: ColorService) {
+    this.colorService = colorService;
+  }
 
   getRandStat(): number {
     return Math.floor((Math.random() * 100) + 1);
@@ -26,15 +29,16 @@ export class HorseService {
     }
   }
 
-  createRandomHorse(value, userId) {
+  createRandomHorse(value, userId): Observable<DocumentReference> {
     let stamina = this.getRandStat();
     let speed = this.getRandStat();
     let gallop = this.getRandStat();
     let trot = this.getRandStat();
     let jumping = this.getRandStat();
+    let dressage = this.getRandStat();    
     let gender = this.getRandGender();
   
-    return this.db.collection('horses').add({
+   return from(this.db.collection('horses').add({
       breed: value.breed,
       color: value.color,
       name: 'Strawberry',
@@ -55,7 +59,7 @@ export class HorseService {
       tr_gallop: 0,
       tr_trot: 0,
       tr_jumping: 0
-    });
+    }))
   }
 
   getHorses(): Observable<Horse[]> {

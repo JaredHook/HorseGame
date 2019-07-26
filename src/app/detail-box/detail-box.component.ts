@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { Horse } from '../horse';
 import { BreedService } from '../../services/breed.service';
 import { Breed } from '../breed';
@@ -12,7 +12,7 @@ import { Color } from '../color';
 })
 export class DetailBoxComponent implements OnInit {
   viewMode = 'char';
-  @Input() horse: Horse;
+  @Input() horse?: Horse;
   breed: Breed;
   color: Color;
   constructor(private breedService: BreedService, private colorService: ColorService) {
@@ -20,7 +20,7 @@ export class DetailBoxComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    
   }
 
   ngOnChanges() {
