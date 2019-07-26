@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { AuthService } from './auth.service';
+import { ColorService } from './color.service';
 import { Observable } from 'rxjs';
 import { Horse } from '../app/horse';
 import { map } from 'rxjs/operators';
@@ -11,8 +11,11 @@ import { map } from 'rxjs/operators';
 })
 export class HorseService {
   name: string = 'greg';
-  
-  constructor(public db: AngularFirestore) { }
+  colorService: ColorService
+
+  constructor(public db: AngularFirestore, colorService: ColorService) {
+    this.colorService = colorService;
+  }
 
   getRandStat(): number {
     return Math.floor((Math.random() * 100) + 1);

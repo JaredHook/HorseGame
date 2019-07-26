@@ -39,8 +39,15 @@ h2 {
   font-family: arial narrow;
 }*/
 
-
+.head {
+  justify-content: space-around;
+  padding-bottom: 5px;
+}
+.container {
+  max-width: 60%;
+}
 .star-ratings-sprite {
+  display: inline-block;
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
   font-size: 0;
   height: 21px;
