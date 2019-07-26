@@ -23,8 +23,14 @@ export class ProgressbarComponent implements OnInit {
   }
 
   ngOnChanges() {
-    //this.energyBar = 100 - this.energy;
-    //this.healthBar = 100 - this.health;
-    //this.moraleBar = 100 - this.morale;
+    if (this.energy) {
+      this.energyBar = 100 - this.energy;
+    }
+    if (this.health) {
+      this.healthBar = 100 - this.health;
+    }
+    if (this.morale) {
+      this.moraleBar = 100 - this.morale;
+    }
   }
 }
