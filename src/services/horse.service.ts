@@ -11,8 +11,11 @@ import { from } from 'rxjs';
 })
 export class HorseService {
   name: string = 'greg';
-  
-  constructor(public db: AngularFirestore) { }
+  colorService: ColorService
+
+  constructor(public db: AngularFirestore, colorService: ColorService) {
+    this.colorService = colorService;
+  }
 
   getRandStat(): number {
     return Math.floor((Math.random() * 100) + 1);
