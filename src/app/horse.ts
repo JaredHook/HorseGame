@@ -1,3 +1,6 @@
+import { Color } from './color';
+import { Breed } from './breed';
+
 export class Horse {
   id: string;
   breed: number;
@@ -19,4 +22,6 @@ export class Horse {
   tr_stamina: number;
   tr_trot: number;
   trot: number;
+  c: Color;
+  b: Breed;
 }
