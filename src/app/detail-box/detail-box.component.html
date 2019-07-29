@@ -14,7 +14,7 @@
             <strong>Breed</strong>: <span class="breed">{{ breed.breed }}</span>
           </div>
           <div>
-            <strong>Age</strong>: 10 years
+            <strong>Age</strong>: {{ horse }}
           </div>
         </div>
 
@@ -41,7 +41,7 @@
             <strong>Coat</strong>: {{ color.color }}
           </div>
           <div>
-            <strong>Date of Birth</strong>: 10/1/2011
+            <strong>Date of Birth</strong>: {{ horse.dob.seconds * 1000 | date:'MM-dd-yyyy' }}
           </div>
         </div>
 

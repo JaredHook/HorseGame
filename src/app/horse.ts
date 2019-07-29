@@ -14,6 +14,9 @@ export class Horse {
   name: string;
   speed: number;
   stamina: number;
+  dob: any;
+  months: number;
+  years: number;
   height: number;
   weight: number;
   tr_gallop: number;

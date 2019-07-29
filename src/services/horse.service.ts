@@ -35,11 +35,12 @@ export class HorseService {
     let jumping = this.getRandStat();
     let dressage = this.getRandStat();    
     let gender = this.getRandGender();
+    let today = new Date();
   
    return from(this.db.collection('horses').add({
       breed: value.breed,
       color: value.color,
-      name: 'Strawberry',
+      name: 'Watermelon II',
       gender: gender,
       userId: userId,
       stamina: stamina,
@@ -47,6 +48,7 @@ export class HorseService {
       gallop: gallop,
       trot: trot,
       jumping: jumping,
+      dob: today,
       height: 14.5,
       weight: 400,
       energy: 100,

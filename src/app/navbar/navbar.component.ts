@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HorseService } from '../../services/horse.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public horseService: HorseService) { }
 
   ngOnInit() {
   }
 
+  generateRandomHorse() {
+    this.horseService.createRandomHorse(new MockHorse(), sessionStorage.getItem('uid'));
+  }
+  
+}
+
+export class MockHorse {
+  
+  breed = 1;
+  color = 1;
 }

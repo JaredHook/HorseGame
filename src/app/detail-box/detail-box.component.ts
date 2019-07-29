@@ -55,4 +55,5 @@ export class DetailBoxComponent implements OnInit {
       });
     return this.color;
   }
+
 }

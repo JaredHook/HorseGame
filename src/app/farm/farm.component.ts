@@ -17,6 +17,7 @@ export class FarmComponent implements OnInit {
   horseService: HorseService;
   colorService: ColorService;
   breedService: BreedService;
+
   constructor(private router: ActivatedRoute, horseService: HorseService, colorService: ColorService, breedService: BreedService) {
     this.horseService = horseService;
     this.colorService = colorService;
@@ -32,7 +33,15 @@ export class FarmComponent implements OnInit {
       this.horseService.getHorseById(this.router.snapshot.params.id).subscribe(
         res => {
           this.horse = res;
-          this.getColorBreedById(this.horse.breed, this.horse.color)
+          this.getColorBreedById(this.horse.breed, this.horse.color);
+
+          let today = Date.now();
+          let age = today - (this.horse.dob.seconds * 1000);
+          age = Math.floor((age / (24 * 3600)) / 1000) * 2;
+          if (age >= 12) {
+            this.horse.years = Math.floor(age/12);
+            this.horse.months = age;
+          }
         });
     }
   }
