@@ -14,7 +14,8 @@
             <strong>Breed</strong>: <span class="breed">{{ breed.breed }}</span>
           </div>
           <div>
-            <strong>Age</strong>: {{ horse }}
+            <strong>Age</strong>: <span *ngIf="horse.years">{{ horse.years }} Years </span>
+            <span *ngIf="horse.months">{{ horse.months }} Months </span>
           </div>
         </div>
 

@@ -39,7 +39,9 @@ export class FarmComponent implements OnInit {
           let age = today - (this.horse.dob.seconds * 1000);
           age = Math.floor((age / (24 * 3600)) / 1000) * 2;
           if (age >= 12) {
-            this.horse.years = Math.floor(age/12);
+            this.horse.years = Math.floor(age / 12);
+            this.horse.months = (age % 12);
+          } else {
             this.horse.months = age;
           }
         });
