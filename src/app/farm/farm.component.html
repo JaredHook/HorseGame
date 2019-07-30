@@ -43,10 +43,16 @@
                       <img src="/assets/images/stroke.png" style="margin: 1px 1px 1px 1px" alt="stroke">
                     </button>
                     <div>Stroke</div>
+                    <!--horse can nurse if younger than 8months-->
                     <button class="care" style="width:50px;">
                       <img src="/assets/images/nurse.png" style="margin: 1px 1px 1px 1px" alt="nurse">
                     </button>
                     <div>Nurse</div>
+                    <!--play button if horse is older than 8months
+                        <button class="care" style="width:50px;">
+                      <img src="/assets/images/play.png" style="margin: 1px 1px 1px 1px" alt="play">
+                    </button>
+                    <div>Play</div>-->
                   </td>
                 </tr>
               </tbody>
@@ -179,25 +185,29 @@
             <div id="rides" class="widget-item">
               <h3 id="rides-header" class="widget-title">Rides</h3>
             </div>
-            <table class="width-100">
+            <table class="table table-border">
               <tbody>
-                <tr class="dashed">
-                  <td class="col-0 first" colspan="2">
-                    <div class="float-right"></div>
-                    <div class="grid-table">
-                      <div class="grid-row">
-                        <ul class="grid-table align-middle list-unstyled">
-                          <li>
-                            <button class="training" style="width:50px;" (click)="onBeachClick()">
-                              <img src="/assets/images/beach.png" style="margin: 1px 1px 1px 1px" alt="beach">
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                <tr>
+                  <td>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/forest.png" style="margin: 1px 1px 1px 1px" alt="forest">
+                    </button>
+                    <div>Forest</div>
                   </td>
-                 </tr>
-               </tbody>
+                  <td>
+                    <button class="care" style="width:50px;" (click)="onBeachClick()">
+                      <img src="/assets/images/beach.png" style="margin: 1px 1px 1px 1px" alt="beach">
+                    </button>
+                    <div>Beach</div>
+                  </td>
+                  <td>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/mountain.png" style="margin: 1px 1px 1px 1px" alt="mountain">
+                    </button>
+                    <div>Mountain</div>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <!--Training Widget-->
