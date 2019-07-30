@@ -5,12 +5,11 @@
     "\\src\\app",
     "\\src\\app\\detail-box",
     "\\src\\app\\farm",
-    "\\src\\app\\progressbar",
+    "\\src\\app\\login",
     "\\src\\app\\signup-page",
     "\\src\\app\\stars",
-    "\\src\\environments",
     "\\src\\services"
   ],
-  "SelectedNode": "\\src\\app\\testing",
+  "SelectedNode": "\\src\\app\\stars\\stars.component.css",
   "PreviewInSolutionExplorer": false
 }

@@ -1,4 +1,4 @@
-<div class="container-box">
+<div class="container">
   <div class="page1 box-content1">
     <div class="header">
       <span><strong> Skills</strong></span>
@@ -9,11 +9,11 @@
 
     <div>
 
-      <div class="star-ratings-sprite"><span [ngStyle]="{'width.%': stamina}" class="star-ratings-sprite-rating"></span></div>
-      <span class="head" max="100"><strong>Stamina: {{stamina}}</strong></span>
-      <div class="star-ratings-sprite"><span [ngStyle]="{'width.%': stamina}" class="star-ratings-sprite-rating"></span><span>stamina</span></div>
-      <span class="head" max="100"><strong>{{stamina}}</strong></span>
-
+      <div class="star-ratings-sprite">
+        <span class="head" max="100"><strong>Stamina: {{stamina}}</strong></span>
+        <span [ngStyle]="{'width.%': stamina}" class="star-ratings-sprite-rating">Stamina</span>
+      </div>
+      
     </div>
     <hr>
     <div>

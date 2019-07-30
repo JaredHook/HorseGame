@@ -59,7 +59,9 @@ h2 {
   display: block;
 }
 
-
+.container {
+  max-width: 60%;
+}
 
 .box-content1 {
   border: 2px solid #a4ba6d;
