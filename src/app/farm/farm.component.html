@@ -67,7 +67,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <button class="care" style="width:50px;">
+                    <button class="care" style="width:50px;" (click)="bed()">
                       <img src="/assets/images/lune.png" style="margin: 1px 1px 1px 1px" alt="lune">
                     </button>
                     <div>Put to bed</div>
@@ -173,7 +173,7 @@
           <!--<div  class="col-sm-4 flex-column">-->
           <div class="skill-set text-center">
             <img class="transparent horse-img" src="assets/horses/{{horse.b.key}}/{{horse.c.key}}.png">
-            <h4 class="text-nowrap">Best Skill:</h4><strong class="text-nowrap">Trot</strong>
+            <!--<h4 class="text-nowrap">Best Skill:</h4><strong class="text-nowrap">Trot</strong>-->
           </div>
         </div>
 
@@ -311,8 +311,9 @@
       </div>
     </section>
     <app-progressbar [energy]="horse.energy"
-    [health]="horse.health"
-    [morale]="horse.morale"></app-progressbar>
+                     [health]="horse.health"
+                     [morale]="horse.morale"
+                     [time]="horse.dayTime"></app-progressbar>
 
     <app-stars [stamina]="horse.stamina"
                [speed]="horse.speed"

@@ -55,6 +55,7 @@ export class FarmComponent implements OnInit {
   feed() {
     this.horse.health += 20;
     this.horse.morale += 5;
+    this.horse.dayTime -= 1;
     this.horseService.careForHorse(this.router.snapshot.params.id,
                                    this.horse.energy,
                                    this.horse.health,
@@ -62,4 +63,7 @@ export class FarmComponent implements OnInit {
                                    this.horse.dayTime);
   }
 
+  bed() {
+    this.horse.isInBed = true;
+  }
 }

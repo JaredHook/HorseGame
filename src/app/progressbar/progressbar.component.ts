@@ -10,6 +10,7 @@ export class ProgressbarComponent implements OnInit {
   @Input() public energy: number;
   @Input() public health: number;
   @Input() public morale: number;
+  @Input() public time: number;
   public energyBar = 0;
   public healthBar = 0;
   public moraleBar = 0;
