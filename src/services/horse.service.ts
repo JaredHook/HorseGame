@@ -52,8 +52,8 @@ export class HorseService {
       height: 14.5,
       weight: 400,
       energy: 100,
-      health: 100,
-      morale: 100,
+      health: 50,
+      morale: 10,
       tr_stamina: 0,
       tr_speed: 0,
       tr_gallop: 0,
@@ -114,5 +114,14 @@ export class HorseService {
   trainHorse(id: string, stamina:number) {
     return this.db.collection('/horses').doc(id).update({
       'tr_stamina': stamina })
+  };
+
+  careForHorse(id: string, energy: number, health: number, morale: number, dayTime: number) {
+    return this.db.collection('/horses').doc(id).update({
+      'energy': energy,
+      'health': health,
+      'morale': morale,
+      'dayTime': dayTime
+    })
   };
 }

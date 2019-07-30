@@ -82,7 +82,6 @@ export class SignupPageComponent implements OnInit {
     this.allColors = this.getColors();
   }
 
-
   getBreeds(): Breed[] {
     // this.http
     //  .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_breeds')

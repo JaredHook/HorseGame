@@ -51,4 +51,15 @@ export class FarmComponent implements OnInit {
     this.horse.tr_stamina++ 
     this.horseService.trainHorse(this.router.snapshot.params.id, this.horse.tr_stamina)
   }
+
+  feed() {
+    this.horse.health += 20;
+    this.horse.morale += 5;
+    this.horseService.careForHorse(this.router.snapshot.params.id,
+                                   this.horse.energy,
+                                   this.horse.health,
+                                   this.horse.morale,
+                                   this.horse.dayTime);
+  }
+
 }
