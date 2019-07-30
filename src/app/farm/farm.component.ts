@@ -25,25 +25,15 @@ export class FarmComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.router.paramMap.pipe(map(() => window.history.state)).subscribe(res => {
+    this.router.paramMap.pipe(map(() => window.history.state)).subscribe(res => {//when you enter the page at first
       this.horse = res as Horse;
       this.getColorBreedById(this.horse.breed, this.horse.color)
     });
-    if (!this.horse.id) {
+    if (!this.horse.id) {// when you reload the page
       this.horseService.getHorseById(this.router.snapshot.params.id).subscribe(
         res => {
           this.horse = res;
           this.getColorBreedById(this.horse.breed, this.horse.color);
-
-          let today = Date.now();
-          let age = today - (this.horse.dob.seconds * 1000);
-          age = Math.floor((age / (24 * 3600)) / 1000) * 2;
-          if (age >= 12) {
-            this.horse.years = Math.floor(age / 12);
-            this.horse.months = (age % 12);
-          } else {
-            this.horse.months = age;
-          }
         });
     }
   }

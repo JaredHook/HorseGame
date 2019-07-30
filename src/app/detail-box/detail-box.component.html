@@ -16,6 +16,7 @@
           <div>
             <strong>Age</strong>: <span *ngIf="horse.years">{{ horse.years }} Years </span>
             <span *ngIf="horse.months">{{ horse.months }} Months </span>
+            <span *ngIf="!horse.years && !horse.months"> Newborn </span>
           </div>
         </div>
 
