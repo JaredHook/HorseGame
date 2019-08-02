@@ -53,14 +53,23 @@ export class FarmComponent implements OnInit {
   }
 
   feed() {
-    this.horse.health += 20;
-    this.horse.morale += 5;
-    this.horse.dayTime -= 1;
-    this.horseService.careForHorse(this.router.snapshot.params.id,
-                                   this.horse.energy,
-                                   this.horse.health,
-                                   this.horse.morale,
-                                   this.horse.dayTime);
+    if (this.horse.dayTime > 8) {
+      this.horse.dayTime -= 1;
+      this.horse.isFed = true;
+      //check horse health and either add 20 or if that would put it above 100 set it to 100
+      this.horse.health = (this.horse.health <= 80) ? this.horse.health += 20 : 100;
+      //check horse morale and either add 5 to it or if that would put it above 100 set it to 100
+      this.horse.morale = (this.horse.morale <= 95) ? this.horse.morale += 5 : 100;
+      //check horse energy and either add 5 to it or if that would put it above 100 set it to 100
+      this.horse.energy = (this.horse.energy <= 95) ? this.horse.energy += 5 : 100;
+
+      this.horseService.feedHorse(this.router.snapshot.params.id,
+        this.horse.energy,
+        this.horse.health,
+        this.horse.morale,
+        this.horse.dayTime,
+        this.horse.isFed);
+    }
   }
 
   bed() {

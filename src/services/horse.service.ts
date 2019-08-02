@@ -60,7 +60,9 @@ export class HorseService {
       tr_speed: 0,
       tr_gallop: 0,
       tr_trot: 0,
-      tr_jumping: 0
+      tr_jumping: 0,
+      isInBed: false,
+      isFed: false
     }))
   }
 
@@ -118,12 +120,13 @@ export class HorseService {
       'tr_stamina': stamina })
   };
 
-  careForHorse(id: string, energy: number, health: number, morale: number, dayTime: number) {
+  feedHorse(id: string, energy: number, health: number, morale: number, dayTime: number, isFed: boolean) {
     return this.db.collection('/horses').doc(id).update({
       'energy': energy,
       'health': health,
       'morale': morale,
-      'dayTime': dayTime
+      'dayTime': dayTime,
+      'isFed' : isFed
     })
   };
 }

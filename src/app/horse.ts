@@ -30,4 +30,5 @@ export class Horse {
   c: Color;
   b: Breed;
   isInBed: boolean;
+  isFed: boolean;
 }
