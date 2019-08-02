@@ -14,7 +14,9 @@
             <strong>Breed</strong>: <span class="breed">{{ breed.breed }}</span>
           </div>
           <div>
-            <strong>Age</strong>: 10 years
+            <strong>Age</strong>: <span *ngIf="horse.years">{{ horse.years }} Years </span>
+            <span *ngIf="horse.months">{{ horse.months }} Months </span>
+            <span *ngIf="!horse.years && !horse.months"> Newborn </span>
           </div>
         </div>
 
@@ -41,7 +43,7 @@
             <strong>Coat</strong>: {{ color.color }}
           </div>
           <div>
-            <strong>Date of Birth</strong>: 10/1/2011
+            <strong>Date of Birth</strong>: {{ horse.dob.seconds * 1000 | date:'MM-dd-yyyy' }}
           </div>
         </div>
 

@@ -10,10 +10,15 @@ export class Horse {
   gender: string;
   health: number;
   jumping: number;
+  dressage: number;
   morale: number;
   name: string;
   speed: number;
   stamina: number;
+  dayTime: number;
+  dob: any;
+  months: number;
+  years: number;
   height: number;
   weight: number;
   tr_gallop: number;
@@ -24,4 +29,5 @@ export class Horse {
   trot: number;
   c: Color;
   b: Breed;
+  isInBed: boolean;
 }

@@ -35,23 +35,27 @@ export class HorseService {
     let jumping = this.getRandStat();
     let dressage = this.getRandStat();    
     let gender = this.getRandGender();
+    let today = new Date();
   
    return from(this.db.collection('horses').add({
       breed: value.breed,
       color: value.color,
-      name: 'Strawberry',
+      name: 'Watermelon II',
       gender: gender,
       userId: userId,
       stamina: stamina,
       speed: speed,
       gallop: gallop,
+      dressage: dressage,
       trot: trot,
       jumping: jumping,
+      dob: today,
       height: 14.5,
       weight: 400,
       energy: 100,
-      health: 100,
-      morale: 100,
+      health: 50,
+      morale: 10,
+      dayTime: 24,
       tr_stamina: 0,
       tr_speed: 0,
       tr_gallop: 0,
@@ -66,6 +70,7 @@ export class HorseService {
         return actions.map(a => {
           const data = a.payload.doc.data() as Horse
           const id = a.payload.doc.id
+          this.calculateAge(data);
           return { id, ...data };
         })
       })
@@ -75,12 +80,30 @@ export class HorseService {
   getHorseById(id: string): Observable<Horse> {
     return this.db.collection('/horses').doc(id).snapshotChanges().pipe(
       map(res => {
-        const data = res.payload.data() as Horse
-        return  data ;
-
+        const horse = res.payload.data() as Horse;
+        this.calculateAge(horse);
+        return horse;
       })
     )
   }
+
+  calculateAge(horse: Horse) {
+    if (horse.dob) {
+      let today = Date.now(); // get today's date
+      let age = today - (horse.dob.seconds * 1000); //compare today's date with the birthday of the horse * 1000 to convert the server call into milliseconds
+      age = Math.floor((age / (24 * 3600)) / 1000) * 2; // convert milliseconds into days value, multiply by 2 as each day is 2 months in game logic
+      if (age >= 12) { //if age is more than a year set years and months accordingly
+        horse.years = Math.floor(age / 12);
+        horse.months = (age % 12);
+      } else { // otherwise age is less than a year and we can set months straight into age
+        horse.months = age;
+      }
+    } else {
+      let newDoB = new Date();
+      horse.dob = newDoB;
+    }
+  }
+
 
   getName(): string {
     return this.name;
@@ -93,5 +116,14 @@ export class HorseService {
   trainHorse(id: string, stamina:number) {
     return this.db.collection('/horses').doc(id).update({
       'tr_stamina': stamina })
+  };
+
+  careForHorse(id: string, energy: number, health: number, morale: number, dayTime: number) {
+    return this.db.collection('/horses').doc(id).update({
+      'energy': energy,
+      'health': health,
+      'morale': morale,
+      'dayTime': dayTime
+    })
   };
 }

@@ -15,13 +15,74 @@
             <div id="care" class="widget-item">
               <h3 id="care-header" class="widget-title">Care</h3>
             </div>
+            <table class="table table-border">
+              <tbody>
+                <tr>
+                  <td>
+                    <button class="care" style="width:50px;" (click)="feed()">
+                      <img src="/assets/images/hay.png" style="margin: 1px 1px 1px 1px" alt="hay">
+                    </button>
+                    <div>Feed</div>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/brush.png" style="margin: 1px 1px 1px 1px" alt="groom">
+                    </button>
+                    <div>Groom</div>
+                  </td>
+                  <td>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/drink.png" style="margin: 1px 1px 1px 1px" alt="drink">
+                    </button>
+                    <div>Drink</div>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/carrot.png" style="margin: 1px 1px 1px 1px" alt="carrot">
+                    </button>
+                    <div>Carrot</div>
+                  </td>
+                  <td>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/stroke.png" style="margin: 1px 1px 1px 1px" alt="stroke">
+                    </button>
+                    <div>Stroke</div>
+                    <!--horse can nurse if younger than 8months-->
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/nurse.png" style="margin: 1px 1px 1px 1px" alt="nurse">
+                    </button>
+                    <div>Nurse</div>
+                    <!--play button if horse is older than 8months
+                        <button class="care" style="width:50px;">
+                      <img src="/assets/images/play.png" style="margin: 1px 1px 1px 1px" alt="play">
+                    </button>
+                    <div>Play</div>-->
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <!--Night Widget-->
           <div class="widget">
             <div id="night" class="widget-item">
               <h3 id="night-header" class="widget-title">Night</h3>
             </div>
+            <table class="table table-border">
+              <tbody>
+                <tr>
+                  <td>
+                    <button class="care" style="width:50px;" (click)="bed()">
+                      <img src="/assets/images/lune.png" style="margin: 1px 1px 1px 1px" alt="lune">
+                    </button>
+                    <div>Put to bed</div>
+                  </td>
+                  <td>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/age.png" style="margin: 1px 1px 1px 1px" alt="age">
+                    </button>
+                    <div>Age</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+
           <!--Equestrian Center Widget-->
           <div class="widget">
             <div id="equestrian" class="widget-item">
@@ -107,12 +168,15 @@
             </table>
           </div>
         </div>
+
         <div class="col-sm-4">
           <!--<div  class="col-sm-4 flex-column">-->
-            <div class="skill-set text-center"><img  class="transparent horse-img" src="assets/horses/{{horse.b.key}}/{{horse.c.key}}.png">
-            <h4  class="text-nowrap">Best Skill:</h4><strong  class="text-nowrap">Trot</strong>
-            </div>
+          <div class="skill-set text-center">
+            <img class="transparent horse-img" src="assets/horses/{{horse.b.key}}/{{horse.c.key}}.png">
+            <!--<h4 class="text-nowrap">Best Skill:</h4><strong class="text-nowrap">Trot</strong>-->
+          </div>
         </div>
+
         <div class="col-sm-4">
           <!--Mission Widget-->
           <div class="widget">
@@ -125,25 +189,29 @@
             <div id="rides" class="widget-item">
               <h3 id="rides-header" class="widget-title">Rides</h3>
             </div>
-            <table class="width-100">
+            <table class="table table-border">
               <tbody>
-                <tr class="dashed">
-                  <td class="col-0 first" colspan="2">
-                    <div class="float-right"></div>
-                    <div class="grid-table">
-                      <div class="grid-row">
-                        <ul class="grid-table align-middle list-unstyled">
-                          <li>
-                            <button class="training" style="width:50px;" (click)="onBeachClick()">
-                              <img src="/assets/images/beach.png" style="margin: 1px 1px 1px 1px" alt="beach">
-                            </button>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                <tr>
+                  <td>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/forest.png" style="margin: 1px 1px 1px 1px" alt="forest">
+                    </button>
+                    <div>Forest</div>
                   </td>
-                 </tr>
-               </tbody>
+                  <td>
+                    <button class="care" style="width:50px;" (click)="onBeachClick()">
+                      <img src="/assets/images/beach.png" style="margin: 1px 1px 1px 1px" alt="beach">
+                    </button>
+                    <div>Beach</div>
+                  </td>
+                  <td>
+                    <button class="care" style="width:50px;">
+                      <img src="/assets/images/mountain.png" style="margin: 1px 1px 1px 1px" alt="mountain">
+                    </button>
+                    <div>Mountain</div>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <!--Training Widget-->
@@ -242,16 +310,17 @@
         </div>
       </div>
     </section>
+    <app-progressbar [energy]="horse.energy"
+                     [health]="horse.health"
+                     [morale]="horse.morale"
+                     [time]="horse.dayTime"></app-progressbar>
+
     <app-stars [stamina]="horse.stamina"
                [speed]="horse.speed"
                [dressage]="horse.dressage"
                [gallop]="horse.gallop"
                [trot]="horse.trot"
                [jumping]="horse.jumping"></app-stars>
-
-    <app-progressbar [energy]="horse.energy"
-                     [health]="horse.health"
-                     [morale]="horse.morale"></app-progressbar>
     <app-detail-box [horse]="horse"></app-detail-box>
   </main>
 </div>
