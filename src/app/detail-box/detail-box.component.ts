@@ -15,13 +15,9 @@ export class DetailBoxComponent implements OnInit {
   @Input() horse?: Horse;
   breed: Breed;
   color: Color;
-  constructor(private breedService: BreedService, private colorService: ColorService) {
-    
-  }
+  constructor(private breedService: BreedService, private colorService: ColorService) {}
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   ngOnChanges() {
     this.getBreed();
