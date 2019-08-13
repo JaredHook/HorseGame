@@ -27,25 +27,25 @@ export class FarmComponent implements OnInit {
   ngOnInit() {
     this.router.paramMap.pipe(map(() => window.history.state)).subscribe(res => {//when you enter the page at first
       this.horse = res as Horse;
-      this.getColorBreedById(this.horse.breed, this.horse.color)
+      //this.getColorBreedById(this.horse.breed, this.horse.color)
     });
     if (!this.horse.id) {// when you reload the page
       this.horseService.getHorseById(this.router.snapshot.params.id).subscribe(
         res => {
           this.horse = res;
-          this.getColorBreedById(this.horse.breed, this.horse.color);
+          //this.getColorBreedById(this.horse.breed, this.horse.color);
         });
     }
   }
 
-  getColorBreedById(breedId: number, colorId: number) {
-    this.colorService.getColorById(colorId).subscribe(res => {
-      this.horse.c = res[0];
-    })
-    this.breedService.getBreedById(breedId).subscribe(res => {
-      this.horse.b = res[0];
-    })
-  }
+  //getColorBreedById(breedId: number, colorId: number) {
+  //  this.colorService.getColorById(colorId).subscribe(res => {
+  //    this.horse.c = res[0];
+  //  })
+  //  this.breedService.getBreedById(breedId).subscribe(res => {
+  //    this.horse.b = res[0];
+  //  })
+  //}
 
   onBeachClick() {
     this.horse.tr_stamina++ 

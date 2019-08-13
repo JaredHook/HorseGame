@@ -57,7 +57,7 @@
         <tbody>
           <tr>
             <td *ngFor="let horse of horses"> 
-              <div><img src="assets/images/gr-c-1.png" width="40" height="40" /><a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a></div>
+              <div><img src="assets/horses_small/{{horse.b.key}}/{{horse.c.key}}.png" width="40" height="40" /><a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a></div>
               <div><img src="assets/images/brush.png" /><img src="assets/images/bonus.png" /></div>
             </td>
           </tr>

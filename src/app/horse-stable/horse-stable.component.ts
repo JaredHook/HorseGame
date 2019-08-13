@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class HorseStableComponent implements OnInit {
   horseService: HorseService;
   horses: Horse[] = [];
+  horse: Horse;
 
   constructor(horseService: HorseService,
     private router: Router) {

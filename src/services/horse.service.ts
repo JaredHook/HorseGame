@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Horse } from '../app/horse';
 import { map } from 'rxjs/operators';
 import { from } from 'rxjs';
+import { ColorService } from './color.service';
+import { BreedService } from './breed.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,9 @@ import { from } from 'rxjs';
 export class HorseService {
   name: string = 'greg';
 
-  constructor(public db: AngularFirestore) {
+  constructor(public db: AngularFirestore,
+              private colorService: ColorService,
+              private breedService: BreedService) {
   }
 
   getRandStat(): number {
@@ -68,10 +72,11 @@ export class HorseService {
 
   getHorses(): Observable<Horse[]> {
     return this.db.collection('/horses', ref => ref.where('userId', '==', sessionStorage.getItem('uid'))).snapshotChanges().pipe(
-      map(actions => {
+      map(actions => {// Jared figure out merge maps to make this work
         return actions.map(a => {
-          const data = a.payload.doc.data() as Horse
-          const id = a.payload.doc.id
+          const data = a.payload.doc.data() as Horse;
+          const id = a.payload.doc.id;
+          this.getColorBreedById(data);
           this.calculateAge(data);
           return { id, ...data };
         })
@@ -84,6 +89,7 @@ export class HorseService {
       map(res => {
         const horse = res.payload.data() as Horse;
         this.calculateAge(horse);
+        this.getColorBreedById(horse);
         return horse;
       })
     )
@@ -106,6 +112,14 @@ export class HorseService {
     }
   }
 
+  getColorBreedById(horse: Horse) {
+    this.colorService.getColorById(horse.color).subscribe(res => {
+      horse.c = res[0];
+    })
+    this.breedService.getBreedById(horse.breed).subscribe(res => {
+      horse.b = res[0];
+    })
+  }
 
   getName(): string {
     return this.name;
