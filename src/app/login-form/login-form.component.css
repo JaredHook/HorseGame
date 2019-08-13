@@ -68,9 +68,9 @@ input[type="checkbox"] {
   box-shadow: 0 1px 1px rgba(233, 18, 18, 0.10), 0 1px 1px rgba(233, 18, 18, 0.10);
 }
 
- .is-invalid::placeholder {
-    color: rgba(233, 18, 18, 0.70);
-  }
+.is-invalid::placeholder {
+  color: rgba(233, 18, 18, 0.70);
+}
 
 .login-form {
   display: block;
