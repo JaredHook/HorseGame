@@ -17,7 +17,6 @@
     font-size: 18px;
 }
 
-
 .dropdown:hover  .dropdown-menu {
     display: block;
 }
@@ -73,4 +72,3 @@
 /*.dropdown:hover a {
     background: blue;
 }*/
-
