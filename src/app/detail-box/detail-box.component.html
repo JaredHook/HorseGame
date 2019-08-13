@@ -1,0 +1,156 @@
+<div class="container">
+
+  <ul class="nav nav-tabs">
+    <li [class.active]="viewMode == 'char'" rel="char"><a (click)="viewMode ='char'">Characteristics</a></li>
+    <li [class.active]="viewMode == 'genetic'" rel="genetic"><a (click)="viewMode ='genetic'">Genetic</a></li>
+    <li [class.active]="viewMode == 'bonus'" rel="bonus"><a (click)="viewMode ='bonus'">Bonus</a></li>
+  </ul>
+
+  <div class="box-content" [ngSwitch]="viewMode">
+    <div id="char" *ngSwitchCase="'char'">
+      <div class="horse-info">
+        <div class="flex-row-between">
+          <div>
+            <strong>Breed</strong>: <span class="breed">{{ breed.breed }}</span>
+          </div>
+          <div>
+            <strong>Age</strong>: <span *ngIf="horse.years">{{ horse.years }} Years </span>
+            <span *ngIf="horse.months">{{ horse.months }} Months </span>
+            <span *ngIf="!horse.years && !horse.months"> Newborn </span>
+          </div>
+        </div>
+
+        <div class="flex-row-between">
+          <div>
+            <strong>Species</strong>: Riding Horse
+          </div>
+          <div>
+            <strong>Height</strong>: {{ horse.height }} Hands
+          </div>
+        </div>
+
+        <div class="flex-row-between">
+          <div>
+            <strong>Gender</strong>: {{ horse.gender }}
+          </div>
+          <div>
+            <strong>Weight</strong>: {{ horse.weight }} kg
+          </div>
+        </div>
+
+        <div class="flex-row-between">
+          <div>
+            <strong>Coat</strong>: {{ color.color }}
+          </div>
+          <div>
+            <strong>Date of Birth</strong>: {{ horse.dob.seconds * 1000 | date:'MM-dd-yyyy' }}
+          </div>
+        </div>
+
+        <div class="flex-row-between">
+          <div>
+            <strong>Producer</strong>: Emma
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-border">
+        <thead>
+          <tr>
+            <th>Tack</th>
+            <th>Items</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div>Competitions</div>
+              <div>Bonuses</div>
+            </td>
+            <td>
+              <em>None for the moment!</em>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="4">Victories</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td>
+              <div id="trophy"></div>
+            </td>
+            <td>
+              <div id="trophy-silver"></div>
+            </td>
+            <td>
+              <div id="trophy-bronze"></div>
+            </td>
+          </tr>
+          <tr class="victory">
+            <td class="victory-title">Galloping race</td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="victory">
+            <td class="victory-title">Trotting race</td>
+            <td>2</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="victory">
+            <td class="victory-title">Cross-country</td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="victory">
+            <td class="victory-title">Show jumping</td>
+            <td>6</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr class="victory">
+            <td class="victory-title">Dressage</td>
+            <td>4</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="genetic" *ngSwitchCase="'genetic'">
+      <div class="horse-info">
+        <div class="genetic-title">
+          <div>
+            <strong>Genetic potential</strong>
+          </div>
+          <div>
+            <strong>Total: 1325.72</strong>
+          </div>
+        </div>
+
+        <div class="flex-row-between">
+          <div>
+            <strong>Coat</strong>: Chestnut
+          </div>
+          <div>
+            <strong>Date of Birth</strong>: 10/1/2011
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="bonus" *ngSwitchCase="'bonus'">
+      <p>Some content in menu 2.</p>
+    </div>
+  </div>
+</div>

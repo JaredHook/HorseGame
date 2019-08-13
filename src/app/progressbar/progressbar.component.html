@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="box-content">
+    <div class="timer-circle">
+      <div class="timer_number">{{ time }}</div>
+      <svg>
+        <circle r="2rem" cx="50%" cy="50%"></circle>
+      </svg>
+    </div>
+
+    <div>
+      <div class="stat">
+        <span class="stat-title">
+          Energy
+        </span>
+        <div class="meter">
+          <span></span>
+          <span class="shrinker" [style.width.%]="energyBar"></span>
+        </div>
+        <span class="stat-percent"> {{ energy }}% </span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-title">
+          Health
+        </span>
+        <div class="meter">
+          <span></span>
+          <span class="shrinker" [style.width.%]="healthBar"></span>
+        </div>
+        <span class="stat-percent"> {{ health }}% </span>
+      </div>
+
+      <div class="stat">
+        <span class="stat-title">
+          Morale
+        </span>
+        <div class="meter">
+          <span></span>
+          <span class="shrinker" [style.width.%]="moraleBar"></span>
+        </div>
+        <span class="stat-percent"> {{ morale }}% </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!--<ul class="list-unstyled">
+     <li>
+       <label for="progress">Energy</label>
+         <progress max="100" value="100"></progress>
+     </li>
+     <li>
+       <label for="progress">Health</label>
+         <progress max="100" value="70"></progress>
+     </li>
+     <li>
+       <label for="progress">Morale</label>
+       <progress max="100" value="70"></progress>
+     </li>
+   </ul>-->

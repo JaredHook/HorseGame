@@ -1,0 +1,117 @@
+.meter {
+  height: 10px;
+  position: relative;
+  background: #a8a73e;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 1px;
+  width: 100%;
+  display: inline-block;
+  margin: 6px auto;
+  /*box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);*/
+}
+
+.container {
+  max-width: 60%;
+}
+
+  .meter > span {
+    display: block;
+    height: 100%;
+    border-radius: 5px;
+    background: linear-gradient(90deg, red 0%, yellow 50%, lime 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .meter > .shrinker {
+    background: #a8a73e;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+.stat {
+  display: grid;
+  grid-template-columns: [first] 25% auto [last] 15%;
+  margin: .25rem;
+}
+
+.stat-percent {
+  margin-left: auto;
+}
+
+.box-content {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.timer-circle {
+  position: relative;
+  margin: auto;
+  height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+}
+
+
+.timer_number {
+  color: black;
+  display: inline-block;
+  line-height: 4rem;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 4.5rem;
+  height: 4.5rem;
+  transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+  svg circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: .5rem;
+    stroke: #8f982d;
+    fill: none;
+    /*animation: countdown 10s linear infinite forwards;*/
+  }
+
+progress {
+  height: 8px;
+  border-radius: 5px;
+  vertical-align: middle;
+  padding-right: 10px;
+}
+
+  /*if Strawberry was a unicorn
+  progress[value]::-webkit-progress-value {
+    background-image: -webkit-linear-gradient(-45deg, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)), -webkit-linear-gradient(left, #09c, #f44);
+    border-radius: 2px;
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+  }*/
+
+  progress[value]::-webkit-progress-value {
+    height: 8px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, red 0%, yellow 50%, lime 100%);
+    /*animation: moveGradient 5s linear infinite;*/
+  }
+/*@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: -200% 0%;
+  }
+}*/

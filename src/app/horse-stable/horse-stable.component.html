@@ -1,0 +1,71 @@
+<p *ngFor=" let horse of horses">
+  <a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a>
+</p>
+
+<div class="howrse-logo">
+  <img src="https://ca.howrse.com/media/equideo/image/interface/header/logo/disconnected/howrse.png">
+</div>
+
+<div class="box-content container">
+  <section class="flexbox">
+    <div class="breadcrumb-row">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Breeding farm »</a></li>
+          <li class="breadcrumb-item"><a href="#">Horses »</a></li>
+          <li class="breadcrumb-item active" aria-current="page">My horses without a breeding farm</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+  <h1>My horses</h1>
+  <ul class="nav nav-tabs">
+    <li [class.active]="viewMode == 'char'" rel="char"><a (click)="viewMode ='char'">My horses without a breeding farm</a></li>
+  </ul>
+  <main>
+    <section class="flexbox">
+      <div class="row">
+      </div>
+    </section>
+    <div class="box-content">
+      <table class="table table-border">
+        <thead>
+          <tr>
+            <th>
+              Filter:
+              <button class="btn btn-all btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Worked</a>
+                <a class="dropdown-item" href="#">Not worked</a>
+                <a class="dropdown-item" href="#">Specialized in Classical Riding</a>
+                <a class="dropdown-item" href="#">Specialized in Western Riding</a>
+                <a class="dropdown-item" href="#">In an Equestrian Center</a>
+                <a class="dropdown-item" href="#">Without Equestrian Center</a>
+                <a class="dropdown-item" href="#">Bedded down</a>
+                <a class="dropdown-item" href="#">Not bedded down</a>
+                <a class="dropdown-item" href="#">In gestation</a>
+                <a class="dropdown-item" href="#">Not in gestation</a>
+                <a class="dropdown-item" href="#">Males</a>
+                <a class="dropdown-item" href="#">Females</a>
+              </div>
+            </th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td *ngFor="let horse of horses"> 
+              <div><img src="assets/images/gr-c-1.png" width="40" height="40" /><a [routerLink]="['/play', horse.id]" [state]="horse">{{horse.name}} </a></div>
+              <div><img src="assets/images/brush.png" /><img src="assets/images/bonus.png" /></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!--Beautiful Background Image-->
+<div class="body-background"></div>
