@@ -4,7 +4,6 @@ import { Breed } from '../app/breed';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })

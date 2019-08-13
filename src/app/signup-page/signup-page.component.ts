@@ -205,7 +205,4 @@ export class SignupPageComponent implements OnInit {
     this.imgUrl = this.imgBaseUrl + this.imgDefHorse + '/' + keyc + '.png';
     this.imgDefColor = keyc;
   }
-
-
-
 }

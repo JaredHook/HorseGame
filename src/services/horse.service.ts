@@ -104,7 +104,6 @@ export class HorseService {
     }
   }
 
-
   getName(): string {
     return this.name;
   }
