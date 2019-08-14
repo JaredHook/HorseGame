@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
-
 @Component({
   selector: 'app-progressbar',
   templateUrl: './progressbar.component.html',
@@ -14,8 +13,6 @@ export class ProgressbarComponent implements OnInit {
   public energyBar = 0;
   public healthBar = 0;
   public moraleBar = 0;
-
-
 
   constructor() { }
 

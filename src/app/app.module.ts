@@ -14,7 +14,6 @@ import { environment } from '../environments/environment';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { LoginFormComponent } from './login-form/login-form.component';
-// import { LoginModalComponent } from './login-modal/login-modal.component';
 import { MatDialogModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HorseStableComponent } from './horse-stable/horse-stable.component';
@@ -39,12 +38,10 @@ const routes: Routes = [
     DetailBoxComponent,
     NavbarComponent,
     LoginComponent,
-    // NavbarComponent,
     LoginFormComponent,
     HorseStableComponent,
     StarsComponent,
-    ProgressbarComponent,
-
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,

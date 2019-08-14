@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
-
 @Component({
   selector: 'app-stars',
   templateUrl: './stars.component.html',
@@ -31,6 +30,5 @@ export class StarsComponent implements OnInit {
       console.log(e)
 
     }
-
   }
 }

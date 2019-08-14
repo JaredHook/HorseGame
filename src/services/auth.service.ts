@@ -8,6 +8,5 @@ export class AuthService {
 
   constructor(uid: string) {
     sessionStorage.setItem('uid', uid);
-
   }
 }

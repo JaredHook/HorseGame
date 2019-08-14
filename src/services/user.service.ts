@@ -44,7 +44,6 @@ export class UserService {
     return this.db.collection('users', ref => ref.orderBy('age').startAt(value)).snapshotChanges();
   }
 
-
   createUser(value) {
     return this.db.collection('users').add({
       login: value.login,
@@ -56,6 +55,5 @@ export class UserService {
       //surname: value.surname,
       //age: parseInt(value.age),
     });
-
   }
 }
