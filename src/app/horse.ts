@@ -17,6 +17,7 @@ export class Horse {
   stamina: number;
   dayTime: number;
   dob: any;
+  userId: string;
   months: number;
   years: number;
   height: number;

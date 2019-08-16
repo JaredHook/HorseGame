@@ -18,7 +18,7 @@ export class FarmComponent implements OnInit {
   colorService: ColorService;
   breedService: BreedService;
 
-  constructor(private router: ActivatedRoute, horseService: HorseService, colorService: ColorService, breedService: BreedService) {
+  constructor(private router: ActivatedRoute, horseService: HorseService, colorService: ColorService, breedService: BreedService, public authService: AuthService) {
     this.horseService = horseService;
     this.colorService = colorService;
     this.breedService = breedService;
@@ -36,6 +36,11 @@ export class FarmComponent implements OnInit {
           //this.getColorBreedById(this.horse.breed, this.horse.color);
         });
     }
+      if (this.horse) {
+        if (!this.authService.isLoggedIn || (localStorage.getItem('user')) !== this.horse.userId) {
+          console.log("You shouldn't be here.");
+        }
+      }
   }
 
   //getColorBreedById(breedId: number, colorId: number) {

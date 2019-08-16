@@ -151,13 +151,16 @@ export class SignupPageComponent implements OnInit {
     this.userService.createUser(this.signupForm.value)
       .then(
         res => {
-           this.horseService.createRandomHorse(this.signupForm.value, res.id).subscribe(e => {
-             this.router.navigate(['/play/' + e.id]);
-          }) ;
-          
+          this.horseService.createRandomHorse(this.signupForm.value, res.id).subscribe(e => {
+            this.router.navigate(['/play/' + e.id]);
+            localStorage.setItem('user', res.id);
+            localStorage.getItem('user');
+          });
           // this.router.navigate(['/home']);
         }
-      );
+    ).catch(error => {
+      console.error("Error creating user: ", error);
+      });
     // Julias backend
     // this.http
     //  .post(

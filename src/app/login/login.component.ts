@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(fb: FormBuilder,
     userService: UserService,
     horseService: HorseService,
+    public authService: AuthService,
     private router: Router) {
     this.userService = userService;
     this.form = fb.group({
@@ -38,16 +39,16 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     let userAuth = this.form;
-    console.log("form submitted");
+    //console.log("form submitted");
     console.log(this.form);
-    console.log('This is not logged in');
+    //console.log('This is not logged in');
     this.userService.loginUsers(this.form.value).subscribe(
       res => {
         //console.log('return value is ' + JSON.stringify(res));
         try {
           if (res[0].payload.doc.id) {
-            console.log(res[0].payload.doc.id)
-            new AuthService(res[0].payload.doc.id)
+            console.log(res[0].payload.doc.id);
+            this.authService.SignIn(res[0].payload.doc.id);
             this.router.navigate(['/stable']);
           };
         }

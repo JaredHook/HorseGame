@@ -71,18 +71,18 @@ export class HorseService {
   }
 
   getHorses(): Observable<Horse[]> {
-    return this.db.collection('/horses', ref => ref.where('userId', '==', sessionStorage.getItem('uid'))).snapshotChanges().pipe(
-      map(actions => {// Jared figure out merge maps to make this work
-        return actions.map(a => {
-          const data = a.payload.doc.data() as Horse;
-          const id = a.payload.doc.id;
-          this.getColorBreedById(data);
-          this.calculateAge(data);
-          return { id, ...data };
+    return this.db.collection('/horses', ref => ref.where('userId', '==', localStorage.getItem('user'))).snapshotChanges().pipe(//return collection of horses from database
+      map(actions => {//this sets the following code to execute on each server response
+        return actions.map(a => {//returns an array of data
+          const data = a.payload.doc.data() as Horse;//the horse data from server
+          const id = a.payload.doc.id;// the id from server
+          return { id, ...data };//array contents
         })
       })
     )
   }
+//  this.getColorBreedById(data);
+//this.calculateAge(data);
 
   getHorseById(id: string): Observable<Horse> {
     return this.db.collection('/horses').doc(id).snapshotChanges().pipe(

@@ -11,7 +11,7 @@
       <div class="horse-info">
         <div class="flex-row-between">
           <div>
-            <strong>Breed</strong>: <span class="breed">{{ breed.breed }}</span>
+            <strong>Breed</strong>: <span class="breed">{{ breed?.breed }}</span>
           </div>
           <div>
             <strong>Age</strong>: <span *ngIf="horse.years">{{ horse.years }} Years </span>
@@ -25,25 +25,25 @@
             <strong>Species</strong>: Riding Horse
           </div>
           <div>
-            <strong>Height</strong>: {{ horse.height }} Hands
+            <strong>Height</strong>: <span *ngIf="horse.height"> {{ horse.height }} Hands </span>
           </div>
         </div>
 
         <div class="flex-row-between">
           <div>
-            <strong>Gender</strong>: {{ horse.gender }}
+            <strong>Gender</strong>:<span *ngIf="horse.gender"> {{ horse.gender }} </span>
           </div>
           <div>
-            <strong>Weight</strong>: {{ horse.weight }} kg
+            <strong>Weight</strong>: <span *ngIf="horse.weight">{{ horse.weight }} kg</span>
           </div>
         </div>
 
         <div class="flex-row-between">
           <div>
-            <strong>Coat</strong>: {{ color.color }}
+            <strong>Coat</strong>: {{ color?.color }}
           </div>
           <div>
-            <strong>Date of Birth</strong>: {{ horse.dob.seconds * 1000 | date:'MM-dd-yyyy' }}
+            <strong>Date of Birth</strong>: {{ horse?.dob?.seconds * 1000 | date:'MM-dd-yyyy' }}
           </div>
         </div>
 

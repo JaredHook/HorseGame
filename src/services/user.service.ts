@@ -54,6 +54,6 @@ export class UserService {
       //nameToSearch: value.name.toLowerCase(),
       //surname: value.surname,
       //age: parseInt(value.age),
-    });
+    })
   }
 }

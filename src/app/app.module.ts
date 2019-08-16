@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HorseStableComponent } from './horse-stable/horse-stable.component';
 import { StarsComponent } from './stars/stars.component';
 import { ProgressbarComponent } from './progressbar/progressbar.component';
+import { AuthService } from "../services/auth.service";
 
 const routes: Routes = [
   // basic routes
@@ -55,7 +56,7 @@ const routes: Routes = [
     MatDialogModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
   entryComponents: [LoginFormComponent
   ],
