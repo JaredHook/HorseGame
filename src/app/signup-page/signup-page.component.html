@@ -19,7 +19,7 @@
           <li *ngFor="let breed of allBreeds first as isFirst">
             <label>
               {{breed.breed}} <input type="radio" name="breed" formControlName="breed" [checked]="isFirst"
-                                     (change) ="getBreedKey(breed.key)" [value]="breed.breed_id">
+                                     (change)="getBreedKey(breed.key)" [value]="breed.breed_id">
             </label>
           </li>
         </ul>
@@ -38,9 +38,9 @@
         <div class="circle-right"></div>
         <h4 class="text-center">Coats</h4>
         <ul class="list-unstyled text-nowrap">
-          <li *ngFor="let color of allColors  first as isFirst" >
+          <li *ngFor="let color of allColors  first as isFirst">
             <label>
-              <input type="radio" name="color" formControlName="color" [checked]="isFirst"  (change) ="getColorKey(color.key)"
+              <input type="radio" name="color" formControlName="color" [checked]="isFirst" (change)="getColorKey(color.key)"
                      [value]="color.color_id"> {{color.color}}
             </label>
           </li>
@@ -81,28 +81,28 @@
     </div>
 
     <!--<div class="row d-flex" formGroupName="DoB">
-      <div class="form-group col-sm-2">
-        <select class="form-control" formControlName="day" id="birthDay">
-          <option>Day</option>
-          <option>2</option>
-          <option>16</option>
-        </select>
-      </div>
-      <div class="form-group col-sm-2">
-        <select class="form-control" formControlName="month" id="birthMonth">
-          <option>Month</option>
-          <option>September</option>
-          <option>June</option>
-        </select>
-      </div>
-      <div class="form-group col-sm-2">
-        <select class="form-control" formControlName="year" id="birthYear">
-          <option>Year</option>
-          <option>1990</option>
-          <option>2000</option>
-        </select>
-      </div>
-    </div>-->
+    <div class="form-group col-sm-2">
+      <select class="form-control" formControlName="day" id="birthDay">
+        <option>Day</option>
+        <option>2</option>
+        <option>16</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-2">
+      <select class="form-control" formControlName="month" id="birthMonth">
+        <option>Month</option>
+        <option>September</option>
+        <option>June</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-2">
+      <select class="form-control" formControlName="year" id="birthYear">
+        <option>Year</option>
+        <option>1990</option>
+        <option>2000</option>
+      </select>
+    </div>
+  </div>-->
 
     <div class="row d-flex">
       <div class="form-col col-centered">
@@ -125,10 +125,10 @@
           I have read and agree to the <a target="privacy"
                                           class="link-style" href="https://www.owlient.com/tou/ca">Terms and Conditions of Use,</a>
           the <a target="privacy" class="link-style" href="https://www.owlient.com/eula/ca">
-          End User
-          License Agreement,
-        </a> and the <a target="privacy" class="link-style"
-                        href="https://www.owlient.com/pp/ca">Privacy Policy</a>
+            End User
+            License Agreement,
+          </a> and the <a target="privacy" class="link-style"
+                          href="https://www.owlient.com/pp/ca">Privacy Policy</a>
         </label>
       </div>
     </div>
@@ -138,9 +138,17 @@
         <button type="submit" [disabled]="!signupForm.valid" class="btn btn-play btn-lg btn-block">Play</button>
       </div>
     </div>
+    <div class="mt-4 text-center">
+      <label class="labelButtom" for="terms">
+        This information is collected by Owlient to create your account.
+        <a target="privacy" class="link-style" href="https://ca.howrse.com/footer/privacyNotice">
+          More information about the processing of your personal data and your rights.
+        </a>
+      </label>
+    </div>
   </form>
   <br>
-  <!-- disclaimer and terms  -->
+  <!-- disclaimer -->
   <div>
     <label class="custom-control-label" for="terms">
       The information contained on http://willisstudentsproject.com/ website (the "Service") is for general information and educational purposes only.
