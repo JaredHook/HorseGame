@@ -216,83 +216,41 @@
           </div>
           <!--Training Widget-->
           <div class="widget">
-            <div id="Training" class="widget-item">
+            <div id="training" class="widget-item">
               <h3 id="training-header" class="widget-title">Training</h3>
             </div>
-            <table class="width-100">
+            <table class="table table-border text-align">
               <tbody>
-                <tr class="dashed">
-                  <td class="col-0 first" colspan="2">
-                    <div class="float-right"></div>
-                    <div class="grid-table">
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Stamina</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_stamina}}"> {{horse.tr_stamina}}% </progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Speed</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_speed}}"> {{horse.tr_speed}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Dressage</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_dressage}}"> {{horse.tr_dressage}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Gallop</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_gallop}}"> {{horse.tr_gallop}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Trot</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_trot}}"> {{horse.tr_trot}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="grid-row">
-                        <ul class="grid-table list-unstyled">
-                          <li>
-                            <label for="progress">Jumping</label>
-                            <progress id="progress-alignment" max="100" value="{{horse.tr_jumping}}"> {{horse.tr_jumping}}%</progress>
-                            <span class="grid-cell first" style="width:35px;">
-                              <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
-                            </span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                <tr>
+                  <td>
+                    <div>Stamina</div>
+                    <div>Speed</div>
+                    <div>Dressage</div>
+                    <div>Gallop</div>
+                    <div>Trot</div>
+                    <div>Jumping</div>
                   </td>
+                  <td>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_stamina}}"> {{horse.tr_stamina}}% </progress>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_speed}}"> {{horse.tr_speed}}%</progress>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_dressage}}"> {{horse.tr_dressage}}%</progress>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_gallop}}"> {{horse.tr_gallop}}%</progress>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_trot}}"> {{horse.tr_trot}}%</progress>
+                    <progress id="progress-alignment" max="100" value="{{horse.tr_jumping}}"> {{horse.tr_jumping}}%</progress>
+                  </td>
+                  <td>
+                    <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    <div></div>
+                    <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    <div></div>
+                    <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    <div></div>
+                    <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                    <div></div>
+                    <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <!--Competition Widget-->
