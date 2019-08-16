@@ -134,6 +134,10 @@ progress[value]::-webkit-progress-value {
   margin-left: 55px;
 }
 
+.box {
+  margin-left: 10px;
+}
+
 #progress-alignment {
   margin: 0;
 }
