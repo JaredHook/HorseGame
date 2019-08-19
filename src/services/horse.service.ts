@@ -65,6 +65,7 @@ export class HorseService {
       tr_gallop: 0,
       tr_trot: 0,
       tr_jumping: 0,
+      tr_dressage: 0,
       isInBed: false,
       isFed: false
     }))
@@ -129,9 +130,15 @@ export class HorseService {
     this.name = name;
   }
 
-  trainHorse(id: string, stamina:number) {
+  trainHorse(id: string, horse:Horse) {
     return this.db.collection('/horses').doc(id).update({
-      'tr_stamina': stamina })
+      'tr_stamina': horse.tr_stamina,
+      'tr_trot': horse.tr_trot,
+      'tr_speed': horse.tr_speed,
+      'tr_dressage': horse.tr_dressage,
+      'tr_gallop': horse.tr_gallop,
+      'tr_jumping': horse.tr_jumping
+    })
   };
 
   feedHorse(id: string, energy: number, health: number, morale: number, dayTime: number, isFed: boolean) {

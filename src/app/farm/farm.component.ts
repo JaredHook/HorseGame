@@ -56,9 +56,27 @@ export class FarmComponent implements OnInit {
   //  })
   //}
 
+  //Ternary operators initialize training values if they were previously undefined as many of our horses were made before we added the functionality
+
   onBeachClick() {
-    this.horse.tr_stamina++ 
-    this.horseService.trainHorse(this.router.snapshot.params.id, this.horse.tr_stamina)
+    this.horse.tr_dressage = (this.horse.tr_dressage ? this.horse.tr_dressage += 0.5 : 0.5);
+    this.horse.tr_gallop = (this.horse.tr_gallop ? this.horse.tr_gallop += 1 : 1);
+    this.horse.tr_speed = (this.horse.tr_speed ? this.horse.tr_speed += 1 : 1);
+    this.horseService.trainHorse(this.router.snapshot.params.id, this.horse);
+  }
+
+  onForestClick() {
+    this.horse.tr_stamina = (this.horse.tr_stamina ? this.horse.tr_stamina += 0.5 : 0.5);
+    this.horse.tr_trot = (this.horse.tr_trot ? this.horse.tr_trot += 1 : 1);
+    this.horse.tr_speed = (this.horse.tr_speed ? this.horse.tr_speed += 1 : 1);
+    this.horseService.trainHorse(this.router.snapshot.params.id, this.horse);
+  }
+
+  onMountainClick() {
+    this.horse.tr_jumping = (this.horse.tr_jumping ? this.horse.tr_jumping += 0.5 : 0.5);
+    this.horse.tr_stamina = (this.horse.tr_stamina ? this.horse.tr_stamina += 1 : 1);
+    this.horse.tr_trot = (this.horse.tr_trot ? this.horse.tr_trot += 0.5 : 0.5);
+    this.horseService.trainHorse(this.router.snapshot.params.id, this.horse);
   }
 
   feed() {

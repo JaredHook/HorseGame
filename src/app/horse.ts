@@ -27,6 +27,7 @@ export class Horse {
   tr_speed: number;
   tr_stamina: number;
   tr_trot: number;
+  tr_dressage: number;
   trot: number;
   c: Color;
   b: Breed;
