@@ -165,7 +165,7 @@ input[type="radio"] {
 }
 
 .body-background {
-  background-image: url(https://ca.howrse.com/media/equideo/image/background/body/inscription/background.jpg?73733786);
+  background-image: url(https://ca.howrse.com/media/equideo/image/background/body/inscription/background.jpg?73733786); 
   top: 0;
   background-repeat: no-repeat;
   width: 100%;
@@ -173,7 +173,8 @@ input[type="radio"] {
   z-index: -1;
   background-position: center top;
   position: absolute;
-  height: 1000px;
+  height: 1500px !important;
+  background-size: cover;
 }
 
 /* this is disclaimers 
