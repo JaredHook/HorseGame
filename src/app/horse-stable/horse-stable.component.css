@@ -10,11 +10,6 @@
   height: 1000px;
 }
 
-/*edit this css to 10px when inserting navbar*/
-.howrse-logo {
-  margin: 10px 10px 150px 10px;
-}
-
 .breadcrumb {
   font-size: 13px;
   font-weight: 700;
