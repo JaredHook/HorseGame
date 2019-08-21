@@ -1,11 +1,7 @@
-export class User {
-  id: string;
-  breed: string;
-  breed_id: string;
-
-  constructor(id: string, breed: string, breed_id: string) {
-    this.id = id;
-    this.breed = breed;
-    this.breed_id = breed_id;
-  }
+export interface User {
+  uid: string;
+  email: string;
+  displayName: string;
+  photoURL: string;
+  emailVerified: boolean;
 }

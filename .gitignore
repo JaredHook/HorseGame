@@ -52,3 +52,4 @@ Horse.sln
 .vs/horse-game/v16/.suo
 .vs/VSWorkspaceState.json
 .vs/slnx.sqlite
+.vscode/launch.json

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HorseService } from '../../services/horse.service';
+import { AuthService } from '../../services/auth.service';
 import { Horse } from '../horse';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
@@ -12,8 +13,10 @@ import { Router } from '@angular/router';
 export class HorseStableComponent implements OnInit {
   horseService: HorseService;
   horses: Horse[] = [];
+  horse: Horse;
 
   constructor(horseService: HorseService,
+    public authService: AuthService,
     private router: Router) {
     this.horseService = horseService;
   }

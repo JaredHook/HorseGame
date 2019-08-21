@@ -17,6 +17,7 @@ export class Horse {
   stamina: number;
   dayTime: number;
   dob: any;
+  userId: string;
   months: number;
   years: number;
   height: number;
@@ -26,8 +27,10 @@ export class Horse {
   tr_speed: number;
   tr_stamina: number;
   tr_trot: number;
+  tr_dressage: number;
   trot: number;
   c: Color;
   b: Breed;
   isInBed: boolean;
+  isFed: boolean;
 }

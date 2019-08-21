@@ -124,7 +124,7 @@
                             <span class="grid-cell first" style="width:35px;">
                               <img src="/assets/images/sun.png" style="margin: 1px 1px 1px 0px" alt="sun">
                             </span>
-                            <span class="grid-cell last">08:00: {{horse.name}} has just woken up</span>
+                            <span class="grid-cell last">08:00: <span *ngIf="horse">{{horse.name}}</span> has just woken up</span>
                           </li>
                         </ul>
                       </div>
@@ -136,8 +136,13 @@
 
         <div class="col-sm-4">
           <!--<div  class="col-sm-4 flex-column">-->
+<<<<<<< HEAD
+          <div class="skill-set text-center" *ngIf="horse.b && horse.c">
+            <img class="transparent horse-img" src="assets/horses/{{horse?.b?.key}}/{{horse?.c?.key}}.png">
+=======
           <div class="skill-set text-center">
             <img class="transparent horse-img img-fluid" src="assets/horses/{{horse.b.key}}/{{horse.c.key}}.png">
+>>>>>>> develop
             <!--<h4 class="text-nowrap">Best Skill:</h4><strong class="text-nowrap">Trot</strong>-->
           </div>
         </div>
@@ -158,7 +163,7 @@
               <tbody>
                 <tr>
                   <td>
-                    <button class="care" style="width:50px;">
+                    <button class="care" style="width:50px;" (click)="onForestClick()">
                       <img src="/assets/images/forest.png" style="margin: 1px 1px 1px 1px" alt="forest">
                     </button>
                     <div>Forest</div>
@@ -170,7 +175,7 @@
                     <div>Beach</div>
                   </td>
                   <td>
-                    <button class="care" style="width:50px;">
+                    <button class="care" style="width:50px;" (click)="onMountainClick()">
                       <img src="/assets/images/mountain.png" style="margin: 1px 1px 1px 1px" alt="mountain">
                     </button>
                     <div>Mountain</div>
@@ -196,12 +201,12 @@
                     <div>Jumping</div>
                   </td>
                   <td>
-                    <progress id="progress-alignment" max="100" value="{{horse.tr_stamina}}"> {{horse.tr_stamina}}% </progress>
-                    <progress id="progress-alignment" max="100" value="{{horse.tr_speed}}"> {{horse.tr_speed}}%</progress>
-                    <progress id="progress-alignment" max="100" value="{{horse.tr_dressage}}"> {{horse.tr_dressage}}%</progress>
-                    <progress id="progress-alignment" max="100" value="{{horse.tr_gallop}}"> {{horse.tr_gallop}}%</progress>
-                    <progress id="progress-alignment" max="100" value="{{horse.tr_trot}}"> {{horse.tr_trot}}%</progress>
-                    <progress id="progress-alignment" max="100" value="{{horse.tr_jumping}}"> {{horse.tr_jumping}}%</progress>
+                    <progress id="progress-alignment" max="100" *ngIf="horse" value="{{horse.tr_stamina}}"> {{horse.tr_stamina}}% </progress>
+                    <progress id="progress-alignment" max="100" *ngIf="horse" value="{{horse.tr_speed}}"> {{horse.tr_speed}}%</progress>
+                    <progress id="progress-alignment" max="100" *ngIf="horse" value="{{horse.tr_dressage}}"> {{horse.tr_dressage}}%</progress>
+                    <progress id="progress-alignment" max="100" *ngIf="horse" value="{{horse.tr_gallop}}"> {{horse.tr_gallop}}%</progress>
+                    <progress id="progress-alignment" max="100" *ngIf="horse" value="{{horse.tr_trot}}"> {{horse.tr_trot}}%</progress>
+                    <progress id="progress-alignment" max="100" *ngIf="horse" value="{{horse.tr_jumping}}"> {{horse.tr_jumping}}%</progress>
                   </td>
                   <td>
                     <img class="checkmark" src="/assets/images/checkmark.png" alt="checkmark">
@@ -236,7 +241,8 @@
     <app-progressbar [energy]="horse.energy"
                      [health]="horse.health"
                      [morale]="horse.morale"
-                     [time]="horse.dayTime"></app-progressbar>
+                     [time]="horse.dayTime"
+                     [name]="horse.name"></app-progressbar>
 
     <app-stars [stamina]="horse.stamina"
                [speed]="horse.speed"

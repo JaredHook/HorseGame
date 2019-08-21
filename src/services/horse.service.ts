@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { Horse } from '../app/horse';
 import { map } from 'rxjs/operators';
 import { from } from 'rxjs';
+import { ColorService } from './color.service';
+import { BreedService } from './breed.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +14,9 @@ import { from } from 'rxjs';
 export class HorseService {
   name: string = 'greg';
 
-  constructor(public db: AngularFirestore) {
+  constructor(public db: AngularFirestore,
+              private colorService: ColorService,
+              private breedService: BreedService) {
   }
 
   getRandStat(): number {
@@ -60,28 +64,33 @@ export class HorseService {
       tr_speed: 0,
       tr_gallop: 0,
       tr_trot: 0,
-      tr_jumping: 0
+      tr_jumping: 0,
+      tr_dressage: 0,
+      isInBed: false,
+      isFed: false
     }))
   }
 
   getHorses(): Observable<Horse[]> {
-    return this.db.collection('/horses', ref => ref.where('userId', '==', sessionStorage.getItem('uid'))).snapshotChanges().pipe(
-      map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data() as Horse
-          const id = a.payload.doc.id
-          this.calculateAge(data);
-          return { id, ...data };
+    return this.db.collection('/horses', ref => ref.where('userId', '==', localStorage.getItem('user'))).snapshotChanges().pipe(//return collection of horses from database
+      map(actions => {//this sets the following code to execute on each server response
+        return actions.map(a => {//returns an array of data
+          const data = a.payload.doc.data() as Horse;//the horse data from server
+          const id = a.payload.doc.id;// the id from server
+          return { id, ...data };//array contents
         })
       })
     )
   }
+//  this.getColorBreedById(data);
+//this.calculateAge(data);
 
   getHorseById(id: string): Observable<Horse> {
     return this.db.collection('/horses').doc(id).snapshotChanges().pipe(
       map(res => {
         const horse = res.payload.data() as Horse;
         this.calculateAge(horse);
+        this.getColorBreedById(horse);
         return horse;
       })
     )
@@ -104,6 +113,15 @@ export class HorseService {
     }
   }
 
+  getColorBreedById(horse: Horse) {
+    this.colorService.getColorById(horse.color).subscribe(res => {
+      horse.c = res[0];
+    })
+    this.breedService.getBreedById(horse.breed).subscribe(res => {
+      horse.b = res[0];
+    })
+  }
+
   getName(): string {
     return this.name;
   }
@@ -112,17 +130,24 @@ export class HorseService {
     this.name = name;
   }
 
-  trainHorse(id: string, stamina:number) {
+  trainHorse(id: string, horse:Horse) {
     return this.db.collection('/horses').doc(id).update({
-      'tr_stamina': stamina })
+      'tr_stamina': horse.tr_stamina,
+      'tr_trot': horse.tr_trot,
+      'tr_speed': horse.tr_speed,
+      'tr_dressage': horse.tr_dressage,
+      'tr_gallop': horse.tr_gallop,
+      'tr_jumping': horse.tr_jumping
+    })
   };
 
-  careForHorse(id: string, energy: number, health: number, morale: number, dayTime: number) {
+  feedHorse(id: string, energy: number, health: number, morale: number, dayTime: number, isFed: boolean) {
     return this.db.collection('/horses').doc(id).update({
       'energy': energy,
       'health': health,
       'morale': morale,
-      'dayTime': dayTime
+      'dayTime': dayTime,
+      'isFed' : isFed
     })
   };
 }
