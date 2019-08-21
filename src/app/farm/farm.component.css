@@ -51,6 +51,12 @@
     text-align: center;
   }
 
+  .text-align > tbody > tr > td {
+    border-top: 0;
+    background-color: #dcdb81;
+    text-align: left;
+  }
+
 .head1{
   text-align:right;
 }
@@ -125,7 +131,11 @@ progress[value]::-webkit-progress-value {
 }
 
 .checkmark {
-  float: right;
+  margin-left: 55px;
+}
+
+.box {
+  margin-left: 10px;
 }
 
 #progress-alignment {
