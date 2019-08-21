@@ -146,3 +146,12 @@ progress[value]::-webkit-progress-value {
   background-color: rgba(181, 183, 77, .71);
   height: 50px;
 }
+
+img.transparent.horse-img {
+  background-position: center bottom;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
