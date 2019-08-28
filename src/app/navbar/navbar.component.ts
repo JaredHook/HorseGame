@@ -14,7 +14,7 @@ export class NavbarComponent implements OnInit {
   }
 
   generateRandomHorse() {
-    this.horseService.createRandomHorse(new MockHorse(), sessionStorage.getItem('uid'));
+    this.horseService.createRandomHorse(new MockHorse());
   }
   
 }
