@@ -39,6 +39,7 @@
   position: relative;
   z-index: 3;
   top: -3px;
+  border-radius: 0 7px 7px 7px;
 }
 
 .flex-row-between {

@@ -12,6 +12,26 @@
   /*box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);*/
 }
 
+.menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #fafafa;
+  border: 1px solid #abbefd;
+  border-radius: 7px;
+  z-index: 10;
+  font-size: .8rem;
+  transform: translate(100%, 0);
+}
+
+.menu > div {
+  padding: .75rem;
+}
+
+.menu > div:first-child {
+  border-bottom: 1px solid #abbefd;
+}
+
 .horseTab {
   width: 50%;
   margin: 0 auto;

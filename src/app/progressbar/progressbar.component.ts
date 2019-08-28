@@ -14,6 +14,7 @@ export class ProgressbarComponent implements OnInit {
   public energyBar = 0;
   public healthBar = 0;
   public moraleBar = 0;
+  menuOpen = false;
 
   constructor() { }
 

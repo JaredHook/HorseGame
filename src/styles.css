@@ -10,7 +10,7 @@ body {
 .box-content {
   background-color: #f6f3b0;
   border: 2px solid #e2da78;
-  border-radius: 0 7px 7px 7px;
+  border-radius: 7px;
   box-shadow: #fbf7b9 1px 1px inset, #fbf7b9 -1px -1px inset;
   color: #003a0e;
   font-size: 1.1rem;

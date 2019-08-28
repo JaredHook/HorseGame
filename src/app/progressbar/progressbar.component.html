@@ -1,7 +1,12 @@
 <div class="container">
   <div class="horseTab">
     <div>{{ name }}</div>
-    <button class="plus"><i class="fas fa-plus"></i></button>
+    <button class="plus" (click)="menuOpen = !menuOpen"><i class="fas fa-plus"></i></button>
+
+    <div class="menu" *ngIf="menuOpen">
+      <div>Rename {{ name }}</div>
+      <div>Sell {{ name }}</div>
+    </div>
   </div>
 
   <div class="box-content">
