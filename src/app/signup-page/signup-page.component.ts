@@ -146,9 +146,9 @@ export class SignupPageComponent implements OnInit {
       });
     return this.colors;
   }
-
+  
   onSubmit() {
-    let horse = this.horseService.createRandomHorse(this.signupForm.value)
+    let horse = this.horseService.createRandomHorse(this.signupForm.value);
     // php backend (was Julia's backend Avvellin Falls)
     this.http
       .post(
@@ -158,30 +158,30 @@ export class SignupPageComponent implements OnInit {
           "email": this.email.value,
           "password": this.password.value,
           "terms": this.signupForm.get("terms").value,
-          "breed": horse.breed ,
-          "color": horse.color ,
-          "name": horse.name ,
-          "gender": horse.gender ,
-          "stamina": horse.stamina ,
-          "speed": horse.speed ,
-          "gallop": horse.gallop ,
-          "dressage": horse.dressage ,
-          "trot": horse.trot ,
-          "jumping": horse.jumping ,
-          "height": horse.height ,
-          "weight": horse.weight ,
-          "energy": horse.energy ,
-          "health": horse.health ,
-          "morale": horse.morale ,
-          "dayTime": horse.dayTime ,
-          "tr_stamina": horse.tr_stamina ,
-          "tr_speed": horse.tr_speed ,
-          "tr_gallop": horse.tr_gallop ,
-          "tr_trot": horse.tr_trot ,
-          "tr_jumping": horse.tr_jumping ,
-          "tr_dressage": horse.tr_dressage ,
-          "isInBed": horse.isInBed ,
-          "isFed": horse.isFed ,
+           "breed": horse.breed,
+           "color": horse.color,
+           "name": horse.name,
+           "gender": horse.gender,
+           "stamina": horse.stamina,
+           "speed": horse.speed,
+           "gallop": horse.gallop,
+           "dressage": horse.dressage,
+           "trot": horse.trot,
+           "jumping": horse.jumping,
+           "height": horse.height,
+           "weight": horse.weight,
+           "energy": horse.energy,
+           "health": horse.health,
+           "morale": horse.morale,
+           "dayTime": horse.dayTime,
+           "tr_stamina": horse.tr_stamina,
+           "tr_speed": horse.tr_speed,
+           "tr_gallop": horse.tr_gallop,
+           "tr_trot": horse.tr_trot,
+           "tr_jumping": horse.tr_jumping,
+           "tr_dressage": horse.tr_dressage,
+           "isInBed": horse.isInBed,
+           "isFed": horse.isFed,
         }
       )
       .subscribe(
