@@ -30,20 +30,20 @@ export class SignupPageComponent implements OnInit {
   colors: Color[] = [];
 
   allColors: Color[];
-  imgDefHorse  = 'achal_tecke';
+  imgDefHorse = 'achal_tecke';
   imgDefColor = 'gr-pml';
   imgBaseUrl = 'assets/horses/';
   imgUrl: string;
 
 
   constructor(private fb: FormBuilder,
-              private http: HttpClient,
-              private router: Router,
-              public userService: UserService,
-              public breedService: BreedService,
-              public colorService: ColorService,
-              public horseService: HorseService,
-              public dialog: MatDialog) {
+    private http: HttpClient,
+    private router: Router,
+    public userService: UserService,
+    public breedService: BreedService,
+    public colorService: ColorService,
+    public horseService: HorseService,
+    public dialog: MatDialog) {
     this.imgUrl = this.imgBaseUrl + this.imgDefHorse + '/' + this.imgDefColor + '.png';
   }
 
@@ -62,7 +62,7 @@ export class SignupPageComponent implements OnInit {
   signupForm = this.fb.group({
     login: ['', [Validators.required, Validators.minLength(3)]],
 
-    password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')]], // length of at least 8 aplhanumeric characters. Must contain lowercase uppercase and a number can contain special characters
+    password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z\d$@$!%*?&].{8,}')]], // length of at least 8 aplhanumeric characters. Must contain lowercase uppercase and a   can contain special characters
     DoB: this.fb.group({
       day: [''],
       month: [''],
@@ -84,7 +84,7 @@ export class SignupPageComponent implements OnInit {
 
   getBreeds(): Breed[] {
     // this.http
-    //  .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_breeds')
+    //  .get<{ [key:  ]: any }>('http://avellinfalls.com/home/new_account_display_breeds')
     //  .pipe(
     //    map(responseData => {
     //      let dataBreed: any;
@@ -117,7 +117,7 @@ export class SignupPageComponent implements OnInit {
 
   getColors(): Color[] {
     //  this.http
-    //    .get<{ [key: string]: any }>('http://avellinfalls.com/home/new_account_display_colors')
+    //    .get<{ [key:  ]: any }>('http://avellinfalls.com/home/new_account_display_colors')
     //    .pipe(
     //      map(responseData => {
     //        let dataColor: any;
@@ -146,42 +146,72 @@ export class SignupPageComponent implements OnInit {
       });
     return this.colors;
   }
-
+  
   onSubmit() {
-    this.userService.createUser(this.signupForm.value)
-      .then(
-        res => {
-          this.horseService.createRandomHorse(this.signupForm.value, res.id).subscribe(e => {
-            this.router.navigate(['/play/' + e.id]);
-            localStorage.setItem('user', res.id);
-            localStorage.getItem('user');
-          });
-          // this.router.navigate(['/home']);
+    let horse = this.horseService.createRandomHorse(this.signupForm.value);
+    // php backend (was Julia's backend Avvellin Falls)
+    this.http
+      .post(
+        'http://localhost/signup.php',
+        {
+          "login": this.login.value,
+          "email": this.email.value,
+          "password": this.password.value,
+          "terms": this.signupForm.get("terms").value,
+           "breed": horse.breed,
+           "color": horse.color,
+           "name": horse.name,
+           "gender": horse.gender,
+           "stamina": horse.stamina,
+           "speed": horse.speed,
+           "gallop": horse.gallop,
+           "dressage": horse.dressage,
+           "trot": horse.trot,
+           "jumping": horse.jumping,
+           "height": horse.height,
+           "weight": horse.weight,
+           "energy": horse.energy,
+           "health": horse.health,
+           "morale": horse.morale,
+           "dayTime": horse.dayTime,
+           "tr_stamina": horse.tr_stamina,
+           "tr_speed": horse.tr_speed,
+           "tr_gallop": horse.tr_gallop,
+           "tr_trot": horse.tr_trot,
+           "tr_jumping": horse.tr_jumping,
+           "tr_dressage": horse.tr_dressage,
+           "isInBed": horse.isInBed,
+           "isFed": horse.isFed,
         }
-    ).catch(error => {
-      console.error("Error creating user: ", error);
-      });
-    // Julias backend
-    // this.http
-    //  .post(
-    //    'http://avellinfalls.com/home/add_new_user',
-    //    {
-    //      "login": this.login.value
-    //    }
-    //  )
-    //  .subscribe(
-    //    (val) => {
-    //      console.log("POST call successful value returned in body",
-    //        val);
-    //    },
-    //    response => {
-    //      console.log("POST call in error", response);
-    //    },
-    //    () => {
-    //      console.log("The POST observable is now completed.");
-    //    });
+      )
+      .subscribe(
+        (val) => {
+          console.log("POST call successful value returned in body",
+            val);
+        },
+        response => {
+          console.log("POST call in error", response);
+        },
+        () => {
+          console.log("The POST observable is now completed.");
+        });
 
     // this.router.navigate(['/play']);
+
+    // this is for firebase
+    // this.userService.createUser(this.signupForm.value)
+    //   .then(
+    //     res => {
+    //       this.horseService.createRandomHorse(this.signupForm.value, res.id).subscribe(e => {
+    //         this.router.navigate(['/play/' + e.id]);
+    //         localStorage.setItem('user', res.id);
+    //         localStorage.getItem('user');
+    //       });
+    //       // this.router.navigate(['/home']);
+    //     }
+    // ).catch(error => {
+    //   console.error("Error creating user: ", error);
+    //   });
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(LoginFormComponent, {
@@ -195,16 +225,16 @@ export class SignupPageComponent implements OnInit {
     });
   }
   // imgDefHorse = 'achal-tecke';
- // imgDefColor = 'gr-pml';
- // imgBaseUrl = 'assets/horses/';
- // imgUrl: string;
+  // imgDefColor = 'gr-pml';
+  // imgBaseUrl = 'assets/horses/';
+  // imgUrl:  ;
 
   getBreedKey(keyb: string ) {
     this.imgUrl = this.imgBaseUrl + keyb + '/' + this.imgDefColor + '.png';
     this.imgDefHorse = keyb;
-}
+  }
 
-  getColorKey(keyc: string) {
+  getColorKey(keyc: string ) {
     this.imgUrl = this.imgBaseUrl + this.imgDefHorse + '/' + keyc + '.png';
     this.imgDefColor = keyc;
   }
