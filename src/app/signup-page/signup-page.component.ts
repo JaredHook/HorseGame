@@ -152,7 +152,7 @@ export class SignupPageComponent implements OnInit {
     // php backend (was Julia's backend Avvellin Falls)
     this.http
       .post(
-        'http://localhost/signup.php',
+        'http://localhost/horseGameBackend/signup.php',
         {
           "login": this.login.value,
           "email": this.email.value,

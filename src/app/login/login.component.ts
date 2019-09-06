@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
 
     this.http
       .get<User[]>(
-        'http://localhost/login.php',
+        'http://localhost/horseGameBackend/login.php',
 
         {
           params: new HttpParams().set('login', this.form.value.login)
@@ -64,6 +64,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (val) => {
           this.authService.SignIn(val["id"]);
+          console.log(val["id"]);
           this.router.navigate(['/stable']);
           console.log("POST call successful value returned in body",
             val);

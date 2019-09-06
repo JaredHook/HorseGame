@@ -28,7 +28,7 @@ export class HorseStableComponent implements OnInit {
 
     this.http
       .get<Horse[]>(
-        'http://localhost/getHorses.php',
+        'http://localhost/horseGameBackend/getHorses.php',
 
         {
           params: new HttpParams().set('id', localStorage.getItem('user'))
