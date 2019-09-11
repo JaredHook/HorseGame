@@ -30,7 +30,7 @@ export class SignupPageComponent implements OnInit {
   colors: Color[] = [];
 
   allColors: Color[];
-  imgDefHorse = 'achal_tecke';
+  imgDefHorse = 'pony';
   imgDefColor = 'gr-pml';
   imgBaseUrl = 'assets/horses/';
   imgUrl: string;
@@ -83,67 +83,47 @@ export class SignupPageComponent implements OnInit {
   }
 
   getBreeds(): Breed[] {
-    // this.http
-    //  .get<{ [key:  ]: any }>('http://avellinfalls.com/home/new_account_display_breeds')
-    //  .pipe(
-    //    map(responseData => {
-    //      let dataBreed: any;
-    //      for (const key in responseData) {
-    //        if (responseData.hasOwnProperty(key)) {
-    //          dataBreed = responseData[key]
-    //        }
-    //      }
-    //      return dataBreed;
-    //    }))
-    //  .subscribe(data => {
-    //    let br = data as Array<Breed>;
-    //    for (let i = 0; i < br.length; i++) {
-    //      let breed = new Breed(br[i].id, br[i].breed, br[i].breed_id);
-    //      this.breeds.push(breed);
-    //    }
-    //  })
-    // return this.breeds;
-    this.breedService.getBreeds()
-      .subscribe(result => {
-        console.log(result);
-        const br = result as Array<Breed>;
-        for (let i = 0; i < br.length; i++) {
-          const breed = new Breed(br[i].key, br[i].breed, br[i].breed_id);
-          this.breeds.push(breed);
-        }
-      });
+    this.http
+     .get<Breed[]>('http://localhost/horseGameBackend/display_breeds.php')
+     .subscribe((data) => {
+       let br = data as Array<Breed>;
+       for (let i = 0; i < br.length; i++) {
+         let breed = new Breed(br[i].id, br[i].breed_key, br[i].breed, br[i].best_skill);
+         this.breeds.push(breed);
+       }
+     })
     return this.breeds;
+    // this.breedService.getBreeds()
+    //   .subscribe(result => {
+    //     console.log(result);
+    //     const br = result as Array<Breed>;
+    //     for (let i = 0; i < br.length; i++) {
+    //       const breed = new Breed(br[i].key, br[i].breed, br[i].breed_id);
+    //       this.breeds.push(breed);
+    //     }
+    //   });
+    // return this.breeds;
   }
 
   getColors(): Color[] {
-    //  this.http
-    //    .get<{ [key:  ]: any }>('http://avellinfalls.com/home/new_account_display_colors')
-    //    .pipe(
-    //      map(responseData => {
-    //        let dataColor: any;
-    //        for (const key in responseData) {
-    //          if (responseData.hasOwnProperty(key)) {
-    //            dataColor = responseData[key]
-    //          }
-    //        }
-    //        return dataColor;
-    //      }))
-    //    .subscribe(data => {
-    //      let cl = data as Array<Color>;
-    //      for (let i = 0; i < cl.length; i++) {
-    //        let color = new Color(cl[i].id, cl[i].color, cl[i].color_id);
-    //        this.colors.push(color);
-    //      }
-    //    })
-    this.colorService.getColors()
-      .subscribe(result => {
-        console.log(result);
-        const br = result as Array<Color>;
-        for (let i = 0; i < br.length; i++) {
-          const color = new Color(br[i].key, br[i].color, br[i].color_id);
-          this.colors.push(color);
-        }
-      });
+     this.http
+       .get<Color[]>('http://localhost/horseGameBackend/display_colors.php')
+       .subscribe((data) => {
+         let cl = data as Array<Color>;
+         for (let i = 0; i < cl.length; i++) {
+           let color = new Color(cl[i].id, cl[i].color_key, cl[i].color);
+           this.colors.push(color);
+         }
+       })
+    // this.colorService.getColors()
+    //   .subscribe(result => {
+    //     console.log(result);
+    //     const br = result as Array<Color>;
+    //     for (let i = 0; i < br.length; i++) {
+    //       const color = new Color(br[i].key, br[i].color, br[i].color_id);
+    //       this.colors.push(color);
+    //     }
+    //   });
     return this.colors;
   }
   

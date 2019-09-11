@@ -1,22 +1,22 @@
 export class Breed {
-  //id: string;
-  key: string;
+  id: number;
+  breed_key: string;
   breed: string;
-  breed_id: number;
-  //minHeight: number;
-  //maxHeight: number;
-  //minWeight: number;
-  //maxWeight: number;
+  best_skill: string;
+  // minHeight: number;
+  // maxHeight: number;
+  // minWeight: number;
+  // maxWeight: number;
 
-  constructor(key: string, breed: string, breed_id: number) { //minHeight: number, maxHeight: number, minWeight: number, maxWeight: number) {
-
-    //this.id = id;
-    this.key = key;
+  constructor(id: number, breed_key: string, breed: string, best_skill: string) {
+    //, minHeight: number, maxHeight: number, minWeight: number, maxWeight: number
+    this.id = id;
+    this.breed_key = breed_key;
     this.breed = breed;
-    this.breed_id = breed_id;
-    //this.minHeight = minHeight;
-    //this.maxHeight = maxHeight;
-    //this.minWeight = minWeight;
-    //this.maxWeight = maxWeight;
+    this.best_skill = best_skill;
+    // this.minHeight = minHeight;
+    // this.maxHeight = maxHeight;
+    // this.minWeight = minWeight;
+    // this.maxWeight = maxWeight;
   }
 }

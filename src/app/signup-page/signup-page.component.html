@@ -19,7 +19,7 @@
           <li *ngFor="let breed of allBreeds first as isFirst">
             <label>
               {{breed.breed}} <input type="radio" name="breed" formControlName="breed" [checked]="isFirst"
-                                     (change)="getBreedKey(breed.key)" [value]="breed.breed_id">
+                                     (change)="getBreedKey(breed.breed_key)" [value]="breed.id">
             </label>
           </li>
         </ul>
@@ -40,8 +40,8 @@
         <ul class="list-unstyled text-nowrap">
           <li *ngFor="let color of allColors  first as isFirst">
             <label>
-              <input type="radio" name="color" formControlName="color" [checked]="isFirst" (change)="getColorKey(color.key)"
-                     [value]="color.color_id"> {{color.color}}
+              <input type="radio" name="color" formControlName="color" [checked]="isFirst" (change)="getColorKey(color.color_key)"
+                     [value]="color.id"> {{color.color}}
             </label>
           </li>
         </ul>
