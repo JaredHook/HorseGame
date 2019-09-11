@@ -14,7 +14,7 @@ import { HttpParams, HttpClient } from '@angular/common/http';
 export class HorseStableComponent implements OnInit {
   horseService: HorseService;
   horses: Horse[] = [];
-  horse: Horse;
+  //horse: Horse;
 
   constructor(horseService: HorseService,
     public authService: AuthService,
@@ -37,9 +37,7 @@ export class HorseStableComponent implements OnInit {
       )
       .subscribe(
         (val) => {
-          this.authService.SignIn(val["id"]);
-          console.log("POST call successful value returned in body",
-            val);
+          this.horses = val;
         },
         response => {
           console.log("POST call in error", response);

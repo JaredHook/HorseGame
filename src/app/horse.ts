@@ -3,8 +3,8 @@ import { Breed } from './breed';
 
 export class Horse {
   id: number;
-  breed: number;
-  color: number;
+  breed_id: number;
+  color_id: number;
   energy: number;
   gallop: number;
   gender: string;
@@ -29,10 +29,13 @@ export class Horse {
   tr_trot: number;
   tr_dressage: number;
   trot: number;
-  c: Color;
-  b: Breed;
+  breed: string;
+  breed_key:string
+  color_key: string;
+  color: string;
   isInBed: boolean;
   isFed: boolean;
+  login: string;
 
 constructor(
     breed: number,

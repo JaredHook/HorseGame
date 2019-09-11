@@ -19,37 +19,37 @@ export class DetailBoxComponent implements OnInit {
 
   ngOnInit() {}
 
-  ngOnChanges() {
-    this.getBreed();
-    this.getColor();
-  }
+  // ngOnChanges() {
+  //   this.getBreed();
+  //   this.getColor();
+  // }
 
-  getBreed(): Breed {
-    this.breedService.getBreeds()
-      .subscribe( res => {
-        const br = res as Array<Breed>;
+  // getBreed(): Breed {
+  //   this.breedService.getBreeds()
+  //     .subscribe( res => {
+  //       const br = res as Array<Breed>;
 
-        for (let i = 0; i < br.length; i++) {
-          if (br[i].breed_id == this.horse.breed) {
-            this.breed = br[i];
-          }
-        }
-      });
-    return this.breed;
-  }
+  //       for (let i = 0; i < br.length; i++) {
+  //         if (br[i].breed_id == this.horse.breed) {
+  //           this.breed = br[i];
+  //         }
+  //       }
+  //     });
+  //   return this.breed;
+  // }
 
-  getColor(): Color {
-    this.colorService.getColors()
-      .subscribe(res => {
-        const cl = res as Array<Color>;
+  // getColor(): Color {
+  //   this.colorService.getColors()
+  //     .subscribe(res => {
+  //       const cl = res as Array<Color>;
 
-        for (let i = 0; i < cl.length; i++) {
-          if (cl[i].color_id == this.horse.color) {
-            this.color = cl[i];
-          }
-        }
-      });
-    return this.color;
-  }
+  //       for (let i = 0; i < cl.length; i++) {
+  //         if (cl[i].color_id == this.horse.color) {
+  //           this.color = cl[i];
+  //         }
+  //       }
+  //     });
+  //   return this.color;
+  // }
 
 }

@@ -6,6 +6,7 @@ import { Horse } from '../horse';
 import { HorseService } from '../../services/horse.service';
 import { ColorService } from '../../services/color.service';
 import { BreedService } from '../../services/breed.service';
+import { HttpParams, HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-farm',
@@ -18,24 +19,44 @@ export class FarmComponent implements OnInit {
   colorService: ColorService;
   breedService: BreedService;
 
-  constructor(private router: ActivatedRoute, horseService: HorseService, colorService: ColorService, breedService: BreedService, public authService: AuthService) {
+  constructor(private router: ActivatedRoute, horseService: HorseService, colorService: ColorService, breedService: BreedService, public authService: AuthService, private http: HttpClient) {
     this.horseService = horseService;
     this.colorService = colorService;
     this.breedService = breedService;
   }
 
   ngOnInit() {
-    this.router.paramMap.pipe(map(() => window.history.state)).subscribe((res: Horse) => {//when you enter the page at first
-      this.loginCheck(res);
-      //this.getColorBreedById(this.horse.breed, this.horse.color)
-    });
-    if (!this.horse.id) {// when you reload the page
-      this.horseService.getHorseById(this.router.snapshot.params.id).subscribe(
-        res => {
-          this.loginCheck(res);
-          //this.getColorBreedById(this.horse.breed, this.horse.color);
+    this.http
+      .get<Horse>(
+        'http://localhost/horseGameBackend/getHorse.php',
+
+        {
+          params: new HttpParams().set('id', this.router.snapshot.params.id)
+        }
+
+      )
+      .subscribe(
+        (val) => {
+          this.horse = val;
+          this.calculateAge(this.horse);
+        },
+        response => {
+          console.log("POST call in error", response);
+        },
+        () => {
+          console.log("The POST observable is now completed.");
         });
-    }
+    // this.router.paramMap.pipe(map(() => window.history.state)).subscribe((res: Horse) => {//when you enter the page at first
+    //   this.loginCheck(res);
+    //   //this.getColorBreedById(this.horse.breed, this.horse.color)
+    // });
+    // if (!this.horse.id) {// when you reload the page
+    //   this.horseService.getHorseById(this.router.snapshot.params.id).subscribe(
+    //     res => {
+    //       this.loginCheck(res);
+    //       //this.getColorBreedById(this.horse.breed, this.horse.color);
+    //     });
+    // }
   }
 
   loginCheck(horse: Horse) {
@@ -101,5 +122,22 @@ export class FarmComponent implements OnInit {
 
   bed() {
     this.horse.isInBed = true;
+  }
+
+  calculateAge(horse: Horse) {
+    if (horse.dob) {
+      let today = Date.now(); // get today's date
+      let age = today - (horse.dob); //compare today's date with the birthday of the horse 
+      age = Math.floor(age / (24 * 3600)) * 2; // multiply by 2 as each day is 2 months in game logic
+      if (age >= 12) { //if age is more than a year set years and months accordingly
+        horse.years = Math.floor(age / 12);
+        horse.months = (age % 12);
+      } else { // otherwise age is less than a year and we can set months straight into age
+        horse.months = age;
+      }
+    } else {
+      let newDoB = new Date();
+      horse.dob = newDoB;
+    }
   }
 }

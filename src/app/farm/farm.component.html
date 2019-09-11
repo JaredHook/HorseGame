@@ -136,8 +136,8 @@
 
         <div class="col-sm-4">
           <!--<div  class="col-sm-4 flex-column">-->
-          <div class="skill-set text-center" *ngIf="horse.b && horse.c">
-            <img class="transparent horse-img img-fluid" src="assets/horses/{{horse?.b?.key}}/{{horse?.c?.key}}.png">
+          <div class="skill-set text-center" *ngIf="horse?.breed_key && horse?.color_key">
+            <img class="transparent horse-img img-fluid" src="assets/horses/{{horse?.breed_key}}/{{horse?.color_key}}.png">
             <!--<h4 class="text-nowrap">Best Skill:</h4><strong class="text-nowrap">Trot</strong>-->
           </div>
         </div>
@@ -233,18 +233,18 @@
         </div>
       </div>
     </section>
-    <app-progressbar [energy]="horse.energy"
-                     [health]="horse.health"
-                     [morale]="horse.morale"
-                     [time]="horse.dayTime"
-                     [name]="horse.name"></app-progressbar>
+    <app-progressbar [energy]="horse?.energy"
+                     [health]="horse?.health"
+                     [morale]="horse?.morale"
+                     [time]="horse?.dayTime"
+                     [name]="horse?.name"></app-progressbar>
 
-    <app-stars [stamina]="horse.stamina"
-               [speed]="horse.speed"
-               [dressage]="horse.dressage"
-               [gallop]="horse.gallop"
-               [trot]="horse.trot"
-               [jumping]="horse.jumping"></app-stars>
+    <app-stars [stamina]="horse?.stamina"
+               [speed]="horse?.speed"
+               [dressage]="horse?.dressage"
+               [gallop]="horse?.gallop"
+               [trot]="horse?.trot"
+               [jumping]="horse?.jumping"></app-stars>
     <app-detail-box [horse]="horse"></app-detail-box>
   </main>
 </div>
