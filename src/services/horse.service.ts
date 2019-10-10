@@ -101,8 +101,8 @@ export class HorseService {
   calculateAge(horse: Horse) {
     if (horse.dob) {
       let today = Date.now(); // get today's date
-      let age = today - (horse.dob.seconds * 1000); //compare today's date with the birthday of the horse * 1000 to convert the server call into milliseconds
-      age = Math.floor((age / (24 * 3600)) / 1000) * 2; // convert milliseconds into days value, multiply by 2 as each day is 2 months in game logic
+      let age = today - (horse.dob); //compare today's date with the birthday of the horse * 1000 to convert the server call into milliseconds
+      age = Math.floor(age / (24 * 3600)) * 2; // convert milliseconds into days value, multiply by 2 as each day is 2 months in game logic
       if (age >= 12) { //if age is more than a year set years and months accordingly
         horse.years = Math.floor(age / 12);
         horse.months = (age % 12);
