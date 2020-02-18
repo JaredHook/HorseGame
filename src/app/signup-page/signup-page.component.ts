@@ -16,12 +16,19 @@ import { HorseService } from '../../services/horse.service';
 import { resolve } from 'q';
 import { MatDialog } from '@angular/material';
 import { LoginFormComponent } from '../login-form/login-form.component';
+import * as _ from 'lodash';
+interface Baby {
+  age: number;
+  name: string;
+}
+
 
 @Component({
   selector: 'app-signup-page',
   templateUrl: './signup-page.component.html',
   styleUrls: ['./signup-page.component.css']
 })
+
 
 export class SignupPageComponent implements OnInit {
   breeds: Breed[] = [];
@@ -80,6 +87,32 @@ export class SignupPageComponent implements OnInit {
     this.allBreeds = this.getBreeds();
     // this.getBreeds();
     this.allColors = this.getColors();
+
+    this.http
+      .get<Baby[]>("http://localhost/color/test.php").pipe(map(res => {
+        return res
+      })).subscribe(res => {
+        console.log(res);
+      });
+
+    this.http
+      .post(
+        'http://avellinfalls.com/home/add_new_user', JSON.stringify(
+          {
+            "login": 1234
+          })
+      )
+      .subscribe(
+        (val) => {
+          console.log("POST call successful value returned in body",
+            val);
+        },
+        response => {
+          console.log("POST call in error", response);
+        },
+        () => {
+          console.log("The POST observable is now completed.");
+        });
   }
 
   getBreeds(): Breed[] {
@@ -148,38 +181,38 @@ export class SignupPageComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userService.createUser(this.signupForm.value)
-      .then(
-        res => {
-          this.horseService.createRandomHorse(this.signupForm.value, res.id).subscribe(e => {
-            this.router.navigate(['/play/' + e.id]);
-            localStorage.setItem('user', res.id);
-            localStorage.getItem('user');
-          });
-          // this.router.navigate(['/home']);
-        }
-    ).catch(error => {
-      console.error("Error creating user: ", error);
-      });
-    // Julias backend
-    // this.http
-    //  .post(
-    //    'http://avellinfalls.com/home/add_new_user',
-    //    {
-    //      "login": this.login.value
+    //this.userService.createUser(this.signupForm.value)
+    //  .then(
+    //    res => {
+    //      this.horseService.createRandomHorse(this.signupForm.value, res.id).subscribe(e => {
+    //        this.router.navigate(['/play/' + e.id]);
+    //        localStorage.setItem('user', res.id);
+    //        localStorage.getItem('user');
+    //      });
+    //      // this.router.navigate(['/home']);
     //    }
-    //  )
-    //  .subscribe(
-    //    (val) => {
-    //      console.log("POST call successful value returned in body",
-    //        val);
-    //    },
-    //    response => {
-    //      console.log("POST call in error", response);
-    //    },
-    //    () => {
-    //      console.log("The POST observable is now completed.");
-    //    });
+    //).catch(error => {
+    //  console.error("Error creating user: ", error);
+    //  });
+    // Julias backend
+     this.http
+       .post(
+         'http://avellinfalls.com/home/add_new_user', JSON.stringify(
+        {
+         "login": 123
+        })
+      )
+      .subscribe(
+        (val) => {
+          console.log("POST call successful value returned in body",
+            val);
+        },
+        response => {
+          console.log("POST call in error", response);
+        },
+        () => {
+          console.log("The POST observable is now completed.");
+        });
 
     // this.router.navigate(['/play']);
   }
